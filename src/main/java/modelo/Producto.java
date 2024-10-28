@@ -1,47 +1,50 @@
 package modelo;
 
 public class Producto {
-    private String idProducto;
-    private String nombreProducto;
-    private String tipoProducto;
-    private float precioProducto;
+    private int id;
+    private String nombre;
+    private float precio;
+    private String descripcion;
 
-    public Producto(String idProducto, String nombreProducto, String tipoProducto, float precioProducto) {
-        this.idProducto = idProducto;
-        this.nombreProducto = nombreProducto;
-        this.tipoProducto = tipoProducto;
-        this.precioProducto = precioProducto;
+    public Producto() {}
+
+    public Producto(int id, String nombre, float precio, String descripcion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.descripcion = descripcion;
     }
 
-    public String getIdProducto() {
-        return idProducto;
+    // Getters y Setters
+    public int getId() {
+        return id;
     }
 
-    public void setIdProducto(String idProducto) {
-        this.idProducto = idProducto;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNombreProducto() {
-        return nombreProducto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreProducto(String nombreProducto) {
-        this.nombreProducto = nombreProducto;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getTipoProducto() {
-        return tipoProducto;
+    public float getPrecio() {
+        return precio;
     }
 
-    public void setTipoProducto(String tipoProducto) {
-        this.tipoProducto = tipoProducto;
+    public void actualizarPrecio(float precio) {
+        this.precio = precio;
     }
 
-    public float getPrecioProducto() {
-        return precioProducto;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setPrecioProducto(float precioProducto) {
-        this.precioProducto = precioProducto;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
