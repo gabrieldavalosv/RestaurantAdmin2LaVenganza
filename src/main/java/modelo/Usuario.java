@@ -14,10 +14,6 @@ public class Usuario {
     // Contraseña del usuario
     private String contrasenia;
 
-    // Constructor por defecto
-    public Usuario() {}
-
-
     public Usuario(String id, String nombre, String usuario, String contrasenia) {
         this.id = id;
         this.nombre = nombre;
