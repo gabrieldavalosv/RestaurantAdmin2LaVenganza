@@ -1,6 +1,5 @@
 package modelo;
 
-// Clase que representa a un Cliente con sus atributos básicos
 public class Cliente {
     // Identificador único del cliente
     private String id;

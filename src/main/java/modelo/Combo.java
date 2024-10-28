@@ -3,7 +3,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-// Clase que representa un Combo compuesto por múltiples productos
+
 public class Combo {
     // Identificador único del combo
     private String id;

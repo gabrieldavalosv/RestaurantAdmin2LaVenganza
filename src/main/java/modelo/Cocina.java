@@ -3,7 +3,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-// Clase que representa la cocina encargada de preparar las órdenes
+
 public class Cocina {
     // Lista que almacena las órdenes pendientes de preparación
     private List<Orden> ordenesPendiente;
@@ -11,7 +11,6 @@ public class Cocina {
     // Tiempo base de preparación en minutos
     private static final int TIEMPO_PREPARACION_BASE = 10;
 
-    // Constructor que inicializa la lista de órdenes pendientes
     public Cocina() {
         this.ordenesPendiente = new ArrayList<>();
     }

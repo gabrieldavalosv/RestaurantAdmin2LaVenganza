@@ -1,6 +1,5 @@
 package modelo;
 
-// Clase que representa un Pago realizado por un cliente
 public class Pago {
     // Identificador único del pago
     private String id;
@@ -8,7 +7,6 @@ public class Pago {
     // Monto total del pago
     private Float monto;
 
-    // Método de pago utilizado (por ejemplo, "efectivo", "tarjeta")
     private String metodoPago;
 
     // Estado actual del pago (por ejemplo, "Pendiente", "Completado", "Fallido")

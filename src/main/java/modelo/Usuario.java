@@ -1,6 +1,5 @@
 package modelo;
 
-// Clase que representa un Usuario en el sistema
 public class Usuario {
     // Identificador único del usuario
     private String id;

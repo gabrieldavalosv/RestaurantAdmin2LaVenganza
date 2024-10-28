@@ -3,7 +3,6 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-// Clase que representa a un Empleado que gestiona órdenes
 public class Empleado {
     // Objeto Usuario que contiene la información del empleado
     private Usuario usuario;

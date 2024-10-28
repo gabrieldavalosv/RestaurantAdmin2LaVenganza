@@ -1,6 +1,5 @@
 package modelo;
 
-// Clase que representa un Producto con sus atributos básicos
 public class Producto {
     // Identificador único del producto
     private String id;

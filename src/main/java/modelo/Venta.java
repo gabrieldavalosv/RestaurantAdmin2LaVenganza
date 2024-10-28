@@ -1,6 +1,5 @@
 package modelo;
 
-// Clase que representa una Venta realizada por un cliente
 public class Venta {
     // Identificador único de la venta
     private String id;

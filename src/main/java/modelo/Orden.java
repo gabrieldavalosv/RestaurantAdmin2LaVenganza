@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 
-// Clase que representa una Orden con productos, combos y su estado
 public class Orden {
     // Identificador único de la orden
     private String id;
@@ -39,7 +38,6 @@ public class Orden {
     }
 
 
-    // Método para obtener el ID de la orden.
     public String getId() {
         return id;
     }
@@ -57,7 +55,6 @@ public class Orden {
     }
 
 
-     //Método para btener el estado actual de la orden.
 
     public String getEstado() {
         return estado;
