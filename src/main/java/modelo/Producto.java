@@ -1,50 +1,47 @@
 package modelo;
 
 public class Producto {
-    private int id;
+    private String id;
     private String nombre;
-    private float precio;
+    private Float precio;
     private String descripcion;
 
-    public Producto() {}
-
-    public Producto(int id, String nombre, float precio, String descripcion) {
+    public Producto(String id, String nombre, Float precio, String descripcion) {
+        if (id == null || nombre == null || precio == null || descripcion == null) {
+            throw new IllegalArgumentException("Ningún parámetro puede ser null");
+        }
+        if (precio < 0) {
+            throw new IllegalArgumentException("El precio no puede ser negativo");
+        }
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
         this.descripcion = descripcion;
     }
 
-    // Getters y Setters
-    public int getId() {
+    public String getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public float getPrecio() {
+    public Float getPrecio() {
         return precio;
-    }
-
-    public void actualizarPrecio(float precio) {
-        this.precio = precio;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void actualizarPrecio(Float nuevoPrecio) {
+        if (nuevoPrecio == null) {
+            throw new IllegalArgumentException("El nuevo precio no puede ser null");
+        }
+        if (nuevoPrecio < 0) {
+            throw new IllegalArgumentException("El precio no puede ser negativo");
+        }
+        this.precio = nuevoPrecio;
     }
 }

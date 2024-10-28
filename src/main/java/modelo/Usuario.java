@@ -1,26 +1,28 @@
 package modelo;
 
 public class Usuario {
-    private int id;
+    private String id;
     private String nombre;
     private String usuario;
     private String contrasenia;
 
     public Usuario() {}
 
-    public Usuario(int id, String nombre, String usuario, String contrasenia) {
+    public Usuario(String id, String nombre, String usuario, String contrasenia) {
         this.id = id;
         this.nombre = nombre;
         this.usuario = usuario;
         this.contrasenia = contrasenia;
     }
 
-    // Getters y Setters
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
+        if (id == null || id.trim().isEmpty()) {
+            throw new IllegalArgumentException("El ID no puede estar vacío");
+        }
         this.id = id;
     }
 
@@ -37,6 +39,7 @@ public class Usuario {
     }
 
     public void setUsuario(String usuario) {
+
         this.usuario = usuario;
     }
 
@@ -45,7 +48,8 @@ public class Usuario {
     }
 
     public void setContrasenia(String contrasenia) {
+
         this.contrasenia = contrasenia;
     }
-    
+
 }

@@ -1,39 +1,29 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Combo {
-    private int id;
+    private String id;
     private String nombre;
-    private ArregloProductos productos;
-    private float precio;
+    private List<Producto> productos;
+    private Float precio;
 
-    public Combo() {}
-
-    public Combo(int id, String nombre, ArregloProductos productos, float precio) {
+    public Combo(String id, String nombre, Float precio) {
+        if (id == null || nombre == null || precio == null) {
+            throw new IllegalArgumentException("Ningún parámetro puede ser null");
+        }
+        if (precio < 0) {
+            throw new IllegalArgumentException("El precio no puede ser negativo");
+        }
         this.id = id;
         this.nombre = nombre;
-        this.productos = productos;
         this.precio = precio;
+        this.productos = new ArrayList<>();
     }
 
-    public void agregarProducto(Producto producto) {
-        
-    }
-
-    public void eliminarProducto(int id) {
-
-    }
-
-    public float calcularPrecioTotal() {
-        return 0.0f;
-    }
-
-    // Getters y Setters
-    public int getId() {
+    public String getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -41,23 +31,54 @@ public class Combo {
     }
 
     public void setNombre(String nombre) {
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío");
+        }
         this.nombre = nombre;
     }
 
-    public ArregloProductos getProductos() {
-        return productos;
+    public List<Producto> getProductos() {
+        return new ArrayList<>(productos);
     }
 
-    public void setProductos(ArregloProductos productos) {
-        this.productos = productos;
-    }
-
-    public float getPrecio() {
+    public Float getPrecio() {
         return precio;
     }
 
-    public void setPrecio(float precio) {
+    public void setPrecio(Float precio) {
+        if (precio < 0) {
+            throw new IllegalArgumentException("El precio no puede ser negativo");
+        }
         this.precio = precio;
     }
+
+    public void agregarProducto(Producto producto) {
+        if (producto == null) {
+            throw new IllegalArgumentException("El producto no puede ser null");
+        }
+        productos.add(producto);
+    }
+
+    public void eliminarProducto(String id) {
+        if (id == null || id.trim().isEmpty()) {
+            throw new IllegalArgumentException("El ID no puede estar vacío");
+        }
+        productos.removeIf(p -> p.getId().equals(id));
+    }
+
+    public Float calcularPrecioTotal() {
+        float total = precio;
+        float sumaPreciosIndividuales = 0;
+
+        for (Producto producto : productos) {
+            sumaPreciosIndividuales += producto.getPrecio();
+        }
+
+        float descuento = sumaPreciosIndividuales * 0.20f;
+        total = sumaPreciosIndividuales - descuento;
+
+        return total;
+    }
 }
+
 
