@@ -1,7 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("VICTORIA O MUERTE");
-        System.out.println("Orden");
-
+        System.out.println("Hola Sabogal 👻");
     }
 }
