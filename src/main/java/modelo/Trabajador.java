@@ -5,6 +5,10 @@ public class Trabajador {
     private String nombre;
     private String contrasena;
 
+    public Trabajador(){
+        
+    }
+    
     public Trabajador(String id, String nombre, String contrasena) {
         this.id = id;
         this.nombre = nombre;
@@ -15,6 +19,10 @@ public class Trabajador {
         return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -23,11 +31,17 @@ public class Trabajador {
         this.nombre = nombre;
     }
 
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    // Metodos
     public boolean login(String nombre, String contrasena) {
-        if (nombre.equals("admin") && contrasena.equals("admin")) {
-            return true;
-        }
-        return false;
+        return nombre.equals("admin") && contrasena.equals("admin");
     }
 
     public boolean logout() {

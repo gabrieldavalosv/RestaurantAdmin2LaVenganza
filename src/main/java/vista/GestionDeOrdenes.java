@@ -4,17 +4,28 @@
  */
 package vista;
 
+import controlador.CtrlGestionOrdenes;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JTextField;
+
 /**
  *
  * @author josep
  */
 public class GestionDeOrdenes extends javax.swing.JFrame {
-
+    CtrlGestionOrdenes controlador;
+    
     /**
      * Creates new form GestiónDeOrdenes
      */
     public GestionDeOrdenes() {
         initComponents();
+        
+        controlador = new CtrlGestionOrdenes(this);
     }
 
     /**
@@ -26,9 +37,14 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        frameProductos = new javax.swing.JFrame();
+        labelTituloForm1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listProductos = new javax.swing.JList<>();
+        buttonAceptar = new javax.swing.JButton();
+        labelTituloForm = new javax.swing.JLabel();
+        labelUsuario = new javax.swing.JLabel();
+        labelTituloFechaHora = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jToggleButton5 = new javax.swing.JToggleButton();
@@ -37,29 +53,75 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jSeparator2 = new javax.swing.JSeparator();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        labelTituloId = new javax.swing.JLabel();
+        labelTituloCliente = new javax.swing.JLabel();
+        labelTituloEstado = new javax.swing.JLabel();
+        labelTituloTotal = new javax.swing.JLabel();
+        labelTituloFecha = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        jLabel11 = new javax.swing.JLabel();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton10 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
+        labelTituloDetalles = new javax.swing.JLabel();
+        buttonNuevaOrden = new javax.swing.JButton();
+        buttonAgregarProducto = new javax.swing.JButton();
+        buttonAgregarCombo = new javax.swing.JButton();
+        buttonFinalizarOrden = new javax.swing.JButton();
+        buttonCancelarOrden = new javax.swing.JButton();
+        labeldOrden = new javax.swing.JLabel();
+        labelEstado = new javax.swing.JLabel();
+        fieldCliente = new javax.swing.JTextField();
+        labelTotal = new javax.swing.JLabel();
+        labelFecha = new javax.swing.JLabel();
+
+        frameProductos.setMinimumSize(new java.awt.Dimension(420, 467));
+        frameProductos.setSize(new java.awt.Dimension(420, 467));
+
+        labelTituloForm1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        labelTituloForm1.setText("Lista de Productos");
+
+        listProductos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane2.setViewportView(listProductos);
+
+        buttonAceptar.setText("Aceptar");
+
+        javax.swing.GroupLayout frameProductosLayout = new javax.swing.GroupLayout(frameProductos.getContentPane());
+        frameProductos.getContentPane().setLayout(frameProductosLayout);
+        frameProductosLayout.setHorizontalGroup(
+            frameProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frameProductosLayout.createSequentialGroup()
+                .addGroup(frameProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(frameProductosLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(frameProductosLayout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(labelTituloForm1))
+                    .addGroup(frameProductosLayout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addComponent(buttonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+        frameProductosLayout.setVerticalGroup(
+            frameProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frameProductosLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(labelTituloForm1)
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addComponent(buttonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(504, 586));
 
-        jLabel1.setText("Gestión de órdenes");
+        labelTituloForm.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        labelTituloForm.setText("Gestión de órdenes");
 
-        jLabel2.setText("[Usuario: NombreUsuario]");
+        labelUsuario.setText("Usuario: NombreUsuario");
 
-        jLabel3.setText("[Fecha y Hora]");
+        labelTituloFechaHora.setText("[Fecha]");
 
         jLabel6.setText("Buscar orden:");
-
-        jTextField1.setText("__");
 
         jToggleButton5.setText("Buscar");
 
@@ -74,137 +136,183 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setText("ID Orden");
+        labelTituloId.setFont(new java.awt.Font("Georgia", 1, 11)); // NOI18N
+        labelTituloId.setText("ID Orden");
 
-        jLabel8.setText("Cliente");
+        labelTituloCliente.setFont(new java.awt.Font("Georgia", 1, 11)); // NOI18N
+        labelTituloCliente.setText("Cliente");
 
-        jLabel9.setText("Estado");
+        labelTituloEstado.setFont(new java.awt.Font("Georgia", 1, 11)); // NOI18N
+        labelTituloEstado.setText("Estado");
 
-        jLabel10.setText("Total");
+        labelTituloTotal.setFont(new java.awt.Font("Georgia", 1, 11)); // NOI18N
+        labelTituloTotal.setText("Total");
 
-        jLabel5.setText("Fecha");
+        labelTituloFecha.setFont(new java.awt.Font("Georgia", 1, 11)); // NOI18N
+        labelTituloFecha.setText("Fecha");
 
-        jLabel11.setText("Detalles de la orden seleccionada");
+        labelTituloDetalles.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        labelTituloDetalles.setText("Detalles de la orden seleccionada");
 
-        jToggleButton7.setText("Agregar producto");
+        buttonNuevaOrden.setText("Nueva Orden");
 
-        jToggleButton8.setText("Agregar combo");
-        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+        buttonAgregarProducto.setText("Agregar Producto");
+        buttonAgregarProducto.setEnabled(false);
+
+        buttonAgregarCombo.setText("Agregar Combo");
+        buttonAgregarCombo.setEnabled(false);
+
+        buttonFinalizarOrden.setText("Finalizar Orden");
+        buttonFinalizarOrden.setEnabled(false);
+
+        buttonCancelarOrden.setText("Cancelar Orden");
+        buttonCancelarOrden.setEnabled(false);
+
+        labeldOrden.setText("---");
+
+        labelEstado.setText("---");
+
+        fieldCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton8ActionPerformed(evt);
+                fieldClienteActionPerformed(evt);
             }
         });
 
-        jToggleButton10.setText("Finalizar orden");
+        labelTotal.setText("---");
 
-        jToggleButton9.setText("Cancelar orden");
+        labelFecha.setText("---");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(labelUsuario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelTituloFechaHora)
+                .addGap(107, 107, 107))
+            .addComponent(jSeparator3)
             .addComponent(jSeparator1)
             .addComponent(jSeparator2)
-            .addComponent(jSeparator3)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(144, 144, 144))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(112, 112, 112))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelTituloDetalles)
+                .addGap(126, 126, 126))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(51, 51, 51)
+                            .addComponent(jLabel6)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(52, 52, 52)
+                            .addComponent(jLabel4)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap(267, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jToggleButton5)
+                    .addGap(40, 40, 40)
+                    .addComponent(jToggleButton6)
+                    .addContainerGap(278, Short.MAX_VALUE)))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jLabel2)
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
+                        .addGap(88, 88, 88)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(buttonAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonFinalizarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(buttonAgregarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonCancelarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(jToggleButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton6))
+                        .addGap(184, 184, 184)
+                        .addComponent(buttonNuevaOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel7)
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel8)
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel9)
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel10)
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel5))
+                        .addGap(163, 163, 163)
+                        .addComponent(labelTituloForm))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
+                        .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton7)
-                            .addComponent(jToggleButton10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(labelTituloId)
+                            .addComponent(labeldOrden))
+                        .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton9)
-                            .addComponent(jToggleButton8))))
-                .addContainerGap(61, Short.MAX_VALUE))
+                            .addComponent(labelTituloCliente)
+                            .addComponent(fieldCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelTituloEstado)
+                            .addComponent(labelEstado))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelTituloTotal)
+                            .addComponent(labelTotal))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelTituloFecha)
+                            .addComponent(labelFecha))))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
+                .addComponent(labelTituloForm)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addGap(4, 4, 4)
+                    .addComponent(labelUsuario)
+                    .addComponent(labelTituloFechaHora))
+                .addGap(18, 18, 18)
+                .addComponent(buttonNuevaOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTituloTotal)
+                    .addComponent(labelTituloEstado)
+                    .addComponent(labelTituloCliente)
+                    .addComponent(labelTituloId)
+                    .addComponent(labelTituloFecha))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labeldOrden)
+                    .addComponent(labelEstado)
+                    .addComponent(fieldCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelTotal)
+                    .addComponent(labelFecha))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(labelTituloDetalles)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonAgregarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonFinalizarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonCancelarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton5)
                     .addComponent(jToggleButton6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton7)
-                    .addComponent(jToggleButton8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton9)
-                    .addComponent(jToggleButton10))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGap(32, 32, 32))
         );
 
         pack();
@@ -214,9 +322,9 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+    private void fieldClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton8ActionPerformed
+    }//GEN-LAST:event_fieldClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,28 +362,107 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         });
     }
 
+    // Getters de los Widgets
+    public JButton getButtonAgregarCombo() {
+        return buttonAgregarCombo;
+    }
+
+    public JButton getButtonAgregarProducto() {
+        return buttonAgregarProducto;
+    }
+
+    public JButton getButtonCancelarOrden() {
+        return buttonCancelarOrden;
+    }
+
+    public JButton getButtonFinalizarOrden() {
+        return buttonFinalizarOrden;
+    }
+
+    public JButton getButtonNuevaOrden() {
+        return buttonNuevaOrden;
+    }
+
+    public JTextField getFieldCliente() {
+        return fieldCliente;
+    }
+
+    public JLabel getLabelEstado() {
+        return labelEstado;
+    }
+
+    public JLabel getLabelFecha() {
+        return labelFecha;
+    }
+
+    public JLabel getLabelFechaHora() {
+        return labelTituloFechaHora;
+    }
+
+    public JLabel getLabelTotal() {
+        return labelTotal;
+    }
+
+    public JLabel getLabelUsuario() {
+        return labelUsuario;
+    }
+
+    public JLabel getLabeldOrden() {
+        return labeldOrden;
+    }
+
+    // Getters y Setters del frame de productos
+    
+    public JFrame getFrameProductos() {
+        return frameProductos;
+    }
+
+    public JList<String> getListProductos() {
+        return listProductos;
+    }
+
+    public void setListProductos(JList<String> listProductos) {
+        this.listProductos = listProductos;
+    }
+
+    public JButton getButtonAceptar() {
+        return buttonAceptar;
+    }
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonAceptar;
+    private javax.swing.JButton buttonAgregarCombo;
+    private javax.swing.JButton buttonAgregarProducto;
+    private javax.swing.JButton buttonCancelarOrden;
+    private javax.swing.JButton buttonFinalizarOrden;
+    private javax.swing.JButton buttonNuevaOrden;
+    private javax.swing.JTextField fieldCliente;
+    private javax.swing.JFrame frameProductos;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton10;
     private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
+    private javax.swing.JLabel labelEstado;
+    private javax.swing.JLabel labelFecha;
+    private javax.swing.JLabel labelTituloCliente;
+    private javax.swing.JLabel labelTituloDetalles;
+    private javax.swing.JLabel labelTituloEstado;
+    private javax.swing.JLabel labelTituloFecha;
+    private javax.swing.JLabel labelTituloFechaHora;
+    private javax.swing.JLabel labelTituloForm;
+    private javax.swing.JLabel labelTituloForm1;
+    private javax.swing.JLabel labelTituloId;
+    private javax.swing.JLabel labelTituloTotal;
+    private javax.swing.JLabel labelTotal;
+    private javax.swing.JLabel labelUsuario;
+    private javax.swing.JLabel labeldOrden;
+    private javax.swing.JList<String> listProductos;
     // End of variables declaration//GEN-END:variables
 }

@@ -39,10 +39,14 @@ public class CtrlPantallaLogin {
             vista.dispose();
             
         }else{
-            JOptionPane.showMessageDialog(vista, "Usuario o contrasenia incorrectos\n.Intentar de nuevo");
+            limpiarInputs();
+            JOptionPane.showMessageDialog(vista, "Usuario o contrasenia incorrectos.\nIntentar de nuevo");
         }
-        
     }
     
+    public void limpiarInputs(){
+        vista.getFieldUsuario().setText("");
+        vista.getFieldContrasenia().setText("");
+    }
     
 }

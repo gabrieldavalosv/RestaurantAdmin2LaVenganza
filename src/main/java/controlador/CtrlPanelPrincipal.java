@@ -7,6 +7,7 @@ import vista.GestionDeVentas;
 import vista.GestionDeClientes;
 import vista.GestionDeProductos;
 import vista.GestionDeCajeros;
+import vista.PantallaLogin;
 
 /**
  *
@@ -25,11 +26,20 @@ public class CtrlPanelPrincipal {
     }
     
     private void asignarEventos(){
-        vista.getButtonGestionOrdenes().addActionListener( e -> this.irGestionOrdenes() );
-        vista.getButtonGestionVentas().addActionListener( e -> this.irGestionVentas() );
-        vista.getButtonGestionClientes().addActionListener( e -> this.irGestionClientes() );
-        vista.getButtonGestionProductos().addActionListener( e-> this.irGestionProductos() );
-        vista.getButtonGestionCajeros().addActionListener( e -> this.irGestionDeCajeros() );
+        vista.getButtonCerrarSesion().addActionListener( e -> this.irLogin() );
+        
+        vista.getButtonGestionarOrdenes().addActionListener( e -> this.irGestionOrdenes() );
+        vista.getButtonGestionarVentas().addActionListener( e -> this.irGestionVentas() );
+        vista.getButtonGestionarClientes().addActionListener( e -> this.irGestionClientes() );
+        vista.getButtonGestionarProductos().addActionListener( e-> this.irGestionProductos() );
+        vista.getButtonGestionarCajeros().addActionListener( e -> this.irGestionDeCajeros() );
+    }
+    
+    public void irLogin(){
+        var login = new PantallaLogin();
+        login.setVisible(true);
+        
+        vista.dispose();
     }
     
     public void irGestionOrdenes(){
