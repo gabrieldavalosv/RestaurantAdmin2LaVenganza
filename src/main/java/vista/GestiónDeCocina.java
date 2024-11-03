@@ -73,7 +73,7 @@ public class GestiónDeCocina extends javax.swing.JFrame {
 
         jLabel5.setText("Buscar:");
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("__");
 
         jLabel6.setText("ID");
 
