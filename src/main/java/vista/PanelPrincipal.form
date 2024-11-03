@@ -40,24 +40,24 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
-                      <Component id="jToggleButton5" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jToggleButton10" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonGestionClientes" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jToggleButton9" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonGestionProductos" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jToggleButton7" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonGestionOrdenes" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jToggleButton8" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonGestionVentas" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jToggleButton11" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonGestionCajeros" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                      <Component id="buttonCerrarSesion" min="-2" pref="102" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="93" max="32767" attributes="0"/>
@@ -66,7 +66,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="213" max="32767" attributes="0"/>
+                  <EmptySpace pref="220" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -79,21 +79,21 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jToggleButton5" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="buttonCerrarSesion" min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Component id="jSeparator2" min="-2" pref="17" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jToggleButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jToggleButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonGestionOrdenes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonGestionVentas" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jToggleButton9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jToggleButton10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonGestionProductos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonGestionClientes" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jToggleButton11" min="-2" max="-2" attributes="0"/>
+              <Component id="buttonGestionCajeros" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="81" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -122,43 +122,43 @@
         <Property name="text" type="java.lang.String" value="[Rol: Administrador]"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cerrar sesi&#xf3;n"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton5ActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator2">
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton7">
+    <Component class="javax.swing.JToggleButton" name="buttonGestionOrdenes">
       <Properties>
         <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de &#xf3;rdenes"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton8">
+    <Component class="javax.swing.JToggleButton" name="buttonGestionVentas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de ventas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton8ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonGestionVentasActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton10">
+    <Component class="javax.swing.JToggleButton" name="buttonGestionClientes">
       <Properties>
         <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de clientes"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton9">
+    <Component class="javax.swing.JToggleButton" name="buttonGestionProductos">
       <Properties>
         <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de productos"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton11">
+    <Component class="javax.swing.JToggleButton" name="buttonGestionCajeros">
       <Properties>
         <Property name="text" type="java.lang.String" value="Administraci&#xf3;n de cajeros"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="buttonCerrarSesion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cerrar sesi&#xf3;n"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCerrarSesionActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

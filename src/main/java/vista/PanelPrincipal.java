@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package app;
+package vista;
+
+import javax.swing.JButton;
+import javax.swing.JToggleButton;
 
 /**
  *
@@ -29,13 +32,13 @@ public class PanelPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jToggleButton5 = new javax.swing.JToggleButton();
         jSeparator2 = new javax.swing.JSeparator();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton10 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
-        jToggleButton11 = new javax.swing.JToggleButton();
+        buttonGestionOrdenes = new javax.swing.JToggleButton();
+        buttonGestionVentas = new javax.swing.JToggleButton();
+        buttonGestionClientes = new javax.swing.JToggleButton();
+        buttonGestionProductos = new javax.swing.JToggleButton();
+        buttonGestionCajeros = new javax.swing.JToggleButton();
+        buttonCerrarSesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,27 +48,27 @@ public class PanelPrincipal extends javax.swing.JFrame {
 
         jLabel3.setText("[Rol: Administrador]");
 
-        jToggleButton5.setText("Cerrar sesión");
-        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
+        buttonGestionOrdenes.setText("Gestión de órdenes");
+
+        buttonGestionVentas.setText("Gestión de ventas");
+        buttonGestionVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton5ActionPerformed(evt);
+                buttonGestionVentasActionPerformed(evt);
             }
         });
 
-        jToggleButton7.setText("Gestión de órdenes");
+        buttonGestionClientes.setText("Gestión de clientes");
 
-        jToggleButton8.setText("Gestión de ventas");
-        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+        buttonGestionProductos.setText("Gestión de productos");
+
+        buttonGestionCajeros.setText("Administración de cajeros");
+
+        buttonCerrarSesion.setText("Cerrar sesión");
+        buttonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton8ActionPerformed(evt);
+                buttonCerrarSesionActionPerformed(evt);
             }
         });
-
-        jToggleButton10.setText("Gestión de clientes");
-
-        jToggleButton9.setText("Gestión de productos");
-
-        jToggleButton11.setText("Administración de cajeros");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,26 +88,26 @@ public class PanelPrincipal extends javax.swing.JFrame {
                         .addGap(167, 167, 167)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(jToggleButton5))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jToggleButton10)
+                                .addComponent(buttonGestionClientes)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton9))
+                                .addComponent(buttonGestionProductos))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jToggleButton7)
+                                .addComponent(buttonGestionOrdenes)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton8))
-                            .addComponent(jToggleButton11))))
+                                .addComponent(buttonGestionVentas))
+                            .addComponent(buttonGestionCajeros)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addComponent(buttonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(93, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addGap(52, 52, 52)
                     .addComponent(jLabel2)
-                    .addContainerGap(213, Short.MAX_VALUE)))
+                    .addContainerGap(220, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,19 +117,19 @@ public class PanelPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addComponent(jToggleButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(buttonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton7)
-                    .addComponent(jToggleButton8))
+                    .addComponent(buttonGestionOrdenes)
+                    .addComponent(buttonGestionVentas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton9)
-                    .addComponent(jToggleButton10))
+                    .addComponent(buttonGestionProductos)
+                    .addComponent(buttonGestionClientes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton11)
+                .addComponent(buttonGestionCajeros)
                 .addContainerGap(81, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -138,13 +141,13 @@ public class PanelPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+    private void buttonGestionVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGestionVentasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton8ActionPerformed
+    }//GEN-LAST:event_buttonGestionVentasActionPerformed
 
-    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
+    private void buttonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarSesionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton5ActionPerformed
+    }//GEN-LAST:event_buttonCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,16 +184,40 @@ public class PanelPrincipal extends javax.swing.JFrame {
         });
     }
 
+    public JButton getButtonCerrarSesion() {
+        return buttonCerrarSesion;
+    }
+
+    public JToggleButton getButtonGestionCajeros() {
+        return buttonGestionCajeros;
+    }
+
+    public JToggleButton getButtonGestionClientes() {
+        return buttonGestionClientes;
+    }
+
+    public JToggleButton getButtonGestionOrdenes() {
+        return buttonGestionOrdenes;
+    }
+
+    public JToggleButton getButtonGestionProductos() {
+        return buttonGestionProductos;
+    }
+
+    public JToggleButton getButtonGestionVentas() {
+        return buttonGestionVentas;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonCerrarSesion;
+    private javax.swing.JToggleButton buttonGestionCajeros;
+    private javax.swing.JToggleButton buttonGestionClientes;
+    private javax.swing.JToggleButton buttonGestionOrdenes;
+    private javax.swing.JToggleButton buttonGestionProductos;
+    private javax.swing.JToggleButton buttonGestionVentas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JToggleButton jToggleButton10;
-    private javax.swing.JToggleButton jToggleButton11;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
     // End of variables declaration//GEN-END:variables
 }
