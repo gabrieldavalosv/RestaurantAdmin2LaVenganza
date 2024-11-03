@@ -1,28 +1,13 @@
 package modelo;
 
 public class ProductoArreglo {
-    private int index;
     private Producto[] productos;
+    private int index;
+
 
     public ProductoArreglo(int tamano) {
         productos = new Producto[tamano];
         this.index = 0;
-    }
-
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
-    }
-
-    public Producto[] getProductos() {
-        return productos;
-    }
-
-    public void setProductos(Producto[] productos) {
-        this.productos = productos;
     }
 
     public boolean agregarProducto(Producto producto) {

@@ -36,10 +36,10 @@ public class Menu {
         productoArreglo.agregarProducto(new Producto("306", "Coca Cola Grande", 9.00F, "Bebida"));
 
         //POSTRE
-        productoArreglo.agregarProducto(new Producto("401", "Helado de Vainilla", 5.00F, "Postre"));
-        productoArreglo.agregarProducto(new Producto("402", "Helado de Fresa", 5.00F, "Postre"));
-        productoArreglo.agregarProducto(new Producto("403", "Helado de Chocolate", 5.00F, "Postre"));
-        productoArreglo.agregarProducto(new Producto("404", "Pie de Manzana", 6.00F, "Postre"));
+        productoArreglo.agregarProducto(new Producto("401", "Helado de Vainilla", 6.00F, "Postre"));
+        productoArreglo.agregarProducto(new Producto("402", "Helado de Fresa", 6.00F, "Postre"));
+        productoArreglo.agregarProducto(new Producto("403", "Helado de Chocolate", 6.00F, "Postre"));
+        productoArreglo.agregarProducto(new Producto("404", "Pie de Manzana", 7.00F, "Postre"));
 
     }
 
