@@ -10,6 +10,7 @@ import vista.GestionDeOrdenes;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -35,8 +36,8 @@ public class CtrlGestionOrdenes {
     
     private void asignarEventos(){
         vista.getButtonNuevaOrden().addActionListener( e -> this.empezarNuevaOrden() );
-        vista.getButtonAgregarProducto().addActionListener( e -> this.mostrarMenu() );
-        vista.getButtonAceptar().addActionListener( e -> this.seleccionarProducto() );
+        vista.getButtonMenu().addActionListener( e -> this.mostrarMenu() );
+        //vista.getButtonAceptar().addActionListener( e -> this.seleccionarProducto() );
     }
     
     private void mostrarDatosTitulos(){
@@ -52,22 +53,28 @@ public class CtrlGestionOrdenes {
         // Desplegar el frame
         menu = new Menu();
         
+        var listaProductos = menu.getProductoArreglo().getProductos();
+        var tabla = (DefaultTableModel) vista.getTablaMenu().getModel();
+        
         vista.getFrameProductos().setVisible(true);
         
-        vista.getListProductos().setModel( menu.getMenuListModel() );
+        for(int i=0; i < menu.getProductoArreglo().getIndex(); i++ ){
+            Producto p = listaProductos[i];
+            
+            tabla.addRow( new Object[]{ p.getId(), p.getNombre(), p.getPrecio(), p.getCategoria() });
+        }
     }
     
-    private void seleccionarProducto(){
-        int idProducto = vista.getListProductos().getSelectedIndex();
-        
-        producto = menu.getProductoPorIndex(idProducto);
+    /*private void seleccionarProducto(){
+        String idIngresado = vista.
+        producto = orden.agregarProductoALaOrden(producto)
         
         if( orden.agregarProductoALaOrden(producto) ){
             JOptionPane.showMessageDialog(vista.getFrameProductos(), "Se ha agregado el producto:\n" + producto.toString(), "Producto agregado correctamente", JOptionPane.INFORMATION_MESSAGE);
         }else{
             JOptionPane.showMessageDialog(vista.getFrameProductos(), "Ningun producto fue seleccionado para agregar", "Error al agregar su producto", JOptionPane.WARNING_MESSAGE);
         }
-    }
+    }*/
     
     private void empezarNuevaOrden(){
         // Asignar id de la nueva orden apartir del array
@@ -82,6 +89,7 @@ public class CtrlGestionOrdenes {
         vista.getLabelFecha().setText( fecha );
         
         // Habilitar botones para gestionar la nueva orden
+        vista.getButtonMenu().setEnabled(true);
         vista.getButtonAgregarProducto().setEnabled(true);
         vista.getButtonAgregarCombo().setEnabled(true);
         vista.getButtonFinalizarOrden().setEnabled(true);

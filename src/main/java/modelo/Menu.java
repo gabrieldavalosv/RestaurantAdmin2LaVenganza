@@ -49,24 +49,6 @@ public class Menu {
         return productoArreglo;
     }
     
-    public Producto getProductoPorIndex(int index){
-        return productoArreglo.getProductos()[index];
-    }
-    
-    // Para el jList
-    public DefaultListModel<String> getMenuListModel() {
-        DefaultListModel<String> model = new DefaultListModel<>();
-        
-        for (int i = 0; i < productoArreglo.getIndex(); i++) {
-            Producto producto = productoArreglo.getProductos()[i];
-            if (producto != null) {
-                model.addElement( producto.toString() ); // Agregar solo el nombre
-            }
-        }
-        
-        return model;
-    }
-    
     public int getTamano() {
         return tamano;
     }

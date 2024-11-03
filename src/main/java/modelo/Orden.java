@@ -19,13 +19,13 @@ public class Orden {
         this.cliente = cliente;
     }
 
-    public boolean agregarProductoALaOrden(Producto producto) {
-        if( producto != null ){
-            productoArreglo.agregarProducto(producto);
-            return true;
+    public boolean agregarProductoALaOrden(String id, Menu menu) {
+        Producto producto = menu.productoArreglo.buscarProducto(id);
+        if (producto != null) {
+            return productoArreglo.agregarProducto(producto);
+        } else {
+            return false;
         }
-        
-        return false;
     }
 
     public boolean eliminarProductoALaOrden(String id) {
