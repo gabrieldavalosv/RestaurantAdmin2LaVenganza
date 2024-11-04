@@ -56,13 +56,6 @@ public class Orden {
         return total;
     }
 
-    public String mostrarOrden() {
-        System.out.println("ID de Orden: " + id + "Cliente: " + cliente);
-        System.out.println(" ID |          NOMBRE           |  PRECIO  |  CATEGORIA");
-        System.out.println(productoArreglo);
-        return null;
-    }
-
     @Override
     public String toString() {
         String resultado = "ID de Orden: " + getId() + "Cliente: " + getCliente();
