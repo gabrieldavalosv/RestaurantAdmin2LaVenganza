@@ -9,17 +9,14 @@ public class CajeroArreglo {
         this.index = 0;
     }
 
-    public boolean agregarCajero(Cajero cajero) {
-        boolean resultado = false;
+    public void agregarCajero(Cajero cajero) {
         if (this.index < cajeros.length) {
             cajeros[this.index] = cajero;
             this.index++;
-            resultado = true;
         }
-        return resultado;
     }
 
-    public boolean eliminarCajero(String id) {
+    public void eliminarCajero(String id) {
         for (int i = 0; i < index; i++) {
             if (cajeros[i].getId().equals(id)) {
                 for (int j = i; j < index - 1; j++) {
@@ -27,10 +24,8 @@ public class CajeroArreglo {
                 }
                 cajeros[index - 1] = null;
                 index--;
-                return true;
             }
         }
-        return false;
     }
 
     public Cajero buscarCajero(String id) {
@@ -40,5 +35,15 @@ public class CajeroArreglo {
             }
         }
         return null;
+    }
+
+    @Override
+    public String toString() {
+        String resultado = "=========================================================\n";
+        resultado += "Listado de Cajeros:\n";
+        for (int i = 0; i < this.index; i++) {
+            resultado += cajeros[i] + "\n";
+        }
+        return resultado;
     }
 }

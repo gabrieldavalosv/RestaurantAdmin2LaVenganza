@@ -26,15 +26,16 @@ public class Cajero extends Trabajador{
         return ordenArreglo;
     }
 
-    public static void setOrdenArreglo(OrdenArreglo ordenArreglo) {
-        Cajero.ordenArreglo = ordenArreglo;
-    }
-
     public void crearOrden(String id, String cliente) {
         ordenArreglo.agregarOrden(new Orden(id, cliente));
     }
 
     public void cancelarOrden(String id) {
         ordenArreglo.eliminarOrden(id);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-1s : %-25s : %-10s", this.getId(), this.getNombre(), this.getRUC());
     }
 }

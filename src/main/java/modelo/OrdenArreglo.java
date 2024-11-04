@@ -9,17 +9,16 @@ public class OrdenArreglo {
         this.index = 0;
     }
 
-    public boolean agregarOrden(Orden orden) {
-        boolean resultado = false;
+
+
+    public void agregarOrden(Orden orden) {
         if (this.index < ordenes.length) {
             ordenes[this.index] = orden;
             this.index++;
-            resultado = true;
         }
-        return resultado;
     }
 
-    public boolean eliminarOrden(String id) {
+    public void eliminarOrden(String id) {
         for (int i = 0; i < index; i++) {
             if (ordenes[i].getId().equals(id)) {
                 for (int j = i; j < index - 1; j++) {
@@ -27,10 +26,8 @@ public class OrdenArreglo {
                 }
                 ordenes[index - 1] = null;
                 index--;
-                return true;
             }
         }
-        return false;
     }
 
     public Orden buscarOrden(String id) {
@@ -39,6 +36,7 @@ public class OrdenArreglo {
                 return ordenes[i];
             }
         }
+        System.out.println("NO SE ENCONTRO LA ORDEN");
         return null;
     }
 

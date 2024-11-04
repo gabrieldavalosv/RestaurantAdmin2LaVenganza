@@ -57,10 +57,12 @@ public class Menu {
     public int getTamano() {
         return tamano;
     }
-    
-    public void mostrarMenu() {
-        System.out.println("Menu");
-        System.out.println(" ID |          NOMBRE           |  PRECIO  |  CATEGORIA");
-        System.out.println(productoArreglo);
+
+    @Override
+    public String toString() {
+        String resultado = "Menu";
+        resultado += " ID |          NOMBRE           |  PRECIO  |  CATEGORIA\n";
+        resultado += productoArreglo;
+        return resultado;
     }
 }

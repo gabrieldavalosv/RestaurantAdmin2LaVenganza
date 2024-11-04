@@ -9,17 +9,14 @@ public class ProductoArreglo {
         this.index = 0;
     }
 
-    public boolean agregarProducto(Producto producto) {
-        boolean resultado = false;
+    public void agregarProducto(Producto producto) {
         if (this.index < productos.length) {
             productos[this.index] = producto;
             this.index++;
-            resultado = true;
         }
-        return resultado;
     }
 
-    public boolean eliminarProducto(String id) {
+    public void eliminarProducto(String id) {
         for (int i = 0; i < index; i++) {
             if (productos[i].getId().equals(id)) {
                 for (int j = i; j < index - 1; j++) {
@@ -27,10 +24,8 @@ public class ProductoArreglo {
                 }
                 productos[index - 1] = null;
                 index--;
-                return true;
             }
         }
-        return false;
     }
 
     public Producto buscarProducto(String id) {

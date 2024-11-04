@@ -2,22 +2,23 @@ package modelo.personal;
 
 public class Administrador extends Trabajador {
     private CajeroArreglo cajeroArreglo;
-    
-    public Administrador(){
-        
-    }
+
     
     public Administrador(String id, String nombre, String contrasena) {
         super(id, nombre, contrasena);
         cajeroArreglo = new CajeroArreglo(20);
     }
 
-    public boolean agregarCajero(Cajero cajero) {
-        return cajeroArreglo.agregarCajero(cajero);
+    public CajeroArreglo getCajeroArreglo() {
+        return cajeroArreglo;
     }
 
-    public boolean eliminarCajero(String id) {
-        return cajeroArreglo.eliminarCajero(id);
+    public void agregarCajero(Cajero cajero) {
+        cajeroArreglo.agregarCajero(cajero);
+    }
+
+    public void eliminarCajero(String id) {
+        cajeroArreglo.eliminarCajero(id);
     }
 
     public Cajero buscarCajero(String id) {
