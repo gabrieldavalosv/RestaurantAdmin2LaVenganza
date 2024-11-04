@@ -22,11 +22,18 @@ public class OrdenArreglo {
     public boolean eliminarOrden(String id) {
         for (int i = 0; i < index; i++) {
             if (ordenes[i].getId().equals(id)) {
+                
+                // Eliminar la orden desplazando las posiciones
                 for (int j = i; j < index - 1; j++) {
                     ordenes[j] = ordenes[j + 1];
                 }
-                ordenes[index - 1] = null;
+                ordenes[index - 1] = null; // Limpiar la última posición
                 index--;
+
+                // Actualizar los IDs para que sean secuenciales
+                for (int j = 0; j < index; j++) {
+                    ordenes[j].setId(String.valueOf(j));
+                }
                 return true;
             }
         }
@@ -44,8 +51,11 @@ public class OrdenArreglo {
 
     public int getIndex() {
         return index;
-    }    
-    
+    }
+
+    public Orden[] getOrdenes() {
+        return ordenes;
+    }
     
     @Override
     public String toString() {

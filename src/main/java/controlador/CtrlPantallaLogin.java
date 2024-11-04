@@ -31,8 +31,6 @@ public class CtrlPantallaLogin {
         var contrasenia = vista.getFieldContrasenia().getText();
         
         if ( usuario.equals("admin") && contrasenia.equals("123") ){
-            JOptionPane.showMessageDialog(vista, "Credenciales correctas.\nProcediendo a iniciar sesion...");
-            
             var panelPrincipal = new PanelPrincipal();
             
             panelPrincipal.setVisible(true);

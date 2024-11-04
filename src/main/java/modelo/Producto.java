@@ -33,6 +33,22 @@ public class Producto {
         this.precio = precio;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
     @Override
     public String toString() {
         return String.format("%-1s : %-25s : S/.%5.2f : %-10s", id, nombre, precio, categoria);

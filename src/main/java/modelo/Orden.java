@@ -19,8 +19,8 @@ public class Orden {
         this.cliente = cliente;
     }
 
-    public boolean agregarProductoALaOrden(String id, Menu menu) {
-        Producto producto = menu.productoArreglo.buscarProducto(id);
+    public boolean agregarProductoALaOrden(String id) {
+        Producto producto = productoArreglo.buscarProducto(id);
         if (producto != null) {
             return productoArreglo.agregarProducto(producto);
         } else {

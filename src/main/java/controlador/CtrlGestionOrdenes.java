@@ -6,6 +6,7 @@ import modelo.Menu;
 import modelo.Producto;
 
 import vista.GestionDeOrdenes;
+import vista.PanelPrincipal;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -22,7 +23,6 @@ public class CtrlGestionOrdenes {
     OrdenArreglo modelo;
     
     private Orden orden;
-    private Producto producto;
     private String fecha;
     private Menu menu;
     
@@ -31,68 +31,156 @@ public class CtrlGestionOrdenes {
         this.modelo = new OrdenArreglo(10);
         
         this.asignarEventos();
-        this.mostrarDatosTitulos();
+        this.mostrarTitulos();
     }
     
     private void asignarEventos(){
-        vista.getButtonNuevaOrden().addActionListener( e -> this.empezarNuevaOrden() );
-        vista.getButtonMenu().addActionListener( e -> this.mostrarMenu() );
-        //vista.getButtonAceptar().addActionListener( e -> this.seleccionarProducto() );
+        vista.getButtonAgregarOrden().addActionListener( e -> this.eventoAgregarOrden() );
+        vista.getButtonVolverPanel().addActionListener( e -> this.irPanelPrincipal() );
+        vista.getButtonBuscarOrden().addActionListener( e -> this.eventoBuscarOrden() );
+        vista.getButtonCancelarOrden().addActionListener( e -> this.eventoCancelarOrden() );
+        
+        // Frame de órden
+        vista.getButtonAgregarProducto().addActionListener( e -> this.eventoAgregarProducto() );
     }
     
-    private void mostrarDatosTitulos(){
+    private void mostrarTitulos(){
         // Mostrar la fecha actual
         LocalDate fechaActual = LocalDate.now();
         DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         
         fecha = fechaActual.format(formatoFecha);
-        vista.getLabelFechaHora().setText( "Fecha: " + fecha );
+        vista.getLabelTituloFecha().setText( "Fecha: " + fecha );
     }
     
-    private void mostrarMenu(){
-        // Desplegar el frame
+    private void irPanelPrincipal(){
+        var panelPrincipal = new PanelPrincipal();
+        
+        panelPrincipal.setVisible(true);
+        vista.dispose();
+    }
+    
+    private void eventoAgregarOrden(){
+        var ultimoId = String.valueOf( modelo.getIndex() );
+        var cliente = vista.getFieldCliente().getText();
+        
+        if( cliente.isEmpty() ){
+            JOptionPane.showMessageDialog(vista, "Primero ingrese un nombre antes de registrar una nueva órden.");
+            return;
+        }
+        
+        // Instanciar la nueva orden
+        orden = new Orden( ultimoId, cliente);
+
+        // Agregar orden al arreglo de ordenes (modelo)
+        modelo.agregarOrden(orden);
+        
+        // Actualizar la tabla de ordenes
+        var tablaOrdenes = (DefaultTableModel) vista.getTablaOrdenes().getModel();
+        
+        if (orden != null) {
+            tablaOrdenes.addRow(new Object[]{orden.getId(), orden.getCliente(), orden.getEstado(), orden.calcularPrecioTotal()});
+        }
+        
+        vista.getFieldCliente().setText("");
+    }
+    
+    private void eventoBuscarOrden(){
+        var idOrden = vista.getFieldIdOrden().getText();
+        
+        if( idOrden.isEmpty() ){
+            JOptionPane.showMessageDialog(vista, "Por favor, primero ingrese un id de una órden.");
+            return;
+        }
+        
+        orden = modelo.buscarOrden(idOrden);
+        
+        if( orden != null ){
+            mostrarDatosOrden();
+            
+            vista.getFrameOrden().setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(vista, "La órden con id " + idOrden + " no fue encontrada...");
+        }
+        
+        vista.getFieldIdOrden().setText("");
+    }
+    
+    private void eventoCancelarOrden(){
+        var idOrden = vista.getFieldIdOrden().getText();
+        
+        if( idOrden.isEmpty() ){
+            JOptionPane.showMessageDialog(vista, "Por favor, primero ingrese un id de una órden.");
+            return;
+        }
+        
+        orden = modelo.buscarOrden(idOrden);
+        
+        if( orden != null ){
+            var tablaOrdenes = (DefaultTableModel) vista.getTablaOrdenes().getModel();
+            tablaOrdenes.removeRow( Integer.parseInt( idOrden ) );
+            
+            modelo.eliminarOrden(idOrden);
+            
+            // Limpiar todas las filas de la tabla
+            tablaOrdenes.setRowCount(0);
+        
+            // Volver a agregar todas las órdenes desde el arreglo al JTable
+            for (int i = 0; i < modelo.getIndex(); i++) {
+                Orden o = modelo.getOrdenes()[i];
+                
+                tablaOrdenes.addRow(new Object[]{ o.getId(), o.getCliente(), o.getEstado(), o.calcularPrecioTotal() });
+            }
+            
+        }else{
+            JOptionPane.showMessageDialog(vista, "La órden con id " + idOrden + " no fue encontrada...");
+        }
+        
+        vista.getFieldIdOrden().setText("");
+    }
+    
+    // Eventos frame de orden
+    private void mostrarDatosOrden(){
+        // Orden, Cliente, total y fecha
+        vista.getLabelTituloOrden().setText("Gestión de Órden ID(" + orden.getId() + ")" );
+        vista.getLabelOrdenCliente().setText("Cliente: " + orden.getCliente() );
+        vista.getLabelOrdenTotal().setText("Total: " + orden.calcularPrecioTotal() );
+        vista.getLabelTituloMenu().setText("Menú " + fecha );
+        
+        // Mostrar el menu
         menu = new Menu();
         
         var listaProductos = menu.getProductoArreglo().getProductos();
-        var tabla = (DefaultTableModel) vista.getTablaMenu().getModel();
-        
-        vista.getFrameProductos().setVisible(true);
+        var tablaMenu = (DefaultTableModel) vista.getTablaMenu().getModel();
         
         for(int i=0; i < menu.getProductoArreglo().getIndex(); i++ ){
             Producto p = listaProductos[i];
             
-            tabla.addRow( new Object[]{ p.getId(), p.getNombre(), p.getPrecio(), p.getCategoria() });
+            tablaMenu.addRow( new Object[]{ p.getId(), p.getNombre(), p.getCategoria(), p.getPrecio() });
         }
     }
     
-    /*private void seleccionarProducto(){
-        String idIngresado = vista.
-        producto = orden.agregarProductoALaOrden(producto)
+    private void eventoAgregarProducto(){
+        var idProducto = vista.getFieldIdProducto().getText();
         
-        if( orden.agregarProductoALaOrden(producto) ){
-            JOptionPane.showMessageDialog(vista.getFrameProductos(), "Se ha agregado el producto:\n" + producto.toString(), "Producto agregado correctamente", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            JOptionPane.showMessageDialog(vista.getFrameProductos(), "Ningun producto fue seleccionado para agregar", "Error al agregar su producto", JOptionPane.WARNING_MESSAGE);
+        if( idProducto.isEmpty() ){
+            JOptionPane.showMessageDialog(vista.getFrameOrden(), "Por favor, primero ingrese un id de un producto.");
+            return;
         }
-    }*/
-    
-    private void empezarNuevaOrden(){
-        // Asignar id de la nueva orden apartir del array
-        var ultimoId = String.valueOf( modelo.getIndex() );
         
-        // Actualizar titulos sobre la orden
-        orden = new Orden( ultimoId );
+        // Agregar orden al arreglo de ordenes (modelo)
+        Producto producto = menu.getProductoArreglo().buscarProducto(idProducto);
         
-        vista.getLabeldOrden().setText( orden.getId() );
-        vista.getLabelEstado().setText( orden.getEstado() );
-        vista.getLabelTotal().setText( String.valueOf( orden.calcularPrecioTotal() ) );
-        vista.getLabelFecha().setText( fecha );
+        // Actualizar la tabla de ordenes
+        if (producto != null) {
+            orden.agregarProductoALaOrden(idProducto);
+            
+            var tablaProductos = (DefaultTableModel) vista.getTablaOrdenProductos().getModel();
+            tablaProductos.addRow(new Object[]{producto.getId(), producto.getNombre(), producto.getCategoria(), producto.getPrecio() });
+        }else{
+            JOptionPane.showMessageDialog(vista.getFrameOrden(), "El producto con id " + idProducto + " no fue encontrado...");
+        }
         
-        // Habilitar botones para gestionar la nueva orden
-        vista.getButtonMenu().setEnabled(true);
-        vista.getButtonAgregarProducto().setEnabled(true);
-        vista.getButtonAgregarCombo().setEnabled(true);
-        vista.getButtonFinalizarOrden().setEnabled(true);
-        vista.getButtonCancelarOrden().setEnabled(true);
+        vista.getFieldIdProducto().setText("");
     }
 }

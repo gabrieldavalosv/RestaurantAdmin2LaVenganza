@@ -27,6 +27,11 @@ public class ProductoArreglo {
                 }
                 productos[index - 1] = null;
                 index--;
+                
+                // Actualizar los IDs para que sean secuenciales
+                for (int j = 0; j < index; j++) {
+                    productos[j].setId(String.valueOf(j));
+                }
                 return true;
             }
         }
