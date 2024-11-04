@@ -6,22 +6,15 @@ package vista;
 
 import javax.swing.JButton;
 
-import controlador.CtrlPanelPrincipal;
-import modelo.personal.Administrador;
-
 /**
  *
  * @author josep
  */
 
 public class PanelPrincipal extends javax.swing.JFrame {
-    CtrlPanelPrincipal controlador;
-    Administrador modelo;
     
     public PanelPrincipal() {
         initComponents();
-        
-        controlador = new CtrlPanelPrincipal(this);
     }
 
     /**
@@ -149,9 +142,9 @@ public class PanelPrincipal extends javax.swing.JFrame {
                     .addComponent(buttonGestionarVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonGestionarOrdenes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonGestionarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonGestionarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonGestionarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonGestionarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(buttonGestionarCajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))

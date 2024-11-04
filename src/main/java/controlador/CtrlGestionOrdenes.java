@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import modelo.personal.Administrador;
 
 /**
  *
@@ -21,17 +22,21 @@ import javax.swing.table.DefaultTableModel;
 public class CtrlGestionOrdenes {
     GestionDeOrdenes vista;
     OrdenArreglo modelo;
+    Administrador administrador;
     
     private Orden orden;
     private String fecha;
     private Menu menu;
     
-    public CtrlGestionOrdenes(GestionDeOrdenes vista){
+    public CtrlGestionOrdenes(OrdenArreglo modelo, GestionDeOrdenes vista,Administrador administrador){
         this.vista = vista;
-        this.modelo = new OrdenArreglo(10);
+        this.modelo = modelo;
+        this.administrador = administrador;
         
         this.asignarEventos();
         this.mostrarTitulos();
+        
+        this.vista.setVisible(true);
     }
     
     private void asignarEventos(){
@@ -46,6 +51,13 @@ public class CtrlGestionOrdenes {
         vista.getButtonTerminarOrden().addActionListener( e -> this.eventoTerminarOrden() );
     }
     
+    private void irPanelPrincipal(){
+        var vistaPanel = new PanelPrincipal();
+        var ctrlPanel = new CtrlPanelPrincipal( administrador, vistaPanel );
+        
+        vista.dispose();
+    }
+    
     private void mostrarTitulos(){
         // Mostrar la fecha actual
         LocalDate fechaActual = LocalDate.now();
@@ -53,13 +65,6 @@ public class CtrlGestionOrdenes {
         
         fecha = fechaActual.format(formatoFecha);
         vista.getLabelTituloFecha().setText( "Fecha: " + fecha );
-    }
-    
-    private void irPanelPrincipal(){
-        var panelPrincipal = new PanelPrincipal();
-        
-        panelPrincipal.setVisible(true);
-        vista.dispose();
     }
     
     private void eventoAgregarOrden(){

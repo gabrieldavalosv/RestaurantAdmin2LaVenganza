@@ -5,9 +5,6 @@
 package vista;
 
 import javax.swing.JTextField;
-
-import modelo.personal.Administrador;
-import controlador.CtrlPantallaLogin;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
 
@@ -16,17 +13,13 @@ import javax.swing.JPasswordField;
  * @author josep
  */
 public class PantallaLogin extends javax.swing.JFrame {
-    CtrlPantallaLogin controlador;
     
     /**
      * Creates new form PantallaLogin
      */
+    
     public PantallaLogin() {
         initComponents();
-        
-        var modelo = new Administrador("0", "admin", "123");
-        
-        controlador = new CtrlPantallaLogin(modelo, this);
     }
 
     /**

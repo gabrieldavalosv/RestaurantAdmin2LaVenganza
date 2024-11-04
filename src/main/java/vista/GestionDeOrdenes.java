@@ -4,8 +4,6 @@
  */
 package vista;
 
-import controlador.CtrlGestionOrdenes;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,15 +15,12 @@ import javax.swing.JTextField;
  * @author josep
  */
 public class GestionDeOrdenes extends javax.swing.JFrame {
-    CtrlGestionOrdenes controlador;
     
     /**
      * Creates new form GestiónDeOrdenes
      */
     public GestionDeOrdenes() {
         initComponents();
-        
-        controlador = new CtrlGestionOrdenes(this);
     }
 
     /**
@@ -68,9 +63,7 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         fieldIdOrden = new javax.swing.JTextField();
         buttonBuscarOrden = new javax.swing.JButton();
 
-        frameOrden.setMaximumSize(new java.awt.Dimension(1090, 520));
         frameOrden.setMinimumSize(new java.awt.Dimension(1090, 520));
-        frameOrden.setPreferredSize(new java.awt.Dimension(1090, 520));
         frameOrden.setSize(new java.awt.Dimension(1090, 520));
 
         labelTituloOrden.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N

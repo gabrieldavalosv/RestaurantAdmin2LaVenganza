@@ -19,6 +19,10 @@ public class Trabajador {
         return nombre;
     }
 
+    public String getContrasena() {
+        return contrasena;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

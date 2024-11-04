@@ -86,9 +86,9 @@
                   <Component id="buttonGestionarOrdenes" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="buttonGestionarClientes" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="buttonGestionarProductos" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="buttonGestionarClientes" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Component id="buttonGestionarCajeros" min="-2" pref="35" max="-2" attributes="0"/>

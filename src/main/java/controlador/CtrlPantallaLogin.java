@@ -20,6 +20,7 @@ public class CtrlPantallaLogin {
         this.vista = vista;
         
         this.asignarEventos();
+        vista.setVisible(true);
     }
     
     private void asignarEventos(){
@@ -30,12 +31,11 @@ public class CtrlPantallaLogin {
         var usuario = vista.getFieldUsuario().getText();
         var contrasenia = vista.getFieldContrasenia().getText();
         
-        if ( usuario.equals("admin") && contrasenia.equals("123") ){
-            var panelPrincipal = new PanelPrincipal();
+        if ( usuario.equals( modelo.getNombre() ) && contrasenia.equals( modelo.getContrasena() ) ){
+            var vistaPanel = new PanelPrincipal();
+            var ctrlPanel = new CtrlPanelPrincipal( modelo, vistaPanel);
             
-            panelPrincipal.setVisible(true);
             vista.dispose();
-            
         }else{
             limpiarInputs();
             JOptionPane.showMessageDialog(vista, "Usuario o contrasenia incorrectos.\nIntentar de nuevo");
@@ -46,5 +46,4 @@ public class CtrlPantallaLogin {
         vista.getFieldUsuario().setText("");
         vista.getFieldContrasenia().setText("");
     }
-    
 }

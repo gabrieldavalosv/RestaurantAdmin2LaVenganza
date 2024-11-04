@@ -1,6 +1,8 @@
 package controlador;
 
 import modelo.personal.Administrador;
+import modelo.personal.Cajero;
+
 import vista.PanelPrincipal;
 import vista.GestionDeOrdenes;
 import vista.GestionDeVentas;
@@ -18,10 +20,12 @@ public class CtrlPanelPrincipal {
     private Administrador modelo;
     private PanelPrincipal vista;
 
-    public CtrlPanelPrincipal(PanelPrincipal vista) {
+    public CtrlPanelPrincipal(Administrador modelo, PanelPrincipal vista) {
+        this.modelo = modelo;
         this.vista = vista;
         
         this.asignarEventos();
+        this.vista.setVisible(true);
     }
     
     private void asignarEventos(){
@@ -35,15 +39,17 @@ public class CtrlPanelPrincipal {
     }
     
     public void irLogin(){
-        var login = new PantallaLogin();
-        login.setVisible(true);
+        var vistaLogin = new PantallaLogin();
+        var ctrlLogin = new CtrlPantallaLogin( modelo, vistaLogin);
         
         vista.dispose();
     }
     
     public void irGestionOrdenes(){
-        var gestorOrdenes = new GestionDeOrdenes();
-        gestorOrdenes.setVisible(true);
+        var vistaOrdenes = new GestionDeOrdenes();
+        var ordenes = Cajero.getOrdenArreglo();
+        
+        var ctrlOrdenes = new CtrlGestionOrdenes( ordenes, vistaOrdenes, modelo);
         
         vista.dispose();
     }
@@ -64,6 +70,7 @@ public class CtrlPanelPrincipal {
     
     public void irGestionProductos(){
         var gestorProductos = new GestionDeProductos();
+        
         gestorProductos.setVisible(true);
         
         vista.dispose();
