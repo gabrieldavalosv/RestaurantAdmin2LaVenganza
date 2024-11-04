@@ -1,3 +1,4 @@
+import modelo.excepciones.ArregloLLenoException;
 import modelo.personal.Administrador;
 import modelo.personal.Cajero;
 
@@ -11,7 +12,7 @@ import controlador.CtrlPantallaLogin;
  */
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ArregloLLenoException {
         
         // Creacion de personales
         Administrador administrador = new Administrador("1", "admin", "admin");

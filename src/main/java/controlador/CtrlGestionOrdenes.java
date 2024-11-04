@@ -5,6 +5,8 @@ import modelo.Orden;
 import modelo.Menu;
 import modelo.Producto;
 
+import modelo.excepciones.ArregloLLenoException;
+import modelo.excepciones.IdNoEncontradoException;
 import vista.GestionDeOrdenes;
 import vista.PanelPrincipal;
 
@@ -40,14 +42,44 @@ public class CtrlGestionOrdenes {
     }
     
     private void asignarEventos(){
-        vista.getButtonAgregarOrden().addActionListener( e -> this.eventoAgregarOrden() );
+        vista.getButtonAgregarOrden().addActionListener( e -> {
+            try {
+                this.eventoAgregarOrden();
+            } catch (ArregloLLenoException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
         vista.getButtonVolverPanel().addActionListener( e -> this.irPanelPrincipal() );
-        vista.getButtonBuscarOrden().addActionListener( e -> this.eventoBuscarOrden() );
-        vista.getButtonCancelarOrden().addActionListener( e -> this.eventoCancelarOrden() );
+        vista.getButtonBuscarOrden().addActionListener( e -> {
+            try {
+                this.eventoBuscarOrden();
+            } catch (IdNoEncontradoException | ArregloLLenoException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        vista.getButtonCancelarOrden().addActionListener( e -> {
+            try {
+                this.eventoCancelarOrden();
+            } catch (IdNoEncontradoException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
         
         // Frame de órden
-        vista.getButtonAgregarProducto().addActionListener( e -> this.eventoAgregarProducto() );
-        vista.getButtonEliminarProducto().addActionListener( e -> this.eventoEliminarProducto() );
+        vista.getButtonAgregarProducto().addActionListener( e -> {
+            try {
+                this.eventoAgregarProducto();
+            } catch (ArregloLLenoException | IdNoEncontradoException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        vista.getButtonEliminarProducto().addActionListener( e -> {
+            try {
+                this.eventoEliminarProducto();
+            } catch (IdNoEncontradoException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
         vista.getButtonTerminarOrden().addActionListener( e -> this.eventoTerminarOrden() );
     }
     
@@ -67,7 +99,7 @@ public class CtrlGestionOrdenes {
         vista.getLabelTituloFecha().setText( "Fecha: " + fecha );
     }
     
-    private void eventoAgregarOrden(){
+    private void eventoAgregarOrden() throws ArregloLLenoException {
         var ultimoId = String.valueOf( modelo.getIndex() );
         var cliente = vista.getFieldCliente().getText();
         
@@ -95,7 +127,7 @@ public class CtrlGestionOrdenes {
         vista.getFieldCliente().setText("");
     }
     
-    private void eventoBuscarOrden(){
+    private void eventoBuscarOrden() throws IdNoEncontradoException, ArregloLLenoException {
         var idOrden = vista.getFieldIdOrden().getText();
         
         if( idOrden.isEmpty() ){
@@ -116,7 +148,7 @@ public class CtrlGestionOrdenes {
         vista.getFieldIdOrden().setText("");
     }
     
-    private void eventoCancelarOrden(){
+    private void eventoCancelarOrden() throws IdNoEncontradoException {
         var idOrden = vista.getFieldIdOrden().getText();
         
         if( idOrden.isEmpty() ){
@@ -150,7 +182,7 @@ public class CtrlGestionOrdenes {
     }
     
     // Eventos frame de orden
-    private void mostrarDatosOrden(){
+    private void mostrarDatosOrden() throws ArregloLLenoException {
         // Orden, Cliente, total y fecha
         vista.getLabelTituloOrden().setText("Gestión de Órden ID(" + orden.getId() + ")" );
         vista.getLabelOrdenCliente().setText("Cliente: " + orden.getCliente() );
@@ -182,7 +214,7 @@ public class CtrlGestionOrdenes {
         }
     }
     
-    private void eventoAgregarProducto(){
+    private void eventoAgregarProducto() throws ArregloLLenoException, IdNoEncontradoException {
         var idProducto = vista.getFieldIdProducto().getText();
         
         if( idProducto.isEmpty() ){
@@ -203,7 +235,7 @@ public class CtrlGestionOrdenes {
         vista.getFieldIdProducto().setText("");
     }
     
-    private void eventoEliminarProducto(){
+    private void eventoEliminarProducto() throws IdNoEncontradoException {
         var idProducto = vista.getFieldIdProducto().getText();
         
         if( idProducto.isEmpty() ){

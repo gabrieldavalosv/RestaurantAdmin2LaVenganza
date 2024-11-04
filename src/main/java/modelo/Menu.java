@@ -1,12 +1,14 @@
 package modelo;
 
+import modelo.excepciones.ArregloLLenoException;
+
 import javax.swing.DefaultListModel;
 
 public class Menu {
     ProductoArreglo productoArreglo;
     int tamano = 40;
 
-    public Menu() {
+    public Menu() throws ArregloLLenoException {
         productoArreglo = new ProductoArreglo(tamano);
 
         //COMIDAS

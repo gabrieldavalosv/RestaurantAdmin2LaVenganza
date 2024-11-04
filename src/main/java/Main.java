@@ -1,3 +1,5 @@
+import modelo.excepciones.ArregloLLenoException;
+import modelo.excepciones.IdNoEncontradoException;
 import modelo.personal.Administrador;
 import modelo.personal.Cajero;
 import modelo.Menu;
@@ -5,7 +7,7 @@ import modelo.Menu;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IdNoEncontradoException, ArregloLLenoException {
         System.out.println("Hola Sabogal 👻");
 
         Menu menu = new Menu();
@@ -28,7 +30,7 @@ public class Main {
             cajero.getOrdenArreglo().buscarOrden("304").mostrarOrden();
         }
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             System.out.println(menu);
             System.out.print("ID: ");
             String id = scanner.nextLine();

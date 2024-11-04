@@ -1,5 +1,8 @@
 package modelo;
 
+import modelo.excepciones.ArregloLLenoException;
+import modelo.excepciones.IdNoEncontradoException;
+
 public class Orden {
     private String id;
     private ProductoArreglo productoArreglo;
@@ -19,7 +22,7 @@ public class Orden {
         this.cliente = cliente;
     }
 
-    public boolean agregarProductoALaOrden(String id, Menu menu) {
+    public boolean agregarProductoALaOrden(String id, Menu menu) throws ArregloLLenoException, IdNoEncontradoException {
         Producto producto = menu.productoArreglo.buscarProducto(id);
         if (producto != null) {
             productoArreglo.agregarProducto(producto);
@@ -28,7 +31,7 @@ public class Orden {
         return false;
     }
 
-    public boolean eliminarProductoALaOrden(String id) {
+    public boolean eliminarProductoALaOrden(String id) throws IdNoEncontradoException {
         Producto producto = productoArreglo.buscarProducto(id);
         if (producto != null) {
             productoArreglo.eliminarProducto(id);
@@ -59,7 +62,15 @@ public class Orden {
         System.out.println(productoArreglo);
         return null;
     }
-    
+
+    @Override
+    public String toString() {
+        String resultado = "ID de Orden: " + getId() + "Cliente: " + getCliente();
+        resultado +=" ID |          NOMBRE           |  PRECIO  |  CATEGORIA";
+        resultado += productoArreglo;
+        return resultado;
+    }
+
     // Getters y setters
 
     public String getId() {

@@ -25,12 +25,10 @@ public class Venta {
         if (pago.procesarPago()) {
             this.estado = "Realizada";
             this.fecha = new Date();
-            System.out.println("La venta se ha realizado con exito");
             generarComprobante();
             return true;
         } else {
             this.estado = "Fallida";
-            System.out.println("La venta no se ha realizado");
             return false;
         }
 

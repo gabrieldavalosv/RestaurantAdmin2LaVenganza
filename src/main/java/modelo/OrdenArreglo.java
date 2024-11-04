@@ -1,5 +1,8 @@
 package modelo;
 
+import modelo.excepciones.ArregloLLenoException;
+import modelo.excepciones.IdNoEncontradoException;
+
 public class OrdenArreglo {
     private Orden[] ordenes;
     private int index;
@@ -11,14 +14,16 @@ public class OrdenArreglo {
 
 
 
-    public void agregarOrden(Orden orden) {
+    public void agregarOrden(Orden orden) throws ArregloLLenoException {
         if (this.index < ordenes.length) {
             ordenes[this.index] = orden;
             this.index++;
+        } else {
+            throw new ArregloLLenoException();
         }
     }
 
-    public void eliminarOrden(String id) {
+    public void eliminarOrden(String id) throws IdNoEncontradoException {
         for (int i = 0; i < index; i++) {
             if (ordenes[i].getId().equals(id)) {
                 for (int j = i; j < index - 1; j++) {
@@ -26,18 +31,19 @@ public class OrdenArreglo {
                 }
                 ordenes[index - 1] = null;
                 index--;
+            } else {
+                throw new IdNoEncontradoException();
             }
         }
     }
 
-    public Orden buscarOrden(String id) {
+    public Orden buscarOrden(String id) throws IdNoEncontradoException {
         for (int i = 0; i < this.index; i++) {
             if (ordenes[i] != null && ordenes[i].getId().equals(id)) {
                 return ordenes[i];
             }
         }
-        System.out.println("NO SE ENCONTRO LA ORDEN");
-        return null;
+        throw new IdNoEncontradoException();
     }
 
     public int getIndex() {

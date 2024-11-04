@@ -2,6 +2,8 @@ package modelo.personal;
 
 import modelo.Orden;
 import modelo.OrdenArreglo;
+import modelo.excepciones.ArregloLLenoException;
+import modelo.excepciones.IdNoEncontradoException;
 
 public class Cajero extends Trabajador{
     private String RUC;
@@ -26,11 +28,11 @@ public class Cajero extends Trabajador{
         return ordenArreglo;
     }
 
-    public void crearOrden(String id, String cliente) {
+    public void crearOrden(String id, String cliente) throws ArregloLLenoException {
         ordenArreglo.agregarOrden(new Orden(id, cliente));
     }
 
-    public void cancelarOrden(String id) {
+    public void cancelarOrden(String id) throws IdNoEncontradoException {
         ordenArreglo.eliminarOrden(id);
     }
 
