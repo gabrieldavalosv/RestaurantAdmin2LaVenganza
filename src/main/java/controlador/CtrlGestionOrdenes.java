@@ -6,13 +6,16 @@ import modelo.Menu;
 import modelo.Producto;
 
 import vista.GestionDeOrdenes;
+import vista.GestionDePagos;
 import vista.PanelPrincipal;
+
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.personal.Administrador;
+import vista.GestionDePagos;
 
 /**
  *
@@ -56,6 +59,13 @@ public class CtrlGestionOrdenes {
         var ctrlPanel = new CtrlPanelPrincipal( administrador, vistaPanel );
         
         vista.dispose();
+    }
+    
+    private void irGestionarPago(){
+        var vistaPago = new GestionDePagos();
+        var ctrlPago = new CtrlGestionPagos( orden, vistaPago );
+        
+        //vista.dispose();
     }
     
     private void mostrarTitulos(){
@@ -248,6 +258,8 @@ public class CtrlGestionOrdenes {
         
         // Redirigue a la vista de ordenes
         vista.getFrameOrden().dispose();
+        
+        this.irGestionarPago();
         
         // Actualizar la tabla de ordenes
         var tablaOrdenes = (DefaultTableModel) vista.getTablaOrdenes().getModel();

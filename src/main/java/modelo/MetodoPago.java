@@ -4,7 +4,7 @@ public class MetodoPago {
     private String metodo;
 
     public MetodoPago(String metodo) {
-        metodo = this.metodo;
+        this.metodo = metodo;
     }
 
     public String getMetodo() {
