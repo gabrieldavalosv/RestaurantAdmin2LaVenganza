@@ -30,18 +30,23 @@ public class Menu {
         productoArreglo.agregarProducto(new Producto("206", "Camotes Fritos Grandes", 7.00F, "Aperitivo"));
 
         //BEBIDAS
-        productoArreglo.agregarProducto(new Producto("301", "Inca Kola Regular", 7.00F, "Bebida"));
+        productoArreglo.agregarProducto(new Producto("301", "Inca Kola Regular", 6.00F, "Bebida"));
         productoArreglo.agregarProducto(new Producto("302", "Inca Kola Mediana", 8.00F, "Bebida"));
         productoArreglo.agregarProducto(new Producto("303", "Inca Kola Grande", 9.00F, "Bebida"));
         productoArreglo.agregarProducto(new Producto("304", "Coca Cola Regular", 7.00F, "Bebida"));
         productoArreglo.agregarProducto(new Producto("305", "Coca Cola Mediana", 8.00F, "Bebida"));
         productoArreglo.agregarProducto(new Producto("306", "Coca Cola Grande", 9.00F, "Bebida"));
 
-        //POSTRE
+        //POSTRES
         productoArreglo.agregarProducto(new Producto("401", "Helado de Vainilla", 6.00F, "Postre"));
         productoArreglo.agregarProducto(new Producto("402", "Helado de Fresa", 6.00F, "Postre"));
         productoArreglo.agregarProducto(new Producto("403", "Helado de Chocolate", 6.00F, "Postre"));
         productoArreglo.agregarProducto(new Producto("404", "Pie de Manzana", 7.00F, "Postre"));
+
+        //COMBOS
+        productoArreglo.agregarProducto(new Producto("501", "Combo Duo", 46.50F, "Combo"));
+        productoArreglo.agregarProducto(new Producto("502", "Combo Familiar", 69.50F, "Combo"));
+        productoArreglo.agregarProducto(new Producto("503", "Combo Kids", 21.50F, "Combo"));
 
     }
 

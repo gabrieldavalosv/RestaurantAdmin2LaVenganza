@@ -3,19 +3,19 @@ package modelo;
 public class Pago {
     private String id;
     private float monto;
-    private String metodo;
+    private MetodoPago metodoPago;
     private String estado;
 
-    public Pago(String id, float monto, String metodo, String estado) {
+    public Pago(String id, float monto, MetodoPago metodoPago, String estado) {
         this.id = id;
         this.monto = monto;
-        this.metodo = metodo;
+        this.metodoPago = metodoPago;
         this.estado = estado;
     }
 
     public boolean procesarPago() {
         if (validarPago()) {
-            System.out.println("Procesando el pago de: " + monto + " mediante " + metodo);
+            System.out.println("Procesando el pago de: " + monto + " mediante " + metodoPago.getMetodo());
 
             this.estado = "Pago realizado";
             return true;
@@ -31,7 +31,7 @@ public class Pago {
             System.out.println("El monto debe ser mayor a 0");
             return false;
         }
-        if (!metodo.equals("Tarjeta") && !metodo.equals("Efectivo") && !metodo.equals("Transferencia")) {
+        if (!metodoPago.getMetodo().equals("Tarjeta") && !metodoPago.getMetodo().equals("Efectivo") && !metodoPago.getMetodo().equals("Transferencia")) {
             System.out.println("Los metodos de pago aceptado solo son Tarjeta, Efectivo, Transferencia");
             return false;
         }
@@ -47,7 +47,7 @@ public class Pago {
     }
 
     public String getMetodo() {
-        return metodo;
+        return metodoPago.getMetodo();
     }
 
     public String getEstado() {

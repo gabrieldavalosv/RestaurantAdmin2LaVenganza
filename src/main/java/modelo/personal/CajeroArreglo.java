@@ -1,4 +1,4 @@
-package modelo;
+package modelo.personal;
 
 public class CajeroArreglo {
     private Cajero[] cajeros;

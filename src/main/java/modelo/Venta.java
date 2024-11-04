@@ -1,5 +1,7 @@
 package modelo;
 
+import modelo.personal.Cajero;
+
 import java.util.Date;
 
 public class Venta {
