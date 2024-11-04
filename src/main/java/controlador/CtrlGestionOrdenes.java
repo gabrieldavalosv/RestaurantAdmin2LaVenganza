@@ -42,6 +42,8 @@ public class CtrlGestionOrdenes {
         
         // Frame de órden
         vista.getButtonAgregarProducto().addActionListener( e -> this.eventoAgregarProducto() );
+        vista.getButtonEliminarProducto().addActionListener( e -> this.eventoEliminarProducto() );
+        vista.getButtonTerminarOrden().addActionListener( e -> this.eventoTerminarOrden() );
     }
     
     private void mostrarTitulos(){
@@ -150,6 +152,18 @@ public class CtrlGestionOrdenes {
         vista.getLabelOrdenTotal().setText("Total: " + orden.calcularPrecioTotal() );
         vista.getLabelTituloMenu().setText("Menú " + fecha );
         
+        // Renovar tabla para la nueva orden
+        var productosOrden = orden.getProductoArreglo().getProductos();
+        var tablaProductos = (DefaultTableModel) vista.getTablaOrdenProductos().getModel();
+        
+        tablaProductos.setRowCount(0);
+        
+        for(int i=0; i < orden.getProductoArreglo().getIndex(); i++){
+            Producto p = productosOrden[i];
+            
+            tablaProductos.addRow( new Object[]{ p.getId(), p.getNombre(), p.getCategoria(), p.getPrecio() });
+        }
+        
         // Mostrar el menu
         menu = new Menu();
         
@@ -171,7 +185,7 @@ public class CtrlGestionOrdenes {
             return;
         }
         
-        // Actualizar la tabla de ordenes
+        // Actualizar la tabla de productos ordenes
         if( orden.agregarProductoALaOrden(idProducto, menu) ){
             var producto = orden.getProductoArreglo().buscarProducto(idProducto);
             var tablaProductos = (DefaultTableModel) vista.getTablaOrdenProductos().getModel();
@@ -182,5 +196,59 @@ public class CtrlGestionOrdenes {
         }
         
         vista.getFieldIdProducto().setText("");
+    }
+    
+    private void eventoEliminarProducto(){
+        var idProducto = vista.getFieldIdProducto().getText();
+        
+        if( idProducto.isEmpty() ){
+            JOptionPane.showMessageDialog(vista.getFrameOrden(), "Por favor, primero ingrese un id de un producto.");
+            return;
+        }
+        
+        if( orden.eliminarProductoALaOrden(idProducto) ){
+            var tablaProductos = (DefaultTableModel) vista.getTablaOrdenProductos().getModel();
+            
+            //Obtener posicion donde se encuentra el producto con ese id
+            int posicion = -1;
+            
+            for(int i=0; i < tablaProductos.getRowCount(); i++){
+                if (tablaProductos.getValueAt(i, 0).toString().equals(idProducto)) {
+                    posicion = i;
+                    break;
+                }
+            }
+            
+            tablaProductos.removeRow( posicion );
+            
+            // Limpiar todas las filas de la tabla
+            tablaProductos.setRowCount(0);
+        
+            // Volver a agregar todas las órdenes desde el arreglo al JTable
+            for (int i = 0; i < orden.getProductoArreglo().getIndex(); i++) {
+                Producto p = orden.getProductoArreglo().getProductos()[i];
+                
+                tablaProductos.addRow(new Object[]{ p.getId(), p.getNombre(), p.getCategoria(), p.getPrecio() });
+            }
+            
+        }else{
+            JOptionPane.showMessageDialog(vista.getFrameOrden(), "El prodcuto con id " + idProducto + " no fue encontrado...");
+        }
+        
+        vista.getFieldIdProducto().setText("");
+    }
+    
+    private void eventoTerminarOrden(){
+        orden.setEstado("Terminado");
+        
+        // Redirigue a la vista de ordenes
+        vista.getFrameOrden().dispose();
+        
+        // Actualizar la tabla de ordenes
+        var tablaOrdenes = (DefaultTableModel) vista.getTablaOrdenes().getModel();
+        var filaOrden = Integer.parseInt( orden.getId() );
+        
+        tablaOrdenes.setValueAt(orden.getEstado(), filaOrden, 2);
+        tablaOrdenes.setValueAt(orden.calcularPrecioTotal(), filaOrden, 3);
     }
 }

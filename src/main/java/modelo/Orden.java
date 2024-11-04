@@ -40,10 +40,14 @@ public class Orden {
     public float calcularPrecioTotal(){
         float total = 0.0f;
         
-        if( productoArreglo.getIndex() == 0 ) return total;
+        if( productoArreglo.getIndex() == 0 ){
+            return total;
+        }
         
         for( Producto producto: productoArreglo.getProductos() ){
-            total += producto.getPrecio();
+            if( producto != null ){
+                total += producto.getPrecio();
+            }
         }
         
         return total;

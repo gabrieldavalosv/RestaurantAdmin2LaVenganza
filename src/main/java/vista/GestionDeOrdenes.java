@@ -52,6 +52,7 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         buttonAgregarProducto = new javax.swing.JButton();
         buttonEliminarProducto = new javax.swing.JButton();
         buttonTerminarOrden = new javax.swing.JButton();
+        framePago = new javax.swing.JFrame();
         labelTituloForm = new javax.swing.JLabel();
         labelUsuario = new javax.swing.JLabel();
         labelTituloFecha = new javax.swing.JLabel();
@@ -244,6 +245,17 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
                 .addGap(23, 34, Short.MAX_VALUE))
         );
 
+        javax.swing.GroupLayout framePagoLayout = new javax.swing.GroupLayout(framePago.getContentPane());
+        framePago.getContentPane().setLayout(framePagoLayout);
+        framePagoLayout.setHorizontalGroup(
+            framePagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        framePagoLayout.setVerticalGroup(
+            framePagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(552, 547));
         setMinimumSize(new java.awt.Dimension(552, 547));
@@ -323,12 +335,9 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
                 .addComponent(labelUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(labelTituloFecha)
-                .addGap(118, 118, 118))
+                .addGap(111, 111, 111))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(183, 183, 183)
-                        .addComponent(labelTituloForm))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -350,7 +359,10 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(buttonCancelarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
-                                    .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(labelTituloForm)))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -527,6 +539,7 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
     private javax.swing.JTextField fieldIdOrden;
     private javax.swing.JTextField fieldIdProducto;
     private javax.swing.JFrame frameOrden;
+    private javax.swing.JFrame framePago;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
