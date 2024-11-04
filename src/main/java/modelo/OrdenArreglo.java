@@ -43,7 +43,10 @@ public class OrdenArreglo {
     public int getIndex() {
         return index;
     }    
-    
+
+    public Orden[] getOrdenes() {
+        return ordenes;
+    }
     
     @Override
     public String toString() {

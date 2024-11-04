@@ -168,14 +168,11 @@ public class CtrlGestionOrdenes {
             return;
         }
         
-        // Agregar orden al arreglo de ordenes (modelo)
-        Producto producto = menu.getProductoArreglo().buscarProducto(idProducto);
-        
         // Actualizar la tabla de ordenes
-        if (producto != null) {
-            orden.agregarProductoALaOrden(idProducto);
-            
+        if( orden.agregarProductoALaOrden(idProducto, menu) ){
+            var producto = orden.getProductoArreglo().buscarProducto(idProducto);
             var tablaProductos = (DefaultTableModel) vista.getTablaOrdenProductos().getModel();
+            
             tablaProductos.addRow(new Object[]{producto.getId(), producto.getNombre(), producto.getCategoria(), producto.getPrecio() });
         }else{
             JOptionPane.showMessageDialog(vista.getFrameOrden(), "El producto con id " + idProducto + " no fue encontrado...");
