@@ -6,7 +6,7 @@ package vista;
 
 import javax.swing.JTextField;
 
-import modelo.Administrador;
+import modelo.personal.Administrador;
 import controlador.CtrlPantallaLogin;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;

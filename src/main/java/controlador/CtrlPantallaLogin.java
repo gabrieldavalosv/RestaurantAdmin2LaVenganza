@@ -1,6 +1,6 @@
 package controlador;
 
-import modelo.Administrador;
+import modelo.personal.Administrador;
 import vista.PantallaLogin;
 import vista.PanelPrincipal;
 

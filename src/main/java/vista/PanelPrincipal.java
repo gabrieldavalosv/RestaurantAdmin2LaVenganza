@@ -7,7 +7,7 @@ package vista;
 import javax.swing.JButton;
 
 import controlador.CtrlPanelPrincipal;
-import modelo.Administrador;
+import modelo.personal.Administrador;
 
 /**
  *
@@ -21,8 +21,7 @@ public class PanelPrincipal extends javax.swing.JFrame {
     public PanelPrincipal() {
         initComponents();
         
-        modelo = new Administrador();
-        controlador = new CtrlPanelPrincipal(modelo, this);
+        controlador = new CtrlPanelPrincipal(this);
     }
 
     /**

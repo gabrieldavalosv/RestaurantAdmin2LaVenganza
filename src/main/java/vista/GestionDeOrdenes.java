@@ -67,10 +67,10 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         fieldIdOrden = new javax.swing.JTextField();
         buttonBuscarOrden = new javax.swing.JButton();
 
-        frameOrden.setMaximumSize(new java.awt.Dimension(1062, 515));
-        frameOrden.setMinimumSize(new java.awt.Dimension(1062, 515));
-        frameOrden.setPreferredSize(new java.awt.Dimension(1062, 515));
-        frameOrden.setSize(new java.awt.Dimension(1062, 515));
+        frameOrden.setMaximumSize(new java.awt.Dimension(1090, 520));
+        frameOrden.setMinimumSize(new java.awt.Dimension(1090, 520));
+        frameOrden.setPreferredSize(new java.awt.Dimension(1090, 520));
+        frameOrden.setSize(new java.awt.Dimension(1090, 520));
 
         labelTituloOrden.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         labelTituloOrden.setText("Gestión de Órden [idOrden] ");
@@ -191,7 +191,7 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frameOrdenLayout.createSequentialGroup()
                                 .addGroup(frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(frameOrdenLayout.createSequentialGroup()
-                                        .addGap(0, 17, Short.MAX_VALUE)
+                                        .addGap(0, 45, Short.MAX_VALUE)
                                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(frameOrdenLayout.createSequentialGroup()
                                         .addComponent(labelOrdenCliente)
@@ -205,13 +205,13 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(frameOrdenLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36))
+                        .addGap(26, 26, 26)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frameOrdenLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelTituloMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(139, 139, 139))))
+                        .addGap(125, 125, 125))))
         );
         frameOrdenLayout.setVerticalGroup(
             frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,7 +239,7 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
                     .addGroup(frameOrdenLayout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addComponent(labelTituloMenu)
-                        .addGap(41, 41, 41)
+                        .addGap(38, 38, 38)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(23, 34, Short.MAX_VALUE))
         );

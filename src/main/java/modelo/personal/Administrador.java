@@ -3,10 +3,6 @@ package modelo.personal;
 public class Administrador extends Trabajador {
     private CajeroArreglo cajeroArreglo;
     
-    public Administrador(){
-        
-    }
-    
     public Administrador(String id, String nombre, String contrasena) {
         super(id, nombre, contrasena);
         cajeroArreglo = new CajeroArreglo(20);

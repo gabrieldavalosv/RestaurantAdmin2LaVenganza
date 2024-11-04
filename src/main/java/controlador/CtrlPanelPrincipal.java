@@ -1,6 +1,6 @@
 package controlador;
 
-import modelo.Administrador;
+import modelo.personal.Administrador;
 import vista.PanelPrincipal;
 import vista.GestionDeOrdenes;
 import vista.GestionDeVentas;
@@ -18,8 +18,7 @@ public class CtrlPanelPrincipal {
     private Administrador modelo;
     private PanelPrincipal vista;
 
-    public CtrlPanelPrincipal(Administrador modelo, PanelPrincipal vista) {
-        this.modelo = modelo;
+    public CtrlPanelPrincipal(PanelPrincipal vista) {
         this.vista = vista;
         
         this.asignarEventos();
