@@ -80,6 +80,9 @@ public class CtrlGestionOrdenes {
         
         if (orden != null) {
             tablaOrdenes.addRow(new Object[]{orden.getId(), orden.getCliente(), orden.getEstado(), orden.calcularPrecioTotal()});
+            
+            mostrarDatosOrden();
+            vista.getFrameOrden().setVisible(true);
         }
         
         vista.getFieldCliente().setText("");
