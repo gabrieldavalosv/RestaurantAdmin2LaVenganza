@@ -6,7 +6,6 @@ import modelo.Menu;
 import modelo.Producto;
 
 import vista.GestionDeOrdenes;
-import vista.GestionDePagos;
 import vista.PanelPrincipal;
 
 
@@ -64,8 +63,20 @@ public class CtrlGestionOrdenes {
     private void irGestionarPago(){
         var vistaPago = new GestionDePagos();
         var ctrlPago = new CtrlGestionPagos( orden, vistaPago );
+    }
+    
+    
+    private void actualizarTablaOrdenes() {
+        var tablaOrdenes = (DefaultTableModel) vista.getTablaOrdenes().getModel();
+        tablaOrdenes.setRowCount(0);
         
-        //vista.dispose();
+        for (int i = 0; i < modelo.getIndex(); i++) {
+            Orden o = modelo.getOrdenes()[i];
+            tablaOrdenes.addRow(new Object[]{o.getId(), o.getCliente(), o.getEstado(), o.calcularPrecioTotal()});
+        }
+        
+        vista.getTablaOrdenes().revalidate();
+        vista.getTablaOrdenes().repaint();
     }
     
     private void mostrarTitulos(){
@@ -75,6 +86,8 @@ public class CtrlGestionOrdenes {
         
         fecha = fechaActual.format(formatoFecha);
         vista.getLabelTituloFecha().setText( "Fecha: " + fecha );
+        
+        actualizarTablaOrdenes();
     }
     
     private void eventoAgregarOrden(){
@@ -137,20 +150,8 @@ public class CtrlGestionOrdenes {
         orden = modelo.buscarOrden(idOrden);
         
         if( orden != null ){
-            var tablaOrdenes = (DefaultTableModel) vista.getTablaOrdenes().getModel();
-            tablaOrdenes.removeRow( Integer.parseInt( idOrden ) );
-            
             modelo.eliminarOrden(idOrden);
-            
-            // Limpiar todas las filas de la tabla
-            tablaOrdenes.setRowCount(0);
-        
-            // Volver a agregar todas las órdenes desde el arreglo al JTable
-            for (int i = 0; i < modelo.getIndex(); i++) {
-                Orden o = modelo.getOrdenes()[i];
-                
-                tablaOrdenes.addRow(new Object[]{ o.getId(), o.getCliente(), o.getEstado(), o.calcularPrecioTotal() });
-            }
+            actualizarTablaOrdenes();
             
         }else{
             JOptionPane.showMessageDialog(vista, "La órden con id " + idOrden + " no fue encontrada...");
@@ -166,6 +167,13 @@ public class CtrlGestionOrdenes {
         vista.getLabelOrdenCliente().setText("Cliente: " + orden.getCliente() );
         vista.getLabelOrdenTotal().setText("Total: " + orden.calcularPrecioTotal() );
         vista.getLabelTituloMenu().setText("Menú " + fecha );
+        
+        // Desactivar botones en caso la orden este terminada
+        var isTerminada = orden.getEstado().equals("Terminada");
+        
+        vista.getButtonAgregarProducto().setEnabled(!isTerminada);
+        vista.getButtonEliminarProducto().setEnabled(!isTerminada);
+        vista.getButtonTerminarOrden().setEnabled(!isTerminada);
         
         // Renovar tabla para la nueva orden
         var productosOrden = orden.getProductoArreglo().getProductos();
@@ -254,18 +262,8 @@ public class CtrlGestionOrdenes {
     }
     
     private void eventoTerminarOrden(){
-        orden.setEstado("Terminado");
-        
-        // Redirigue a la vista de ordenes
         vista.getFrameOrden().dispose();
         
-        this.irGestionarPago();
-        
-        // Actualizar la tabla de ordenes
-        var tablaOrdenes = (DefaultTableModel) vista.getTablaOrdenes().getModel();
-        var filaOrden = Integer.parseInt( orden.getId() );
-        
-        tablaOrdenes.setValueAt(orden.getEstado(), filaOrden, 2);
-        tablaOrdenes.setValueAt(orden.calcularPrecioTotal(), filaOrden, 3);
+        irGestionarPago();
     }
 }

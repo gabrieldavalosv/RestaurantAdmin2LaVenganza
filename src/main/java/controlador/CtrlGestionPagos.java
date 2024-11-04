@@ -56,6 +56,9 @@ public class CtrlGestionPagos {
         
         if( pago.procesarPago() ){
             JOptionPane.showMessageDialog(vista, "Procesando el pago de: " + pago.getMonto() + " mediante " + metodoPago.getMetodo() );
+            
+            modelo.setEstado("Terminada");
+            
         }else{
             JOptionPane.showMessageDialog(vista, "El pago no se ha podido realizar...");
         }
