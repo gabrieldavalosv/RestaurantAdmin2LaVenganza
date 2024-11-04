@@ -1,5 +1,7 @@
 package modelo;
 
+import javax.swing.DefaultListModel;
+
 public class Menu {
     ProductoArreglo productoArreglo;
     int tamano = 40;
@@ -48,6 +50,14 @@ public class Menu {
 
     }
 
+    public ProductoArreglo getProductoArreglo() {
+        return productoArreglo;
+    }
+    
+    public int getTamano() {
+        return tamano;
+    }
+    
     public void mostrarMenu() {
         System.out.println("Menu");
         System.out.println(" ID |          NOMBRE           |  PRECIO  |  CATEGORIA");

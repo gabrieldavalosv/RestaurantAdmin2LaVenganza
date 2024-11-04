@@ -4,7 +4,6 @@ public class ProductoArreglo {
     private Producto[] productos;
     private int index;
 
-
     public ProductoArreglo(int tamano) {
         productos = new Producto[tamano];
         this.index = 0;
@@ -36,11 +35,19 @@ public class ProductoArreglo {
 
     public Producto buscarProducto(String id) {
         for (int i = 0; i < this.index; i++) {
-            if (productos[i] != null && productos[i].getId().equals(id)) {
+            if ( productos[i] != null && productos[i].getId().equals(id) ){
                 return productos[i];
             }
         }
         return null;
+    }
+    
+    public Producto[] getProductos() {
+        return productos;
+    }
+
+    public int getIndex() {
+        return index;
     }
 
     @Override

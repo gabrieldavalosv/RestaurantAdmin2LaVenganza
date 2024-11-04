@@ -42,6 +42,11 @@ public class OrdenArreglo {
         return null;
     }
 
+    public int getIndex() {
+        return index;
+    }    
+    
+    
     @Override
     public String toString() {
         String resultado = "=========================================================\n";

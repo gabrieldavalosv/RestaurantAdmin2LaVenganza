@@ -2,19 +2,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package app;
+package vista;
+
+import javax.swing.JButton;
+
+import controlador.CtrlPanelPrincipal;
+import modelo.Administrador;
 
 /**
  *
  * @author josep
  */
-public class PanelPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PanelPrincipal
-     */
+public class PanelPrincipal extends javax.swing.JFrame {
+    CtrlPanelPrincipal controlador;
+    Administrador modelo;
+    
     public PanelPrincipal() {
         initComponents();
+        
+        modelo = new Administrador();
+        controlador = new CtrlPanelPrincipal(modelo, this);
     }
 
     /**
@@ -27,124 +35,155 @@ public class PanelPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jSeparator2 = new javax.swing.JSeparator();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton10 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
-        jToggleButton11 = new javax.swing.JToggleButton();
+        labelUsuario = new javax.swing.JLabel();
+        labelRol = new javax.swing.JLabel();
+        jSeparator = new javax.swing.JSeparator();
+        buttonCerrarSesion = new javax.swing.JButton();
+        buttonGestionarOrdenes = new javax.swing.JButton();
+        buttonGestionarVentas = new javax.swing.JButton();
+        buttonGestionarClientes = new javax.swing.JButton();
+        buttonGestionarProductos = new javax.swing.JButton();
+        buttonGestionarCajeros = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         jLabel1.setText("Dashboard");
 
-        jLabel2.setText("[Usuario: NombreUsuario]");
+        labelUsuario.setText("[Usuario: NombreUsuario]");
 
-        jLabel3.setText("[Rol: Administrador]");
+        labelRol.setText("[Rol: Administrador]");
 
-        jToggleButton5.setText("Cerrar sesión");
-        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
+        buttonCerrarSesion.setText("Cerrar sesión");
+        buttonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton5ActionPerformed(evt);
+                buttonCerrarSesionActionPerformed(evt);
             }
         });
 
-        jToggleButton7.setText("Gestión de órdenes");
-
-        jToggleButton8.setText("Gestión de ventas");
-        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+        buttonGestionarOrdenes.setText("Gestión de órdenes");
+        buttonGestionarOrdenes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton8ActionPerformed(evt);
+                buttonGestionarOrdenesActionPerformed(evt);
             }
         });
 
-        jToggleButton10.setText("Gestión de clientes");
+        buttonGestionarVentas.setText("Gestión de ventas");
+        buttonGestionarVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonGestionarVentasActionPerformed(evt);
+            }
+        });
 
-        jToggleButton9.setText("Gestión de productos");
+        buttonGestionarClientes.setText("Gestión de clientes");
+        buttonGestionarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonGestionarClientesActionPerformed(evt);
+            }
+        });
 
-        jToggleButton11.setText("Administración de cajeros");
+        buttonGestionarProductos.setText("Gestión de productos");
+        buttonGestionarProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonGestionarProductosActionPerformed(evt);
+            }
+        });
+
+        buttonGestionarCajeros.setText("Administración de cajeros");
+        buttonGestionarCajeros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonGestionarCajerosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(75, 75, 75))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator2)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jSeparator)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(buttonGestionarOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(buttonGestionarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(buttonGestionarVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonGestionarProductos, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
+                        .addGap(207, 207, 207)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(jToggleButton5))
+                        .addGap(38, 38, 38)
+                        .addComponent(labelUsuario)
+                        .addGap(199, 199, 199)
+                        .addComponent(labelRol))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jToggleButton10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton9))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jToggleButton7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton8))
-                            .addComponent(jToggleButton11))))
-                .addContainerGap(93, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addGap(52, 52, 52)
-                    .addComponent(jLabel2)
-                    .addContainerGap(213, Short.MAX_VALUE)))
+                        .addGap(193, 193, 193)
+                        .addComponent(buttonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(58, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(167, 167, 167)
+                .addComponent(buttonGestionarCajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(24, 24, 24)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelRol)
+                    .addComponent(labelUsuario))
+                .addGap(17, 17, 17)
+                .addComponent(buttonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jToggleButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonGestionarVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonGestionarOrdenes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton7)
-                    .addComponent(jToggleButton8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton9)
-                    .addComponent(jToggleButton10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton11)
-                .addContainerGap(81, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(33, 33, 33)
-                    .addComponent(jLabel2)
-                    .addContainerGap(251, Short.MAX_VALUE)))
+                    .addComponent(buttonGestionarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonGestionarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(buttonGestionarCajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+    private void buttonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCerrarSesionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton8ActionPerformed
+    }//GEN-LAST:event_buttonCerrarSesionActionPerformed
 
-    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
+    private void buttonGestionarOrdenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGestionarOrdenesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton5ActionPerformed
+    }//GEN-LAST:event_buttonGestionarOrdenesActionPerformed
+
+    private void buttonGestionarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGestionarVentasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonGestionarVentasActionPerformed
+
+    private void buttonGestionarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGestionarClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonGestionarClientesActionPerformed
+
+    private void buttonGestionarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGestionarProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonGestionarProductosActionPerformed
+
+    private void buttonGestionarCajerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGestionarCajerosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonGestionarCajerosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,16 +220,41 @@ public class PanelPrincipal extends javax.swing.JFrame {
         });
     }
 
+    // Getters de Widgets
+    public JButton getButtonCerrarSesion() {
+        return buttonCerrarSesion;
+    }
+
+    public JButton getButtonGestionarCajeros() {
+        return buttonGestionarCajeros;
+    }
+
+    public JButton getButtonGestionarClientes() {
+        return buttonGestionarClientes;
+    }
+
+    public JButton getButtonGestionarOrdenes() {
+        return buttonGestionarOrdenes;
+    }
+
+    public JButton getButtonGestionarProductos() {
+        return buttonGestionarProductos;
+    }
+
+    public JButton getButtonGestionarVentas() {
+        return buttonGestionarVentas;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonCerrarSesion;
+    private javax.swing.JButton buttonGestionarCajeros;
+    private javax.swing.JButton buttonGestionarClientes;
+    private javax.swing.JButton buttonGestionarOrdenes;
+    private javax.swing.JButton buttonGestionarProductos;
+    private javax.swing.JButton buttonGestionarVentas;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JToggleButton jToggleButton10;
-    private javax.swing.JToggleButton jToggleButton11;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
+    private javax.swing.JSeparator jSeparator;
+    private javax.swing.JLabel labelRol;
+    private javax.swing.JLabel labelUsuario;
     // End of variables declaration//GEN-END:variables
 }
