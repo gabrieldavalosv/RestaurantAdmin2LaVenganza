@@ -1,4 +1,4 @@
-package modelo;
+package modelo.personal;
 
 public class Administrador extends Trabajador {
     private CajeroArreglo cajeroArreglo;

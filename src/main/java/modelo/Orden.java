@@ -39,9 +39,10 @@ public class Orden {
         return false;
     }
 
-    public void mostrarOrdenes() {
+    public String mostrarOrden() {
         System.out.println("ID de Orden: " + id + "Cliente: " + cliente);
         System.out.println(" ID |          NOMBRE           |  PRECIO  |  CATEGORIA");
         System.out.println(productoArreglo);
+        return null;
     }
 }

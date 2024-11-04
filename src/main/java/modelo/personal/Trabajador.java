@@ -1,4 +1,4 @@
-package modelo;
+package modelo.personal;
 
 public class Trabajador {
     private String id;
@@ -24,7 +24,7 @@ public class Trabajador {
     }
 
     public boolean login(String nombre, String contrasena) {
-        if (nombre.equals("admin") && contrasena.equals("admin")) {
+        if (this.nombre.equals(nombre) && this.contrasena.equals(contrasena)) {
             return true;
         }
         return false;
