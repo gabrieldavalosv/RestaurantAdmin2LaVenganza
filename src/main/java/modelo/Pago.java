@@ -1,5 +1,7 @@
 package modelo;
 
+import modelo.excepciones.MontoInsuficienteException;
+
 public class Pago {
     private String id;
     private float monto;
@@ -29,10 +31,9 @@ public class Pago {
         }
     }
 
-    public boolean validarPago() {
+    public boolean validarPago() throws MontoInsuficienteException {
         if (monto <= 0) {
-            System.out.println("El monto debe ser mayor a 0");
-            return false;
+            throw new MontoInsuficienteException();
         }
         if (!metodoPago.getMetodo().equals("Tarjeta") && !metodoPago.getMetodo().equals("Efectivo") && !metodoPago.getMetodo().equals("Transferencia")) {
             return false;
