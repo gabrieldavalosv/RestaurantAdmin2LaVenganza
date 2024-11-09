@@ -23,76 +23,62 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Component id="jSeparator" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="buttonGestionarOrdenes" pref="175" max="32767" attributes="0"/>
-                  <Component id="buttonGestionarClientes" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="labelRol" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="buttonGestionarVentas" max="32767" attributes="0"/>
-                  <Component id="buttonGestionarProductos" pref="175" max="32767" attributes="0"/>
+              <EmptySpace pref="214" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="labelRol2" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelRol1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="buttonGestionarVentas" pref="175" max="32767" attributes="0"/>
+                          <Component id="buttonGestionarOrdenes" pref="175" max="32767" attributes="0"/>
+                          <Component id="buttonGestionarCajeros" alignment="0" pref="175" max="32767" attributes="0"/>
+                          <Component id="buttonCerrarSesion" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="labelUsuario" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="199" pref="199" max="-2" attributes="0"/>
-                      <Component id="labelRol" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
-                      <Component id="buttonCerrarSesion" min="-2" pref="125" max="-2" attributes="0"/>
-                  </Group>
               </Group>
-              <EmptySpace pref="58" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
-              <Component id="buttonGestionarCajeros" min="-2" pref="175" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="labelRol" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-              <Component id="buttonCerrarSesion" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Component id="jSeparator" min="-2" pref="10" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="buttonGestionarVentas" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="buttonGestionarOrdenes" min="-2" pref="35" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="buttonGestionarProductos" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Component id="buttonGestionarClientes" min="-2" pref="35" max="-2" attributes="0"/>
-              </Group>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelRol" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelRol1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelRol2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <Component id="buttonGestionarOrdenes" min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="buttonGestionarCajeros" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace pref="40" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="buttonGestionarVentas" min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="buttonCerrarSesion" min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -116,8 +102,6 @@
         <Property name="text" type="java.lang.String" value="[Rol: Administrador]"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JSeparator" name="jSeparator">
-    </Component>
     <Component class="javax.swing.JButton" name="buttonCerrarSesion">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cerrar sesi&#xf3;n"/>
@@ -136,35 +120,30 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonGestionarVentas">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de ventas"/>
+        <Property name="text" type="java.lang.String" value="Registro de ventas"/>
+        <Property name="actionCommand" type="java.lang.String" value="Registro de ventas"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonGestionarVentasActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="buttonGestionarClientes">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de clientes"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonGestionarClientesActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="buttonGestionarProductos">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de productos"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonGestionarProductosActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="buttonGestionarCajeros">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Administraci&#xf3;n de cajeros"/>
+        <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de cajeros"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonGestionarCajerosActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelRol1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="[Fecha]"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelRol2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="[ID]"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
