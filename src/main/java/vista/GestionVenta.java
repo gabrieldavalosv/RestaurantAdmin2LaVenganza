@@ -50,17 +50,21 @@ public class GestionVenta extends javax.swing.JFrame {
         buttonEliminarProducto = new javax.swing.JButton();
         buttonTerminarOrden = new javax.swing.JButton();
         framePago = new javax.swing.JFrame();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaOrdenes = new javax.swing.JTable();
         labelTituloForm = new javax.swing.JLabel();
         labelUsuario = new javax.swing.JLabel();
         labelTituloFecha = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         buttonAgregarOrden = new javax.swing.JButton();
         buttonVolverPanel = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tablaOrdenes = new javax.swing.JTable();
         buttonCancelarOrden = new javax.swing.JButton();
         labelUsuario1 = new javax.swing.JLabel();
         labelTituloFecha1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tablaOrdenes1 = new javax.swing.JTable();
+        fieldIdOrden = new javax.swing.JTextField();
 
         frameOrden.setMinimumSize(new java.awt.Dimension(1090, 520));
         frameOrden.setSize(new java.awt.Dimension(1090, 520));
@@ -248,28 +252,6 @@ public class GestionVenta extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(552, 547));
-        setSize(new java.awt.Dimension(552, 547));
-
-        labelTituloForm.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        labelTituloForm.setText("Gestión de venta");
-
-        labelUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelUsuario.setText("Cliente:");
-
-        labelTituloFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelTituloFecha.setText("[Fecha]");
-
-        buttonAgregarOrden.setText("Pagar con Efectivo");
-        buttonAgregarOrden.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAgregarOrdenActionPerformed(evt);
-            }
-        });
-
-        buttonVolverPanel.setText("Cancelar Pago");
-
         tablaOrdenes.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         tablaOrdenes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -303,7 +285,29 @@ public class GestionVenta extends javax.swing.JFrame {
             tablaOrdenes.getColumnModel().getColumn(3).setMaxWidth(125);
         }
 
-        buttonCancelarOrden.setText("Pagar con Tarjeta");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(552, 547));
+        setSize(new java.awt.Dimension(552, 547));
+
+        labelTituloForm.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        labelTituloForm.setText("Gestión de venta");
+
+        labelUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelUsuario.setText("[labelNombreCliente]");
+
+        labelTituloFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelTituloFecha.setText("[labelFecha-Hora]");
+
+        buttonAgregarOrden.setText("buttonPagarConEfectivo");
+        buttonAgregarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAgregarOrdenActionPerformed(evt);
+            }
+        });
+
+        buttonVolverPanel.setText("buttonCancelarPago");
+
+        buttonCancelarOrden.setText("buttonPagarConTarjeta");
 
         labelUsuario1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelUsuario1.setText("Total a Pagar:");
@@ -311,37 +315,81 @@ public class GestionVenta extends javax.swing.JFrame {
         labelTituloFecha1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelTituloFecha1.setText("ID de Orden:");
 
+        jTextField1.setText("fieldMonto");
+
+        tablaOrdenes1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        tablaOrdenes1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Cliente", "Estado", "Precio total (S/.)"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(tablaOrdenes1);
+        if (tablaOrdenes1.getColumnModel().getColumnCount() > 0) {
+            tablaOrdenes1.getColumnModel().getColumn(0).setMinWidth(50);
+            tablaOrdenes1.getColumnModel().getColumn(0).setPreferredWidth(50);
+            tablaOrdenes1.getColumnModel().getColumn(0).setMaxWidth(50);
+            tablaOrdenes1.getColumnModel().getColumn(1).setMinWidth(175);
+            tablaOrdenes1.getColumnModel().getColumn(1).setPreferredWidth(175);
+            tablaOrdenes1.getColumnModel().getColumn(1).setMaxWidth(175);
+            tablaOrdenes1.getColumnModel().getColumn(2).setMinWidth(100);
+            tablaOrdenes1.getColumnModel().getColumn(2).setPreferredWidth(100);
+            tablaOrdenes1.getColumnModel().getColumn(2).setMaxWidth(100);
+            tablaOrdenes1.getColumnModel().getColumn(3).setMinWidth(125);
+            tablaOrdenes1.getColumnModel().getColumn(3).setPreferredWidth(125);
+            tablaOrdenes1.getColumnModel().getColumn(3).setMaxWidth(125);
+        }
+
+        fieldIdOrden.setText("fieldIDOrden");
+        fieldIdOrden.setMaximumSize(new java.awt.Dimension(60, 25));
+        fieldIdOrden.setMinimumSize(new java.awt.Dimension(60, 25));
+        fieldIdOrden.setPreferredSize(new java.awt.Dimension(60, 25));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(buttonAgregarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(buttonCancelarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addComponent(labelTituloForm)))
-                .addContainerGap(51, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelUsuario)
-                    .addComponent(labelUsuario1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelUsuario1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelTituloFecha)
-                    .addComponent(labelTituloFecha1))
-                .addGap(111, 111, 111))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelTituloFecha1)
+                        .addGap(41, 41, 41)
+                        .addComponent(fieldIdOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(buttonAgregarOrden)
+                        .addGap(3, 3, 3)
+                        .addComponent(buttonCancelarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelTituloForm)
+                        .addGap(150, 150, 150)))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,12 +403,14 @@ public class GestionVenta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUsuario1)
-                    .addComponent(labelTituloFecha1))
+                    .addComponent(labelTituloFecha1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldIdOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonAgregarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -491,14 +541,17 @@ public class GestionVenta extends javax.swing.JFrame {
     private javax.swing.JButton buttonEliminarProducto;
     private javax.swing.JButton buttonTerminarOrden;
     private javax.swing.JButton buttonVolverPanel;
+    private javax.swing.JTextField fieldIdOrden;
     private javax.swing.JTextField fieldIdProducto;
     private javax.swing.JFrame frameOrden;
     private javax.swing.JFrame framePago;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelOrdenCliente;
     private javax.swing.JLabel labelOrdenTotal;
     private javax.swing.JLabel labelTituloFecha;
@@ -512,6 +565,7 @@ public class GestionVenta extends javax.swing.JFrame {
     private javax.swing.JTable tablaMenu;
     private javax.swing.JTable tablaOrdenProductos;
     private javax.swing.JTable tablaOrdenes;
+    private javax.swing.JTable tablaOrdenes1;
     // End of variables declaration//GEN-END:variables
 
 }

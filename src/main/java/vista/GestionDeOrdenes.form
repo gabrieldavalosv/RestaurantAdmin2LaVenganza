@@ -342,7 +342,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jSeparator1" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               <Component id="labelUsuario" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="labelTituloFecha" min="-2" max="-2" attributes="0"/>
@@ -350,42 +350,42 @@
           </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                      <Component id="buttonAgregarOrden" min="-2" pref="145" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="buttonCancelarOrden" min="-2" pref="145" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="buttonVolverPanel" min="-2" pref="145" max="-2" attributes="0"/>
+                  </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="labelUsuario2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="labelUsuario1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="fieldCliente" min="-2" pref="170" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="fieldIdOrden" min="-2" pref="170" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="buttonBuscarOrden" min="-2" pref="85" max="-2" attributes="0"/>
-                                      </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="labelUsuario2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelUsuario1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="fieldCliente" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="fieldIdOrden" min="-2" pref="170" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="buttonBuscarOrden" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="buttonAgregarOrden" min="-2" pref="145" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="buttonCancelarOrden" min="-2" pref="145" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="buttonVolverPanel" min="-2" pref="145" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
                       <Component id="labelTituloForm" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="51" max="32767" attributes="0"/>
+              <EmptySpace pref="39" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -439,7 +439,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Usuario: NombreUsuario"/>
+        <Property name="text" type="java.lang.String" value="[labelNombreUsuario]"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelTituloFecha">
@@ -447,19 +447,19 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="[Fecha]"/>
+        <Property name="text" type="java.lang.String" value="[labelFecha-Hora]"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
     </Component>
     <Component class="javax.swing.JButton" name="buttonAgregarOrden">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Agregar &#xf3;rden"/>
+        <Property name="text" type="java.lang.String" value="buttonAgregarOrden"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="buttonVolverPanel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Volver"/>
+        <Property name="text" type="java.lang.String" value="buttonVolver"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -515,7 +515,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="buttonCancelarOrden">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cancelar &#xf3;rden"/>
+        <Property name="text" type="java.lang.String" value="buttonCancelarOrden"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelUsuario1">
@@ -528,6 +528,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="fieldCliente">
       <Properties>
+        <Property name="text" type="java.lang.String" value="fieldNombreCliente"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[60, 25]"/>
         </Property>
@@ -538,6 +539,9 @@
           <Dimension value="[60, 25]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fieldClienteActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="labelUsuario2">
       <Properties>
@@ -549,6 +553,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="fieldIdOrden">
       <Properties>
+        <Property name="text" type="java.lang.String" value="fieldIDOrden"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[60, 25]"/>
         </Property>
@@ -562,7 +567,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonBuscarOrden">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Buscar"/>
+        <Property name="text" type="java.lang.String" value="buttonBuscar"/>
       </Properties>
     </Component>
   </SubComponents>
