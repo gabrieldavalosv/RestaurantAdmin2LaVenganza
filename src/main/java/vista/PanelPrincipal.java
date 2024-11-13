@@ -4,8 +4,6 @@
  */
 package vista;
 
-import javax.swing.JButton;
-
 /**
  *
  * @author josep
@@ -27,22 +25,24 @@ public class PanelPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        labelUsuario = new javax.swing.JLabel();
+        labelNombreUsuario = new javax.swing.JLabel();
         labelRol = new javax.swing.JLabel();
         buttonCerrarSesion = new javax.swing.JButton();
         buttonGestionarOrdenes = new javax.swing.JButton();
         buttonGestionarVentas = new javax.swing.JButton();
         buttonGestionarCajeros = new javax.swing.JButton();
-        labelRol1 = new javax.swing.JLabel();
-        labelRol2 = new javax.swing.JLabel();
+        labelFecha = new javax.swing.JLabel();
+        labelIdUsuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         jLabel1.setText("Dashboard");
 
-        labelUsuario.setText("[Usuario: NombreUsuario]");
+        labelNombreUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelNombreUsuario.setText("[Usuario: NombreUsuario]");
 
+        labelRol.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelRol.setText("[Rol: Administrador]");
 
         buttonCerrarSesion.setText("Cerrar sesión");
@@ -73,9 +73,11 @@ public class PanelPrincipal extends javax.swing.JFrame {
             }
         });
 
-        labelRol1.setText("[Fecha]");
+        labelFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelFecha.setText("[Fecha]");
 
-        labelRol2.setText("[ID]");
+        labelIdUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelIdUsuario.setText("[ID]");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,25 +87,24 @@ public class PanelPrincipal extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelRol)
-                    .addComponent(labelUsuario))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                    .addComponent(labelNombreUsuario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelRol2)
-                    .addComponent(labelRol1))
+                    .addComponent(labelIdUsuario)
+                    .addComponent(labelFecha))
                 .addGap(119, 119, 119))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(buttonGestionarVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(buttonGestionarOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(buttonGestionarCajeros, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(buttonCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(230, 230, 230)
-                        .addComponent(jLabel1)))
+                .addGap(190, 190, 190)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(buttonGestionarVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(buttonGestionarOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(buttonGestionarCajeros, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(buttonCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(203, 203, 203))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,11 +114,11 @@ public class PanelPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelRol)
-                    .addComponent(labelRol1))
+                    .addComponent(labelFecha))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelUsuario)
-                    .addComponent(labelRol2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                    .addComponent(labelNombreUsuario)
+                    .addComponent(labelIdUsuario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(buttonGestionarOrdenes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(buttonGestionarCajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,41 +182,16 @@ public class PanelPrincipal extends javax.swing.JFrame {
             }
         });
     }
-
-    // Getters de Widgets
-    public JButton getButtonCerrarSesion() {
-        return buttonCerrarSesion;
-    }
-
-    public JButton getButtonGestionarCajeros() {
-        return buttonGestionarCajeros;
-    }
-
-    public JButton getButtonGestionarClientes() {
-        return buttonGestionarClientes;
-    }
-
-    public JButton getButtonGestionarOrdenes() {
-        return buttonGestionarOrdenes;
-    }
-
-    public JButton getButtonGestionarProductos() {
-        return buttonGestionarProductos;
-    }
-
-    public JButton getButtonGestionarVentas() {
-        return buttonGestionarVentas;
-    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonCerrarSesion;
-    private javax.swing.JButton buttonGestionarCajeros;
-    private javax.swing.JButton buttonGestionarOrdenes;
-    private javax.swing.JButton buttonGestionarVentas;
+    public javax.swing.JButton buttonCerrarSesion;
+    public javax.swing.JButton buttonGestionarCajeros;
+    public javax.swing.JButton buttonGestionarOrdenes;
+    public javax.swing.JButton buttonGestionarVentas;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel labelRol;
-    private javax.swing.JLabel labelRol1;
-    private javax.swing.JLabel labelRol2;
-    private javax.swing.JLabel labelUsuario;
+    public javax.swing.JLabel labelFecha;
+    public javax.swing.JLabel labelIdUsuario;
+    public javax.swing.JLabel labelNombreUsuario;
+    public javax.swing.JLabel labelRol;
     // End of variables declaration//GEN-END:variables
 }

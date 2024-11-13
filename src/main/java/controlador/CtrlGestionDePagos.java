@@ -15,13 +15,13 @@ import vista.GestionDePagos;
  * @author Davi
  */
 
-public class CtrlGestionPagos {
+public class CtrlGestionDePagos {
     Orden modelo;
     GestionDePagos vista;
 
     private String fecha;
     
-    public CtrlGestionPagos(Orden modelo, GestionDePagos vista) {
+    public CtrlGestionDePagos(Orden modelo, GestionDePagos vista) {
         this.modelo = modelo;
         this.vista = vista;
         

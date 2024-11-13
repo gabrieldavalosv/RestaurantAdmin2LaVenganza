@@ -27,32 +27,29 @@
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="labelRol" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelNombreUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="214" max="32767" attributes="0"/>
+              <EmptySpace pref="188" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="labelRol2" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelRol1" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelIdUsuario" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelFecha" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="buttonGestionarVentas" pref="175" max="32767" attributes="0"/>
-                          <Component id="buttonGestionarOrdenes" pref="175" max="32767" attributes="0"/>
-                          <Component id="buttonGestionarCajeros" alignment="0" pref="175" max="32767" attributes="0"/>
-                          <Component id="buttonCerrarSesion" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="buttonGestionarVentas" pref="175" max="32767" attributes="0"/>
+                  <Component id="buttonGestionarOrdenes" pref="175" max="32767" attributes="0"/>
+                  <Component id="buttonGestionarCajeros" alignment="0" pref="175" max="32767" attributes="0"/>
+                  <Component id="buttonCerrarSesion" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="203" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -64,13 +61,13 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelRol" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelRol1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelFecha" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelRol2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelNombreUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelIdUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="51" max="32767" attributes="0"/>
+              <EmptySpace pref="49" max="32767" attributes="0"/>
               <Component id="buttonGestionarOrdenes" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="buttonGestionarCajeros" min="-2" pref="35" max="-2" attributes="0"/>
@@ -92,15 +89,27 @@
         <Property name="text" type="java.lang.String" value="Dashboard"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelUsuario">
+    <Component class="javax.swing.JLabel" name="labelNombreUsuario">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="[Usuario: NombreUsuario]"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="labelRol">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="[Rol: Administrador]"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="buttonCerrarSesion">
       <Properties>
@@ -109,6 +118,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCerrarSesionActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="buttonGestionarOrdenes">
       <Properties>
@@ -117,6 +129,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonGestionarOrdenesActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="buttonGestionarVentas">
       <Properties>
@@ -125,6 +140,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonGestionarVentasActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="buttonGestionarCajeros">
       <Properties>
@@ -133,16 +151,31 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonGestionarCajerosActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelRol1">
+    <Component class="javax.swing.JLabel" name="labelFecha">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="[Fecha]"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelRol2">
+    <Component class="javax.swing.JLabel" name="labelIdUsuario">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="[ID]"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

@@ -4,7 +4,7 @@
  */
 package vista;
 
-import controlador.CtrlGestionOrdenes;
+import controlador.CtrlGestionDeOrdenes;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
