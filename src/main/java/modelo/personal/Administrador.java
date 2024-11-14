@@ -16,15 +16,15 @@ public class Administrador extends Trabajador {
         return cajeroArreglo;
     }
 
-    public void agregarCajero(Cajero cajero) throws ArregloLLenoException {
+    public void agregarCajero(Cajero cajero){
         cajeroArreglo.agregarCajero(cajero);
     }
 
-    public void eliminarCajero(String id) throws IdNoEncontradoException {
+    public void eliminarCajero(String id){
         cajeroArreglo.eliminarCajero(id);
     }
 
-    public Cajero buscarCajero(String id) throws IdNoEncontradoException {
+    public Cajero buscarCajero(String id){
         return cajeroArreglo.buscarCajero(id);
     }
 }

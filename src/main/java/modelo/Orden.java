@@ -22,8 +22,8 @@ public class Orden {
         this.cliente = cliente;
     }
 
-    public boolean agregarProductoALaOrden(String id, Menu menu) throws ArregloLLenoException, IdNoEncontradoException {
-        Producto producto = menu.productoArreglo.buscarProducto(id);
+    public boolean agregarProductoALaOrden(String id, Menu menu){
+        Producto producto = menu.getProductoArreglo().buscarProducto(id);
         if (producto != null) {
             productoArreglo.agregarProducto(producto);
             return true;
@@ -31,7 +31,7 @@ public class Orden {
         return false;
     }
 
-    public boolean eliminarProductoALaOrden(String id) throws IdNoEncontradoException {
+    public boolean eliminarProductoALaOrden(String id){
         Producto producto = productoArreglo.buscarProducto(id);
         if (producto != null) {
             productoArreglo.eliminarProducto(id);

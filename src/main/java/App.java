@@ -18,9 +18,12 @@ public class App {
         Administrador administrador = new Administrador("1", "admin", "admin");
         Cajero cajero = new Cajero("101", "Mathias", "admin", "24920348942");
         Cajero cajero2 = new Cajero("102", "Leo malcriao", "admin", "77777777");
-        
+
+        /*
         administrador.agregarCajero(cajero);
         administrador.agregarCajero(cajero2);
+
+         */
         
         //Pantalla Login
         var pantallaLogin = new PantallaLogin();

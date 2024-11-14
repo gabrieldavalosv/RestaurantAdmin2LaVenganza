@@ -27,7 +27,7 @@ public class Main {
             System.out.print("ID: ");
             String id = scanner.nextLine();
             cajero.getOrdenArreglo().buscarOrden("304").agregarProductoALaOrden(id, menu);
-            cajero.getOrdenArreglo().buscarOrden("304").mostrarOrden();
+            System.out.println(cajero2.getOrdenArreglo().buscarOrden("304"));
         }
 
         for (int i = 0; i < 6; i++) {
@@ -35,7 +35,7 @@ public class Main {
             System.out.print("ID: ");
             String id = scanner.nextLine();
             cajero2.getOrdenArreglo().buscarOrden("304").agregarProductoALaOrden(id, menu);
-            cajero2.getOrdenArreglo().buscarOrden("304").mostrarOrden();
+            System.out.println(cajero2.getOrdenArreglo().buscarOrden("304"));
         }
 
     }

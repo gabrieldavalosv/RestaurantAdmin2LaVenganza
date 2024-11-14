@@ -28,11 +28,11 @@ public class Cajero extends Trabajador{
         return ordenArreglo;
     }
 
-    public void crearOrden(String id, String cliente) throws ArregloLLenoException {
+    public void crearOrden(String id, String cliente){
         ordenArreglo.agregarOrden(new Orden(id, cliente));
     }
 
-    public void cancelarOrden(String id) throws IdNoEncontradoException {
+    public void cancelarOrden(String id){
         ordenArreglo.eliminarOrden(id);
     }
 

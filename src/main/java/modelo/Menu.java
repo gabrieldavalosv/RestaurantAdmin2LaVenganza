@@ -5,10 +5,10 @@ import modelo.excepciones.ArregloLLenoException;
 import javax.swing.DefaultListModel;
 
 public class Menu {
-    ProductoArreglo productoArreglo;
-    int tamano = 40;
+    private ProductoArreglo productoArreglo;
+    private int tamano = 40;
 
-    public Menu() throws ArregloLLenoException {
+    public Menu(){
         productoArreglo = new ProductoArreglo(tamano);
 
         //COMIDAS
@@ -55,15 +55,10 @@ public class Menu {
     public ProductoArreglo getProductoArreglo() {
         return productoArreglo;
     }
-    
-    public int getTamano() {
-        return tamano;
-    }
 
     @Override
     public String toString() {
-        String resultado = "Menu";
-        resultado += " ID |          NOMBRE           |  PRECIO  |  CATEGORIA\n";
+        String resultado =" ID |          NOMBRE           |  PRECIO  |  CATEGORIA\n";
         resultado += productoArreglo;
         return resultado;
     }

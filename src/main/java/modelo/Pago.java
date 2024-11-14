@@ -1,5 +1,6 @@
 package modelo;
 
+import modelo.excepciones.MetodoInvalidoException;
 import modelo.excepciones.MontoInsuficienteException;
 
 public class Pago {
@@ -31,14 +32,22 @@ public class Pago {
         }
     }
 
-    public boolean validarPago() throws MontoInsuficienteException {
-        if (monto <= 0) {
-            throw new MontoInsuficienteException();
-        }
-        if (!metodoPago.getMetodo().equals("Tarjeta") && !metodoPago.getMetodo().equals("Efectivo") && !metodoPago.getMetodo().equals("Transferencia")) {
+    public boolean validarPago(){
+        try {
+            if (monto <= 0) {
+                throw new MontoInsuficienteException();
+            }
+            if (!metodoPago.getMetodo().equals("Tarjeta") && !metodoPago.getMetodo().equals("Efectivo") && !metodoPago.getMetodo().equals("Transferencia")) {
+                throw new MetodoInvalidoException();
+            }
+            return true;
+        } catch (MontoInsuficienteException e) {
+            System.out.println(e.getMessage());
+            return false;
+        } catch (MetodoInvalidoException e) {
+            System.out.println(e.getMessage());
             return false;
         }
-        return true;
     }
 
     public String getId() {
