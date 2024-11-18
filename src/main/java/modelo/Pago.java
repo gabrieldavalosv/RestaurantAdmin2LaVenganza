@@ -21,8 +21,8 @@ public class Pago {
         this.estado = estado;
     }
 
-    public boolean procesarPago() {
-        if (validarPago()) {
+    public boolean procesarPago(float totalPago) {
+        if (validarPago(totalPago)) {
 
             this.estado = "Pago realizado";
             return true;
@@ -32,9 +32,9 @@ public class Pago {
         }
     }
 
-    public boolean validarPago(){
+    public boolean validarPago(float totalPago){
         try {
-            if (monto <= 0) {
+            if (monto <= 0 || monto > totalPago) {
                 throw new MontoInsuficienteException();
             }
             if (!metodoPago.getMetodo().equals("Tarjeta") && !metodoPago.getMetodo().equals("Efectivo") && !metodoPago.getMetodo().equals("Transferencia")) {

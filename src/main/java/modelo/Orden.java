@@ -43,7 +43,7 @@ public class Orden {
     public float calcularPrecioTotal(){
         float total = 0.0f;
         
-        if( productoArreglo.getIndex() == 0 ){
+        if( productoArreglo.getIndex() == 0){
             return total;
         }
         

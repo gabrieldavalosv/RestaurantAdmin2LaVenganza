@@ -21,8 +21,8 @@ public class Venta {
         this.cajero = cajero;
     }
 
-    public boolean procesarVenta() {
-        if (pago.procesarPago()) {
+    public boolean procesarVenta(float totalPago) {
+        if (pago.procesarPago(totalPago)) {
             this.estado = "Realizada";
             this.fecha = new Date();
             generarComprobante();

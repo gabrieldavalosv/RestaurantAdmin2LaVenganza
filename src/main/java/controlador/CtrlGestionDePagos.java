@@ -54,7 +54,7 @@ public class CtrlGestionDePagos {
         
         var pago = new Pago(monto, metodoPago);
         
-        if( pago.procesarPago() ){
+        if(monto >= modelo.calcularPrecioTotal() && pago.procesarPago(modelo.calcularPrecioTotal()) ){
             JOptionPane.showMessageDialog(vista, "Procesando el pago de: " + pago.getMonto() + " mediante " + metodoPago.getMetodo() );
             
             modelo.setEstado("Terminada");

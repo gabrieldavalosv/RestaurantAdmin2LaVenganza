@@ -3,6 +3,7 @@ package controlador;
 import modelo.OrdenArreglo;
 import modelo.Orden;
 import modelo.Menu;
+import vista.GestionDeOrden;
 import vista.GestionDeOrdenes;
 import vista.PanelPrincipal;
 
@@ -11,7 +12,6 @@ import java.time.LocalDate;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.personal.Administrador;
-import vista.GestionDeOrden;
 
 /**
  *

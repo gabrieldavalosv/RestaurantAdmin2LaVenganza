@@ -3,13 +3,12 @@ package controlador;
 import modelo.Orden;
 import modelo.Menu;
 import modelo.Producto;
-import vista.GestionDeOrden;
-import vista.GestionDeOrdenes;
 
 
-import java.time.LocalDate;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
+import vista.GestionDeOrden;
 import vista.GestionDePagos;
 
 /**
@@ -29,7 +28,8 @@ public class CtrlGestionDeOrden {
         
         // Poniendo los titulos
         vista.labelCliente.setText( "Cliente: " + modelo.getCliente() );
-        vista.labelPrecioTotal.setText( "Precio total : " + modelo.calcularPrecioTotal() );
+        vista.labelPrecioTotal.setText( "Precio total : " + modelo.calcularPrecioTotal());
+        vista.labelTituloOrden.setText("Gestión de Orden " + modelo.getId());
         
         // Desplegando las tablas
         this.actualizarTablaProductos();
@@ -95,56 +95,57 @@ public class CtrlGestionDeOrden {
             var tablaProductos = (DefaultTableModel) vista.tablaOrdenProductos.getModel();
             
             tablaProductos.addRow(new Object[]{producto.getId(), producto.getNombre(), producto.getCategoria(), producto.getPrecio() });
+            vista.labelPrecioTotal.setText( "Precio total : " + modelo.calcularPrecioTotal());
+
         }else{
             JOptionPane.showMessageDialog(vista, "El producto con id " + idProducto + " no fue encontrado...");
         }
         
         vista.fieldIdProducto.setText("");
     }
-    
+
     private void eventoEliminarProducto() {
-        var idProducto = vista.fieldIdProducto.getText();
-        
-        if( idProducto.isEmpty() ){
+        var idProducto = vista.fieldIdProducto.getText(); // Obtener el ID del producto ingresado
+
+        if (idProducto.isEmpty()) {
             JOptionPane.showMessageDialog(vista, "Por favor, primero ingrese un id de un producto.");
             return;
         }
-        
-        if( modelo.eliminarProductoALaOrden(idProducto) ){
+
+        // Intentar eliminar el producto del modelo de la orden
+        if (modelo.eliminarProductoALaOrden(idProducto)) {
             var tablaProductos = (DefaultTableModel) vista.tablaOrdenProductos.getModel();
-            
-            //Obtener posicion donde se encuentra el producto con ese id
+
+            // Buscar la fila correspondiente al producto en la tabla
             int posicion = -1;
-            
-            for(int i=0; i < tablaProductos.getRowCount(); i++){
+            for (int i = 0; i < tablaProductos.getRowCount(); i++) {
                 if (tablaProductos.getValueAt(i, 0).toString().equals(idProducto)) {
                     posicion = i;
                     break;
                 }
             }
-            
-            tablaProductos.removeRow( posicion );
-            
-            // Limpiar todas las filas de la tabla
-            tablaProductos.setRowCount(0);
-        
-            // Volver a agregar todas las órdenes desde el arreglo al JTable
-            for( Producto p: modelo.getProductoArreglo().getProductos() ) {
-                if( p != null ){
-                    tablaProductos.addRow(new Object[]{ p.getId(), p.getNombre(), p.getCategoria(), p.getPrecio() });
-                }
+
+            if (posicion != -1) {
+                // Eliminar la fila de la tabla
+                tablaProductos.removeRow(posicion);
+
+                // Actualizar el precio total en la vista
+                vista.labelPrecioTotal.setText("Precio total : " + modelo.calcularPrecioTotal());
+                JOptionPane.showMessageDialog(vista, "Producto eliminado correctamente.");
+            } else {
+                JOptionPane.showMessageDialog(vista, "El producto no está en la tabla.");
             }
-        
-        }else{
-            JOptionPane.showMessageDialog(vista, "El prodcuto con id " + idProducto + " no fue encontrado...");
+        } else {
+            JOptionPane.showMessageDialog(vista, "El producto con id " + idProducto + " no fue encontrado en la orden.");
         }
-        
+
+        // Limpiar el campo de texto
         vista.fieldIdProducto.setText("");
     }
-    
+
     private void eventoTerminarOrden(){
         this.vista.dispose();
-        
+
         irGestionarPago();
     }
     
