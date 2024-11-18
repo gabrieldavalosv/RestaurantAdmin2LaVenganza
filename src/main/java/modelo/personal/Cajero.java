@@ -14,6 +14,7 @@ public class Cajero extends Trabajador{
         super(id, nombre, contrasena);
         this.RUC = RUC;
         ordenArreglo = new OrdenArreglo(20);
+        setRol("Cajero");
     }
 
     public String getRUC() {

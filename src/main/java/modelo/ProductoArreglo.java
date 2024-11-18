@@ -25,7 +25,7 @@ public class ProductoArreglo {
         }
     }
 
-    public void eliminarProducto(String id){
+    public void eliminarProducto(String id) {
         try {
             for (int i = 0; i < index; i++) {
                 if (productos[i].getId().equals(id)) {
@@ -34,14 +34,16 @@ public class ProductoArreglo {
                     }
                     productos[index - 1] = null;
                     index--;
-                } else {
-                    throw new IdNoEncontradoException();
+                    return;
                 }
             }
+
+            throw new IdNoEncontradoException();
         } catch (IdNoEncontradoException e) {
             System.out.println(e.getMessage());
         }
     }
+
 
     public Producto buscarProducto(String id){
         try {

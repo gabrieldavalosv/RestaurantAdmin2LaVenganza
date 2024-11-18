@@ -7,7 +7,9 @@ import javax.swing.JOptionPane;
 import modelo.MetodoPago;
 import modelo.Orden;
 import modelo.Pago;
-
+import modelo.personal.Administrador;
+import modelo.personal.Cajero;
+import vista.GestionDeOrdenes;
 import vista.GestionDePagos;
 
 /**
@@ -17,13 +19,15 @@ import vista.GestionDePagos;
 
 public class CtrlGestionDePagos {
     Orden modelo;
+    Administrador administrador;
     GestionDePagos vista;
 
     private String fecha;
     
-    public CtrlGestionDePagos(Orden modelo, GestionDePagos vista) {
+    public CtrlGestionDePagos(Orden modelo, GestionDePagos vista, Administrador administrador) {
         this.modelo = modelo;
         this.vista = vista;
+        this.administrador = administrador;
         
         this.asignarEventos();
         this.mostrarDatosTitulos();
@@ -57,12 +61,20 @@ public class CtrlGestionDePagos {
         if(monto >= modelo.calcularPrecioTotal() && pago.procesarPago(modelo.calcularPrecioTotal()) ){
             JOptionPane.showMessageDialog(vista, "Procesando el pago de: " + pago.getMonto() + " mediante " + metodoPago.getMetodo() );
             
-            modelo.setEstado("Terminada");
+            modelo.setEstado("Pagada");
+            irGestionOrdenes();
             
         }else{
             JOptionPane.showMessageDialog(vista, "El pago no se ha podido realizar...");
         }
-        
+    }
+
+    public void irGestionOrdenes() {
+        var vistaOrdenes = new GestionDeOrdenes();
+        var ordenes = Cajero.getOrdenArreglo();
+
+        var ctrlOrdenes = new CtrlGestionDeOrdenes(ordenes, vistaOrdenes, administrador);
+
         vista.dispose();
     }
 }

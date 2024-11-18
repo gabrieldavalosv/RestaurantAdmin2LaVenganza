@@ -34,7 +34,7 @@ public class Pago {
 
     public boolean validarPago(float totalPago){
         try {
-            if (monto <= 0 || monto > totalPago) {
+            if (monto < totalPago) {
                 throw new MontoInsuficienteException();
             }
             if (!metodoPago.getMetodo().equals("Tarjeta") && !metodoPago.getMetodo().equals("Efectivo") && !metodoPago.getMetodo().equals("Transferencia")) {

@@ -10,6 +10,7 @@ public class Administrador extends Trabajador {
     public Administrador(String id, String nombre, String contrasena) {
         super(id, nombre, contrasena);
         cajeroArreglo = new CajeroArreglo(20);
+        setRol("Administrador");
     }
 
     public CajeroArreglo getCajeroArreglo() {

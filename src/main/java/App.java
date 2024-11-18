@@ -1,10 +1,8 @@
-import modelo.excepciones.ArregloLLenoException;
 import modelo.personal.Administrador;
 import modelo.personal.Cajero;
 
-import vista.PantallaLogin;
-
 import controlador.CtrlPantallaLogin;
+import vista.PantallaLogin;
 
 /**
  *
@@ -15,9 +13,9 @@ public class App {
     public static void main(String[] args) {
         
         // Creacion de personales
-        Administrador administrador = new Administrador("1", "admin", "admin");
-        Cajero cajero = new Cajero("101", "Mathias", "admin", "24920348942");
-        Cajero cajero2 = new Cajero("102", "Leo malcriao", "admin", "77777777");
+        Administrador administrador1 = new Administrador("100", "Mathias", "2301");
+        Cajero cajero = new Cajero("201", "Sabogal", "wasa", "0145480641");
+        Cajero cajero2 = new Cajero("202", "David", "admin", "7777777777");
 
         /*
         administrador.agregarCajero(cajero);
@@ -27,6 +25,6 @@ public class App {
         
         //Pantalla Login
         var pantallaLogin = new PantallaLogin();
-        var ctrlLogin = new CtrlPantallaLogin(administrador, pantallaLogin);
+        var ctrlLogin = new CtrlPantallaLogin(administrador1, pantallaLogin);
     }
 }

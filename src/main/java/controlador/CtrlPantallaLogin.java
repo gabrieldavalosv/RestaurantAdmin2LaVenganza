@@ -1,8 +1,8 @@
 package controlador;
 
 import modelo.personal.Administrador;
-import vista.PantallaLogin;
 import vista.PanelPrincipal;
+import vista.PantallaLogin;
 
 import javax.swing.JOptionPane;
 
@@ -22,9 +22,11 @@ public class CtrlPantallaLogin {
         this.asignarEventos();
         vista.setVisible(true);
     }
+
     
     private void asignarEventos(){
         vista.getButtonIniciarSesion().addActionListener( e -> this.iniciarSesion() );
+        vista.getjCheckBox1().addActionListener(e -> mostrarcontrasena());
     }
     
     public void iniciarSesion(){
@@ -39,6 +41,14 @@ public class CtrlPantallaLogin {
         }else{
             limpiarInputs();
             JOptionPane.showMessageDialog(vista, "Usuario o contrasenia incorrectos.\nIntentar de nuevo");
+        }
+    }
+
+    public void mostrarcontrasena(){
+        if (!vista.getjCheckBox1().isSelected()) {
+            vista.getFieldContrasenia().setEchoChar((char) 0);
+        } else {
+            vista.getFieldContrasenia().setEchoChar('*');
         }
     }
     

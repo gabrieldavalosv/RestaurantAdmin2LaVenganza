@@ -4,11 +4,13 @@ public class Trabajador {
     private String id;
     private String nombre;
     private String contrasena;
+    private String rol;
 
     public Trabajador(String id, String nombre, String contrasena) {
         this.id = id;
         this.nombre = nombre;
         this.contrasena = contrasena;
+        this.rol = "";
     }
 
     public String getId() {
@@ -25,6 +27,14 @@ public class Trabajador {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
     public boolean login(String nombre, String contrasena) {

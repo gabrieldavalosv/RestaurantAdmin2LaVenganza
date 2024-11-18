@@ -44,8 +44,6 @@ public class GestionDePagos extends javax.swing.JFrame {
         buttonCancelarPago = new javax.swing.JButton();
         comboboxMetodos = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(425, 224));
@@ -53,27 +51,32 @@ public class GestionDePagos extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(425, 224));
 
         labelCliente.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelCliente.setText("[labelNombreCliente]");
+        labelCliente.setText("Cliente: [Cliente]");
 
         labelFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelFecha.setText("[labelFecha-Hora]");
+        labelFecha.setText("Fecha: [Fecha]");
         labelFecha.setToolTipText("");
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel6.setText("Monto:");
 
-        fieldMonto.setText("fieldMonto");
+        fieldMonto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldMontoActionPerformed(evt);
+            }
+        });
 
         labelTotal.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelTotal.setText("Total a Pagar:");
 
         labeldOrden.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labeldOrden.setText("ID de Orden:");
+        labeldOrden.setText("ID de Orden: [IdOrden]");
 
         labelTituloForm.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         labelTituloForm.setText("Gestión de pago");
 
         buttonProcesarPago.setText("Procesar pago");
+        buttonProcesarPago.setMargin(new java.awt.Insets(2, 2, 2, 2));
         buttonProcesarPago.setMaximumSize(new java.awt.Dimension(100, 25));
         buttonProcesarPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,7 +84,8 @@ public class GestionDePagos extends javax.swing.JFrame {
             }
         });
 
-        buttonGenerarRecibo.setText("GenerarRecibo");
+        buttonGenerarRecibo.setText("Generar Recibo");
+        buttonGenerarRecibo.setMargin(new java.awt.Insets(2, 2, 2, 2));
         buttonGenerarRecibo.setMaximumSize(new java.awt.Dimension(100, 25));
         buttonGenerarRecibo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +94,7 @@ public class GestionDePagos extends javax.swing.JFrame {
         });
 
         buttonCancelarPago.setText("Cancelar Pago");
+        buttonCancelarPago.setMargin(new java.awt.Insets(2, 2, 2, 2));
         buttonCancelarPago.setMaximumSize(new java.awt.Dimension(100, 25));
         buttonCancelarPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,12 +107,14 @@ public class GestionDePagos extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel7.setText("Método");
 
-        jTextField1.setText("fieldIDOrden");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(204, 204, 204)
+                .addComponent(labelTituloForm)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(80, 80, 80)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,37 +125,23 @@ public class GestionDePagos extends javax.swing.JFrame {
                         .addGap(106, 106, 106))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(labeldOrden)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(buttonProcesarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(buttonGenerarRecibo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(fieldMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel7)))
+                                .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(buttonCancelarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(comboboxMetodos, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelTotal)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(220, 220, 220)
-                                        .addComponent(labeldOrden)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 90, Short.MAX_VALUE))))
-            .addComponent(jSeparator1)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(204, 204, 204)
-                .addComponent(labelTituloForm)
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(fieldMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(comboboxMetodos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(labelTotal)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(buttonProcesarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonGenerarRecibo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonCancelarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 74, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,29 +152,24 @@ public class GestionDePagos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCliente)
                     .addComponent(labelFecha))
-                .addGap(22, 22, 22)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labeldOrden)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
+                        .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(fieldMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
-                            .addComponent(comboboxMetodos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 187, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(buttonProcesarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonGenerarRecibo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonCancelarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelTotal)
-                            .addComponent(labeldOrden)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(comboboxMetodos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(labelTotal))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonProcesarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonGenerarRecibo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonCancelarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -198,6 +186,10 @@ public class GestionDePagos extends javax.swing.JFrame {
     private void buttonCancelarPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarPagoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonCancelarPagoActionPerformed
+
+    private void fieldMontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldMontoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldMontoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,9 +275,7 @@ public class GestionDePagos extends javax.swing.JFrame {
     private javax.swing.JTextField fieldMonto;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSlider jSlider1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelCliente;
     private javax.swing.JLabel labelFecha;
     private javax.swing.JLabel labelTituloForm;

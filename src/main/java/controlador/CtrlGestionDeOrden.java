@@ -8,6 +8,7 @@ import modelo.Producto;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+import modelo.personal.Administrador;
 import vista.GestionDeOrden;
 import vista.GestionDePagos;
 
@@ -19,12 +20,14 @@ import vista.GestionDePagos;
 public class CtrlGestionDeOrden {
     private Orden modelo;
     private GestionDeOrden vista;
+    private Administrador administrador;
     
     private Menu menu;
     
-    public CtrlGestionDeOrden(Orden modelo, GestionDeOrden vista){
+    public CtrlGestionDeOrden(Orden modelo, GestionDeOrden vista, Administrador administrador) {
         this.vista = vista;
         this.modelo = modelo;
+        this.administrador = administrador;
         
         // Poniendo los titulos
         vista.labelCliente.setText( "Cliente: " + modelo.getCliente() );
@@ -45,7 +48,7 @@ public class CtrlGestionDeOrden {
     
     private void irGestionarPago(){
         var vistaPago = new GestionDePagos();
-        var ctrlPago = new CtrlGestionDePagos( modelo, vistaPago );
+        var ctrlPago = new CtrlGestionDePagos( modelo, vistaPago, administrador);
     }
     
     private void actualizarTablaProductos() {
@@ -58,8 +61,7 @@ public class CtrlGestionDeOrden {
                 tablaProductos.addRow( new Object[]{ p.getId(), p.getNombre(), p.getCategoria(), p.getPrecio() });
             }
         }
-        
-        // Desactivar botones en caso la orden este terminada
+
         boolean isTerminada = modelo.getEstado().equals("Terminada");
         
         vista.buttonAgregarProducto.setEnabled(!isTerminada);
@@ -78,7 +80,6 @@ public class CtrlGestionDeOrden {
                 tablaMenu.addRow( new Object[]{ p.getId(), p.getNombre(), p.getCategoria(), p.getPrecio() });
             }
         }
-        
     }
     
     private void eventoAgregarProducto() {
@@ -105,7 +106,7 @@ public class CtrlGestionDeOrden {
     }
 
     private void eventoEliminarProducto() {
-        var idProducto = vista.fieldIdProducto.getText(); // Obtener el ID del producto ingresado
+        var idProducto = vista.fieldIdProducto.getText().trim(); // Obtener el ID del producto ingresado y eliminar espacios
 
         if (idProducto.isEmpty()) {
             JOptionPane.showMessageDialog(vista, "Por favor, primero ingrese un id de un producto.");
@@ -142,6 +143,7 @@ public class CtrlGestionDeOrden {
         // Limpiar el campo de texto
         vista.fieldIdProducto.setText("");
     }
+
 
     private void eventoTerminarOrden(){
         this.vista.dispose();
