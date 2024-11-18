@@ -12,7 +12,7 @@ public class ProductoArreglo {
         this.index = 0;
     }
 
-    public void agregarProducto(Producto producto){
+    public void agregarProducto(Producto producto) {
         try {
             if (producto != null && this.index < productos.length) {
                 productos[this.index] = producto;
@@ -45,10 +45,10 @@ public class ProductoArreglo {
     }
 
 
-    public Producto buscarProducto(String id){
+    public Producto buscarProducto(String id) {
         try {
             for (int i = 0; i < this.index; i++) {
-                if ( productos[i] != null && productos[i].getId().equals(id) ){
+                if (productos[i] != null && productos[i].getId().equals(id)) {
                     return productos[i];
                 }
             }
@@ -58,7 +58,7 @@ public class ProductoArreglo {
         }
         return null;
     }
-    
+
     public Producto[] getProductos() {
         return productos;
     }

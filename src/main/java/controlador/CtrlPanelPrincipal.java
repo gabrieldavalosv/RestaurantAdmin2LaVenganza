@@ -19,13 +19,11 @@ public class CtrlPanelPrincipal {
         this.modelo = modelo;
         this.vista = vista;
 
-        // Poniendo los titulos
         vista.labelRol.setText("Rol: " + modelo.getRol());
         vista.labelNombreUsuario.setText("Usuario: " + modelo.getNombre());
         vista.labelIdUsuario.setText("ID Usuario: " + modelo.getId());
         vista.labelFecha.setText("Fecha: " + LocalDate.now());
 
-        // Asignando los eventos a los botones
         vista.buttonGestionarOrdenes.addActionListener(e -> this.irGestionOrdenes());
         vista.buttonGestionarVentas.addActionListener(e -> this.irGestionVentas());
         vista.buttonGestionarCajeros.addActionListener(e -> this.irGestionDeCajeros());

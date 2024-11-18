@@ -9,11 +9,11 @@ public class Pago {
     private MetodoPago metodoPago;
     private String estado;
 
-    public Pago(float monto, MetodoPago metodoPago){
+    public Pago(float monto, MetodoPago metodoPago) {
         this.monto = monto;
         this.metodoPago = metodoPago;
     }
-    
+
     public Pago(String id, float monto, MetodoPago metodoPago, String estado) {
         this.id = id;
         this.monto = monto;
@@ -32,7 +32,7 @@ public class Pago {
         }
     }
 
-    public boolean validarPago(float totalPago){
+    public boolean validarPago(float totalPago) {
         try {
             if (monto < totalPago) {
                 throw new MontoInsuficienteException();

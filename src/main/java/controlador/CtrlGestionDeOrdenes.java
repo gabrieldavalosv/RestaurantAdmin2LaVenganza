@@ -30,16 +30,13 @@ public class CtrlGestionDeOrdenes {
         this.modelo = modelo;
         this.administrador = administrador;
 
-        // Poniendo los titulos
         vista.labelRol.setText("Rol: " + administrador.getRol());
         vista.labelNombreUsuario.setText("Usuario: " + administrador.getNombre());
         vista.labelIdUsuario.setText("ID Usuario: " + administrador.getId());
         vista.labelFecha.setText("Fecha: " + LocalDate.now());
 
-        // Desplegando la tabla
         this.actualizarTablaOrdenes();
 
-        // Asignando los eventos a los botones
         vista.buttonVolverPanel.addActionListener(e -> this.irPanelPrincipal());
         vista.buttonAgregarOrden.addActionListener(e -> this.eventoAgregarOrden());
         vista.buttonTerminarOrden.addActionListener(e -> this.eventoTerminarOrden());
@@ -84,13 +81,10 @@ public class CtrlGestionDeOrdenes {
             return;
         }
 
-        // Instanciar la nueva orden
         Orden orden = new Orden(ultimoId, cliente);
 
-        // Agregar orden al arreglo de ordenes (modelo)
         modelo.agregarOrden(orden);
 
-        // Actualizar la tabla de ordenes
         var tablaOrdenes = (DefaultTableModel) vista.tablaOrdenes.getModel();
 
         if (orden != null) {

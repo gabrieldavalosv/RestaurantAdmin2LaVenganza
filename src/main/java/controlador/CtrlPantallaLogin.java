@@ -7,52 +7,51 @@ import vista.PantallaLogin;
 import javax.swing.JOptionPane;
 
 /**
- * 
  * @author Davi
-*/
+ */
 
 public class CtrlPantallaLogin {
-    private Administrador modelo;
-    private PantallaLogin vista;
+    private final Administrador modelo;
+    private final PantallaLogin vista;
 
     public CtrlPantallaLogin(Administrador modelo, PantallaLogin vista) {
         this.modelo = modelo;
         this.vista = vista;
-        
+
         this.asignarEventos();
         vista.setVisible(true);
     }
 
-    
-    private void asignarEventos(){
-        vista.getButtonIniciarSesion().addActionListener( e -> this.iniciarSesion() );
+
+    private void asignarEventos() {
+        vista.getButtonIniciarSesion().addActionListener(e -> this.iniciarSesion());
         vista.getjCheckBox1().addActionListener(e -> mostrarcontrasena());
     }
-    
-    public void iniciarSesion(){
+
+    public void iniciarSesion() {
         var usuario = vista.getFieldUsuario().getText();
         var contrasenia = vista.getFieldContrasenia().getText();
-        
-        if ( usuario.equals( modelo.getNombre() ) && contrasenia.equals( modelo.getContrasena() ) ){
+
+        if (usuario.equals(modelo.getNombre()) && contrasenia.equals(modelo.getContrasena())) {
             var vistaPanel = new PanelPrincipal();
-            var ctrlPanel = new CtrlPanelPrincipal( modelo, vistaPanel);
-            
+            var ctrlPanel = new CtrlPanelPrincipal(modelo, vistaPanel);
+
             vista.dispose();
-        }else{
+        } else {
             limpiarInputs();
             JOptionPane.showMessageDialog(vista, "Usuario o contrasenia incorrectos.\nIntentar de nuevo");
         }
     }
 
-    public void mostrarcontrasena(){
+    public void mostrarcontrasena() {
         if (!vista.getjCheckBox1().isSelected()) {
             vista.getFieldContrasenia().setEchoChar((char) 0);
         } else {
             vista.getFieldContrasenia().setEchoChar('*');
         }
     }
-    
-    public void limpiarInputs(){
+
+    public void limpiarInputs() {
         vista.getFieldUsuario().setText("");
         vista.getFieldContrasenia().setText("");
     }

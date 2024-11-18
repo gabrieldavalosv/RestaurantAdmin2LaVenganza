@@ -5,7 +5,7 @@ import modelo.OrdenArreglo;
 import modelo.excepciones.ArregloLLenoException;
 import modelo.excepciones.IdNoEncontradoException;
 
-public class Cajero extends Trabajador{
+public class Cajero extends Trabajador {
     private String RUC;
     private static OrdenArreglo ordenArreglo;
 
@@ -29,11 +29,11 @@ public class Cajero extends Trabajador{
         return ordenArreglo;
     }
 
-    public void crearOrden(String id, String cliente){
+    public void crearOrden(String id, String cliente) {
         ordenArreglo.agregarOrden(new Orden(id, cliente));
     }
 
-    public void cancelarOrden(String id){
+    public void cancelarOrden(String id) {
         ordenArreglo.eliminarOrden(id);
     }
 

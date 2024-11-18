@@ -13,8 +13,7 @@ public class OrdenArreglo {
     }
 
 
-
-    public void agregarOrden(Orden orden){
+    public void agregarOrden(Orden orden) {
         try {
             if (orden != null && this.index < ordenes.length) {
                 ordenes[this.index] = orden;
@@ -27,7 +26,7 @@ public class OrdenArreglo {
         }
     }
 
-    public void eliminarOrden(String id){
+    public void eliminarOrden(String id) {
         try {
             for (int i = 0; i < index; i++) {
                 if (ordenes[i].getId().equals(id)) {
@@ -45,7 +44,7 @@ public class OrdenArreglo {
         }
     }
 
-    public Orden buscarOrden(String id){
+    public Orden buscarOrden(String id) {
         try {
             for (int i = 0; i < this.index; i++) {
                 if (ordenes[i] != null && ordenes[i].getId().equals(id)) {
@@ -61,12 +60,12 @@ public class OrdenArreglo {
 
     public int getIndex() {
         return index;
-    }    
+    }
 
     public Orden[] getOrdenes() {
         return ordenes;
     }
-    
+
     @Override
     public String toString() {
         String resultado = "=========================================================\n";

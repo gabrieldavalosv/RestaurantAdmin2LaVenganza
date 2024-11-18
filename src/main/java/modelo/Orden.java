@@ -8,13 +8,13 @@ public class Orden {
     private ProductoArreglo productoArreglo;
     private String estado;
     private String cliente;
-    
-    public Orden(String id){
+
+    public Orden(String id) {
         this.id = id;
         this.estado = "En espera";
         this.productoArreglo = new ProductoArreglo(20);
     }
-    
+
     public Orden(String id, String cliente) {
         this.id = id;
         this.productoArreglo = new ProductoArreglo(20);
@@ -22,7 +22,7 @@ public class Orden {
         this.cliente = cliente;
     }
 
-    public boolean agregarProductoALaOrden(String id, Menu menu){
+    public boolean agregarProductoALaOrden(String id, Menu menu) {
         Producto producto = menu.getProductoArreglo().buscarProducto(id);
         if (producto != null) {
             productoArreglo.agregarProducto(producto);
@@ -31,7 +31,7 @@ public class Orden {
         return false;
     }
 
-    public boolean eliminarProductoALaOrden(String id){
+    public boolean eliminarProductoALaOrden(String id) {
         Producto producto = productoArreglo.buscarProducto(id);
         if (producto != null) {
             productoArreglo.eliminarProducto(id);
@@ -39,27 +39,27 @@ public class Orden {
         }
         return false;
     }
-    
-    public float calcularPrecioTotal(){
+
+    public float calcularPrecioTotal() {
         float total = 0.0f;
-        
-        if( productoArreglo.getIndex() == 0){
+
+        if (productoArreglo.getIndex() == 0) {
             return total;
         }
-        
-        for( Producto producto: productoArreglo.getProductos() ){
-            if( producto != null ){
+
+        for (Producto producto : productoArreglo.getProductos()) {
+            if (producto != null) {
                 total += producto.getPrecio();
             }
         }
-        
+
         return total;
     }
 
     @Override
     public String toString() {
         String resultado = "ID de Orden: " + getId() + "Cliente: " + getCliente();
-        resultado +=" ID |          NOMBRE           |  PRECIO  |  CATEGORIA";
+        resultado += " ID |          NOMBRE           |  PRECIO  |  CATEGORIA";
         resultado += productoArreglo;
         return resultado;
     }

@@ -12,7 +12,7 @@ public class CajeroArreglo {
         this.index = 0;
     }
 
-    public void agregarCajero(Cajero cajero){
+    public void agregarCajero(Cajero cajero) {
         try {
             if (cajero != null && this.index < cajeros.length) {
                 cajeros[this.index] = cajero;
@@ -25,7 +25,7 @@ public class CajeroArreglo {
         }
     }
 
-    public void eliminarCajero(String id){
+    public void eliminarCajero(String id) {
         try {
             for (int i = 0; i < index; i++) {
                 if (cajeros[i].getId().equals(id)) {
@@ -43,7 +43,7 @@ public class CajeroArreglo {
         }
     }
 
-    public Cajero buscarCajero(String id){
+    public Cajero buscarCajero(String id) {
         try {
             for (int i = 0; i < this.index; i++) {
                 if (cajeros[i] != null && cajeros[i].getId().equals(id)) {
