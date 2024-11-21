@@ -27,23 +27,23 @@ public class PanelPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        labelUsuario = new javax.swing.JLabel();
-        labelRol = new javax.swing.JLabel();
+        fieldNombreUsuario = new javax.swing.JLabel();
+        rolAdministrador = new javax.swing.JLabel();
         buttonCerrarSesion = new javax.swing.JButton();
         buttonGestionarOrdenes = new javax.swing.JButton();
         buttonGestionarVentas = new javax.swing.JButton();
         buttonGestionarCajeros = new javax.swing.JButton();
-        labelRol1 = new javax.swing.JLabel();
-        labelRol2 = new javax.swing.JLabel();
+        fieldFechaHora = new javax.swing.JLabel();
+        fieldID = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         jLabel1.setText("Dashboard");
 
-        labelUsuario.setText("[Usuario: NombreUsuario]");
+        fieldNombreUsuario.setText("Usuario");
 
-        labelRol.setText("[Rol: Administrador]");
+        rolAdministrador.setText("Rol: Administrador");
 
         buttonCerrarSesion.setBackground(new java.awt.Color(34, 141, 110));
         buttonCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
@@ -81,9 +81,9 @@ public class PanelPrincipal extends javax.swing.JFrame {
             }
         });
 
-        labelRol1.setText("[Fecha]");
+        fieldFechaHora.setText("Fecha-Hora:");
 
-        labelRol2.setText("[ID]");
+        fieldID.setText("ID:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,12 +92,12 @@ public class PanelPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelRol)
-                    .addComponent(labelUsuario))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                    .addComponent(rolAdministrador)
+                    .addComponent(fieldNombreUsuario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelRol2)
-                    .addComponent(labelRol1))
+                    .addComponent(fieldID)
+                    .addComponent(fieldFechaHora))
                 .addGap(119, 119, 119))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,11 +120,11 @@ public class PanelPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelRol)
-                    .addComponent(labelRol1))
+                    .addComponent(rolAdministrador)
+                    .addComponent(fieldFechaHora))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelUsuario)
-                    .addComponent(labelRol2))
+                    .addComponent(fieldNombreUsuario)
+                    .addComponent(fieldID))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(buttonGestionarOrdenes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
@@ -220,10 +220,10 @@ public class PanelPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton buttonGestionarCajeros;
     private javax.swing.JButton buttonGestionarOrdenes;
     private javax.swing.JButton buttonGestionarVentas;
+    private javax.swing.JLabel fieldFechaHora;
+    private javax.swing.JLabel fieldID;
+    private javax.swing.JLabel fieldNombreUsuario;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel labelRol;
-    private javax.swing.JLabel labelRol1;
-    private javax.swing.JLabel labelRol2;
-    private javax.swing.JLabel labelUsuario;
+    private javax.swing.JLabel rolAdministrador;
     // End of variables declaration//GEN-END:variables
 }

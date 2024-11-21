@@ -26,24 +26,24 @@ public class GestionDeProductos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        labelNombreUsuario = new javax.swing.JLabel();
+        labelFechaHora = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboboxCategorias = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
+        fieldNombreProducto = new javax.swing.JTextField();
+        buttonMostrarDisponibles = new javax.swing.JButton();
+        buttonBuscar = new javax.swing.JToggleButton();
+        buttonActualizar = new javax.swing.JToggleButton();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
+        buttonGuardarCambios = new javax.swing.JToggleButton();
+        buttonEliminarProducto = new javax.swing.JToggleButton();
+        buttonCancelar = new javax.swing.JToggleButton();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
-        jToggleButton10 = new javax.swing.JToggleButton();
+        buttonAgregarProducto = new javax.swing.JToggleButton();
         jSeparator5 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaOrdenes = new javax.swing.JTable();
@@ -51,67 +51,66 @@ public class GestionDeProductos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("[labelNombreUsuario]");
-        jLabel2.setToolTipText("");
+        labelNombreUsuario.setText("Usuario:");
+        labelNombreUsuario.setToolTipText("");
 
-        jLabel3.setText("[labelFecha-Hora]");
+        labelFechaHora.setText("Fecha-Hora:");
 
         jLabel4.setText("Categoría:");
 
-        jComboBox1.setBackground(new java.awt.Color(59, 73, 69));
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        comboboxCategorias.setBackground(new java.awt.Color(59, 73, 69));
+        comboboxCategorias.setForeground(new java.awt.Color(255, 255, 255));
+        comboboxCategorias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
+        comboboxCategorias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                comboboxCategoriasActionPerformed(evt);
             }
         });
 
         jLabel6.setText("Buscar Producto:");
 
-        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("fieldNombreProducto");
+        fieldNombreProducto.setBackground(new java.awt.Color(59, 73, 69));
+        fieldNombreProducto.setForeground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setBackground(new java.awt.Color(34, 141, 110));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("buttonMostrarDisponibles");
+        buttonMostrarDisponibles.setBackground(new java.awt.Color(34, 141, 110));
+        buttonMostrarDisponibles.setForeground(new java.awt.Color(255, 255, 255));
+        buttonMostrarDisponibles.setText("Mostrar disponibles");
 
-        jToggleButton5.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton5.setText("buttonBuscar");
+        buttonBuscar.setBackground(new java.awt.Color(34, 141, 110));
+        buttonBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonBuscar.setText("Buscar");
 
-        jToggleButton6.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton6.setText("buttonActualizar");
+        buttonActualizar.setBackground(new java.awt.Color(34, 141, 110));
+        buttonActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonActualizar.setText("Actualizar");
 
         jLabel5.setText("Detalles y edición del producto seleccionado");
 
-        jToggleButton7.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton7.setText("buttonGuardarCambios");
+        buttonGuardarCambios.setBackground(new java.awt.Color(34, 141, 110));
+        buttonGuardarCambios.setForeground(new java.awt.Color(255, 255, 255));
+        buttonGuardarCambios.setText("Guardar cambios");
 
-        jToggleButton8.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton8.setText("buttonEliminarProducto");
-        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+        buttonEliminarProducto.setBackground(new java.awt.Color(34, 141, 110));
+        buttonEliminarProducto.setForeground(new java.awt.Color(255, 255, 255));
+        buttonEliminarProducto.setText("Eliminar producto");
+        buttonEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton8ActionPerformed(evt);
+                buttonEliminarProductoActionPerformed(evt);
             }
         });
 
-        jToggleButton9.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton9.setText("buttonCancelar");
+        buttonCancelar.setBackground(new java.awt.Color(34, 141, 110));
+        buttonCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonCancelar.setText("Cancelar");
 
         jLabel11.setText("Agregar nuevo producto");
 
-        jToggleButton10.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton10.setText("buttonAgregarProducto");
-        jToggleButton10.addActionListener(new java.awt.event.ActionListener() {
+        buttonAgregarProducto.setBackground(new java.awt.Color(34, 141, 110));
+        buttonAgregarProducto.setForeground(new java.awt.Color(255, 255, 255));
+        buttonAgregarProducto.setText("Agregar producto");
+        buttonAgregarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton10ActionPerformed(evt);
+                buttonAgregarProductoActionPerformed(evt);
             }
         });
 
@@ -143,9 +142,9 @@ public class GestionDeProductos extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(63, 63, 63)
-                .addComponent(jLabel2)
+                .addComponent(labelNombreUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addComponent(labelFechaHora)
                 .addGap(91, 91, 91))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
@@ -160,29 +159,23 @@ public class GestionDeProductos extends javax.swing.JFrame {
                 .addComponent(jSeparator5)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addContainerGap(63, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(220, 220, 220))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jToggleButton7)
+                        .addComponent(buttonGuardarCambios)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton8)
+                        .addComponent(buttonEliminarProducto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton9)
-                        .addGap(90, 90, 90))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jToggleButton10)
-                        .addGap(207, 207, 207))
+                        .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(113, 113, 113))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(59, 59, 59))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jToggleButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton6)
-                        .addGap(183, 183, 183))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonAgregarProducto)
+                            .addComponent(jLabel11))
+                        .addGap(220, 220, 220))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -191,13 +184,18 @@ public class GestionDeProductos extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(fieldNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(comboboxCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(buttonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(buttonActualizar))
+                                    .addComponent(buttonMostrarDisponibles)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(164, 164, 164)
                         .addComponent(jLabel5))
@@ -214,23 +212,23 @@ public class GestionDeProductos extends javax.swing.JFrame {
                 .addComponent(labelTituloForm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
+                    .addComponent(labelFechaHora)
+                    .addComponent(labelNombreUsuario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(comboboxCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMostrarDisponibles))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleButton5)
-                    .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -241,32 +239,32 @@ public class GestionDeProductos extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton7)
-                    .addComponent(jToggleButton8)
-                    .addComponent(jToggleButton9))
+                    .addComponent(buttonGuardarCambios)
+                    .addComponent(buttonEliminarProducto)
+                    .addComponent(buttonCancelar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton10)
+                .addComponent(buttonAgregarProducto)
                 .addGap(20, 20, 20))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void comboboxCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboboxCategoriasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_comboboxCategoriasActionPerformed
 
-    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+    private void buttonEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEliminarProductoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton8ActionPerformed
+    }//GEN-LAST:event_buttonEliminarProductoActionPerformed
 
-    private void jToggleButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton10ActionPerformed
+    private void buttonAgregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAgregarProductoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton10ActionPerformed
+    }//GEN-LAST:event_buttonAgregarProductoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,11 +303,16 @@ public class GestionDeProductos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JToggleButton buttonActualizar;
+    private javax.swing.JToggleButton buttonAgregarProducto;
+    private javax.swing.JToggleButton buttonBuscar;
+    private javax.swing.JToggleButton buttonCancelar;
+    private javax.swing.JToggleButton buttonEliminarProducto;
+    private javax.swing.JToggleButton buttonGuardarCambios;
+    private javax.swing.JButton buttonMostrarDisponibles;
+    private javax.swing.JComboBox<String> comboboxCategorias;
+    private javax.swing.JTextField fieldNombreProducto;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -318,13 +321,8 @@ public class GestionDeProductos extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton10;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
+    private javax.swing.JLabel labelFechaHora;
+    private javax.swing.JLabel labelNombreUsuario;
     private javax.swing.JLabel labelTituloForm;
     private javax.swing.JTable tablaOrdenes;
     // End of variables declaration//GEN-END:variables

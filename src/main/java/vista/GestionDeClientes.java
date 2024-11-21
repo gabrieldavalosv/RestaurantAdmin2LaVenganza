@@ -26,16 +26,16 @@ public class GestionDeClientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        labelNombreUsuario = new javax.swing.JLabel();
+        labelFechaHora = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
+        fieldNombreCliente = new javax.swing.JTextField();
+        buttonBuscar = new javax.swing.JToggleButton();
+        buttonActualizar = new javax.swing.JToggleButton();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        buttonAgregarNuevoCliente = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaOrdenes = new javax.swing.JTable();
         labelTituloForm = new javax.swing.JLabel();
@@ -43,29 +43,29 @@ public class GestionDeClientes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("[labelNombreUsuario]");
+        labelNombreUsuario.setText("Usuario:");
 
-        jLabel3.setText("[labelFecha-Hora]");
+        labelFechaHora.setText("Fecha-Hora:");
 
         jLabel6.setText("Buscar cliente:");
 
-        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("fieldNombreCliente");
+        fieldNombreCliente.setBackground(new java.awt.Color(59, 73, 69));
+        fieldNombreCliente.setForeground(new java.awt.Color(255, 255, 255));
 
-        jToggleButton5.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton5.setText("buttonBuscar");
+        buttonBuscar.setBackground(new java.awt.Color(34, 141, 110));
+        buttonBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonBuscar.setText("Buscar");
 
-        jToggleButton6.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton6.setText("buttonActualizar");
+        buttonActualizar.setBackground(new java.awt.Color(34, 141, 110));
+        buttonActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonActualizar.setText("Actualizar");
+        buttonActualizar.setToolTipText("");
 
         jLabel5.setText("Detalles del cliente seleccionado");
 
-        jButton1.setBackground(new java.awt.Color(34, 141, 110));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("buttonAgregarNuevoCliente");
+        buttonAgregarNuevoCliente.setBackground(new java.awt.Color(34, 141, 110));
+        buttonAgregarNuevoCliente.setForeground(new java.awt.Color(255, 255, 255));
+        buttonAgregarNuevoCliente.setText("Agregar nuevo cliente");
 
         tablaOrdenes.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         tablaOrdenes.setModel(new javax.swing.table.DefaultTableModel(
@@ -98,14 +98,7 @@ public class GestionDeClientes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator2)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(169, 169, 169)
-                                .addComponent(jToggleButton5)
-                                .addGap(18, 18, 18)
-                                .addComponent(jToggleButton6)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(jSeparator3)
                         .addContainerGap())))
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
@@ -113,11 +106,11 @@ public class GestionDeClientes extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(fieldNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(labelNombreUsuario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)))
+                        .addComponent(labelFechaHora)))
                 .addGap(86, 86, 86))
             .addComponent(jSeparator4)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -127,14 +120,19 @@ public class GestionDeClientes extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addComponent(labelTituloForm))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(199, 199, 199)
                         .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(jButton1)))
+                        .addGap(208, 208, 208)
+                        .addComponent(buttonAgregarNuevoCliente))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(198, 198, 198)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(buttonBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buttonActualizar))
+                            .addComponent(labelTituloForm))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -144,16 +142,16 @@ public class GestionDeClientes extends javax.swing.JFrame {
                 .addComponent(labelTituloForm)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(labelNombreUsuario)
+                    .addComponent(labelFechaHora))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton6)
-                    .addComponent(jToggleButton5))
+                    .addComponent(buttonActualizar)
+                    .addComponent(buttonBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -165,7 +163,7 @@ public class GestionDeClientes extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(buttonAgregarNuevoCliente)
                 .addGap(19, 19, 19))
         );
 
@@ -209,18 +207,18 @@ public class GestionDeClientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JToggleButton buttonActualizar;
+    private javax.swing.JButton buttonAgregarNuevoCliente;
+    private javax.swing.JToggleButton buttonBuscar;
+    private javax.swing.JTextField fieldNombreCliente;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
+    private javax.swing.JLabel labelFechaHora;
+    private javax.swing.JLabel labelNombreUsuario;
     private javax.swing.JLabel labelTituloForm;
     private javax.swing.JTable tablaOrdenes;
     // End of variables declaration//GEN-END:variables

@@ -26,13 +26,13 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="labelRol" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="rolAdministrador" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldNombreUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="214" max="32767" attributes="0"/>
+              <EmptySpace pref="227" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="labelRol2" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelRol1" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldID" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldFechaHora" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
           </Group>
@@ -63,12 +63,12 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelRol" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelRol1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rolAdministrador" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldFechaHora" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelRol2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldNombreUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="51" max="32767" attributes="0"/>
               <Component id="buttonGestionarOrdenes" min="-2" pref="35" max="-2" attributes="0"/>
@@ -92,14 +92,14 @@
         <Property name="text" type="java.lang.String" value="Dashboard"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelUsuario">
+    <Component class="javax.swing.JLabel" name="fieldNombreUsuario">
       <Properties>
-        <Property name="text" type="java.lang.String" value="[Usuario: NombreUsuario]"/>
+        <Property name="text" type="java.lang.String" value="Usuario"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelRol">
+    <Component class="javax.swing.JLabel" name="rolAdministrador">
       <Properties>
-        <Property name="text" type="java.lang.String" value="[Rol: Administrador]"/>
+        <Property name="text" type="java.lang.String" value="Rol: Administrador"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="buttonCerrarSesion">
@@ -158,14 +158,14 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonGestionarCajerosActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelRol1">
+    <Component class="javax.swing.JLabel" name="fieldFechaHora">
       <Properties>
-        <Property name="text" type="java.lang.String" value="[Fecha]"/>
+        <Property name="text" type="java.lang.String" value="Fecha-Hora:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelRol2">
+    <Component class="javax.swing.JLabel" name="fieldID">
       <Properties>
-        <Property name="text" type="java.lang.String" value="[ID]"/>
+        <Property name="text" type="java.lang.String" value="ID:"/>
       </Properties>
     </Component>
   </SubComponents>

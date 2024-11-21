@@ -49,19 +49,19 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         buttonTerminarOrden = new javax.swing.JButton();
         framePago = new javax.swing.JFrame();
         labelTituloForm = new javax.swing.JLabel();
-        labelUsuario = new javax.swing.JLabel();
-        labelTituloFecha = new javax.swing.JLabel();
+        labelRol = new javax.swing.JLabel();
+        labelFechaHora = new javax.swing.JLabel();
         buttonAgregarOrden = new javax.swing.JButton();
-        buttonVolverPanel = new javax.swing.JButton();
+        buttonVolver = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaOrdenes = new javax.swing.JTable();
         buttonCancelarOrden = new javax.swing.JButton();
-        buttonVolverPanel1 = new javax.swing.JButton();
-        labelUsuario3 = new javax.swing.JLabel();
-        labelTituloFecha1 = new javax.swing.JLabel();
+        buttonModificarOrden = new javax.swing.JButton();
+        labelNombreUsuario = new javax.swing.JLabel();
+        labelID = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        labelTituloFecha2 = new javax.swing.JLabel();
+        fieldNombreCliente = new javax.swing.JTextField();
+        labelOrdenID = new javax.swing.JLabel();
 
         frameOrden.setMinimumSize(new java.awt.Dimension(1090, 520));
         frameOrden.setSize(new java.awt.Dimension(1090, 520));
@@ -257,20 +257,20 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         labelTituloForm.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         labelTituloForm.setText("Gestión de órdenes");
 
-        labelUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelUsuario.setText("[labelRol]");
-        labelUsuario.setToolTipText("");
+        labelRol.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelRol.setText("Rol:");
+        labelRol.setToolTipText("");
 
-        labelTituloFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelTituloFecha.setText("[labelFecha-Hora]");
+        labelFechaHora.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelFechaHora.setText("Fecha-Hora:");
 
         buttonAgregarOrden.setBackground(new java.awt.Color(34, 141, 110));
         buttonAgregarOrden.setForeground(new java.awt.Color(255, 255, 255));
-        buttonAgregarOrden.setText("buttonAgregarOrden");
+        buttonAgregarOrden.setText("Agregar orden");
 
-        buttonVolverPanel.setBackground(new java.awt.Color(34, 141, 110));
-        buttonVolverPanel.setForeground(new java.awt.Color(255, 255, 255));
-        buttonVolverPanel.setText("buttonVolver");
+        buttonVolver.setBackground(new java.awt.Color(34, 141, 110));
+        buttonVolver.setForeground(new java.awt.Color(255, 255, 255));
+        buttonVolver.setText("Volver");
 
         tablaOrdenes.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         tablaOrdenes.setModel(new javax.swing.table.DefaultTableModel(
@@ -307,69 +307,69 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
 
         buttonCancelarOrden.setBackground(new java.awt.Color(34, 141, 110));
         buttonCancelarOrden.setForeground(new java.awt.Color(255, 255, 255));
-        buttonCancelarOrden.setText("buttonCancelarOrden");
+        buttonCancelarOrden.setText("Cancelar orden");
 
-        buttonVolverPanel1.setBackground(new java.awt.Color(34, 141, 110));
-        buttonVolverPanel1.setForeground(new java.awt.Color(255, 255, 255));
-        buttonVolverPanel1.setText("buttonModificarOrden");
+        buttonModificarOrden.setBackground(new java.awt.Color(34, 141, 110));
+        buttonModificarOrden.setForeground(new java.awt.Color(255, 255, 255));
+        buttonModificarOrden.setText("Modificar orden");
 
-        labelUsuario3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelUsuario3.setText("[labelNombreUsuario]");
+        labelNombreUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelNombreUsuario.setText("Usuario:");
 
-        labelTituloFecha1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelTituloFecha1.setText("[labelID]");
+        labelID.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelID.setText("ID:");
 
         jLabel6.setText("Cliente:");
 
-        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("fieldNombreCliente");
-        jTextField1.setToolTipText("");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        fieldNombreCliente.setBackground(new java.awt.Color(59, 73, 69));
+        fieldNombreCliente.setForeground(new java.awt.Color(255, 255, 255));
+        fieldNombreCliente.setToolTipText("");
+        fieldNombreCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                fieldNombreClienteActionPerformed(evt);
             }
         });
 
-        labelTituloFecha2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelTituloFecha2.setText("[labelOrdenID]");
+        labelOrdenID.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelOrdenID.setText("Orden ID:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(14, 14, 14)
-                            .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(30, 30, 30)
-                            .addComponent(labelTituloForm))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(43, 43, 43)
-                            .addComponent(buttonAgregarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(12, 12, 12)
-                            .addComponent(buttonVolverPanel1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(buttonCancelarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(51, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelUsuario)
-                    .addComponent(labelUsuario3)
+                    .addComponent(labelRol)
+                    .addComponent(labelNombreUsuario)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(fieldNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelTituloFecha)
-                    .addComponent(labelTituloFecha1)
-                    .addComponent(labelTituloFecha2))
+                    .addComponent(labelFechaHora)
+                    .addComponent(labelID)
+                    .addComponent(labelOrdenID))
                 .addGap(111, 111, 111))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(buttonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(labelTituloForm))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(buttonAgregarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonModificarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonCancelarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -377,28 +377,28 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTituloForm)
-                    .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelUsuario)
+                        .addComponent(labelRol)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(labelUsuario3))
+                        .addComponent(labelNombreUsuario))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelTituloFecha)
+                        .addComponent(labelFechaHora)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(labelTituloFecha1)))
+                        .addComponent(labelID)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(labelTituloFecha2))
-                .addGap(20, 20, 20)
+                        .addComponent(fieldNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelOrdenID))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonVolverPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonModificarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonAgregarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonCancelarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
@@ -407,9 +407,9 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void fieldNombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombreClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_fieldNombreClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -457,11 +457,11 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
     }
 
     public JButton getButtonVolverPanel() {
-        return buttonVolverPanel;
+        return buttonVolver;
     }
 
     public JLabel getLabelTituloFecha() {
-        return labelTituloFecha;
+        return labelFechaHora;
     }
 
     public JLabel getLabelTituloForm() {
@@ -545,10 +545,11 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
     private javax.swing.JButton buttonAgregarProducto;
     private javax.swing.JButton buttonCancelarOrden;
     private javax.swing.JButton buttonEliminarProducto;
+    private javax.swing.JButton buttonModificarOrden;
     private javax.swing.JButton buttonTerminarOrden;
-    private javax.swing.JButton buttonVolverPanel;
-    private javax.swing.JButton buttonVolverPanel1;
+    private javax.swing.JButton buttonVolver;
     private javax.swing.JTextField fieldIdProducto;
+    private javax.swing.JTextField fieldNombreCliente;
     private javax.swing.JFrame frameOrden;
     private javax.swing.JFrame framePago;
     private javax.swing.JLabel jLabel6;
@@ -556,17 +557,16 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel labelFechaHora;
+    private javax.swing.JLabel labelID;
+    private javax.swing.JLabel labelNombreUsuario;
     private javax.swing.JLabel labelOrdenCliente;
+    private javax.swing.JLabel labelOrdenID;
     private javax.swing.JLabel labelOrdenTotal;
-    private javax.swing.JLabel labelTituloFecha;
-    private javax.swing.JLabel labelTituloFecha1;
-    private javax.swing.JLabel labelTituloFecha2;
+    private javax.swing.JLabel labelRol;
     private javax.swing.JLabel labelTituloForm;
     private javax.swing.JLabel labelTituloMenu;
     private javax.swing.JLabel labelTituloOrden;
-    private javax.swing.JLabel labelUsuario;
-    private javax.swing.JLabel labelUsuario3;
     private javax.swing.JLabel labelUsuario5;
     private javax.swing.JTable tablaMenu;
     private javax.swing.JTable tablaOrdenProductos;

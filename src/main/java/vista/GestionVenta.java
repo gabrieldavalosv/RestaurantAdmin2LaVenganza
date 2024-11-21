@@ -53,15 +53,15 @@ public class GestionVenta extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaOrdenes = new javax.swing.JTable();
         labelTituloForm = new javax.swing.JLabel();
-        labelUsuario = new javax.swing.JLabel();
-        labelTituloFecha = new javax.swing.JLabel();
+        labelNombreCliente = new javax.swing.JLabel();
+        labelFechaHora = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        buttonAgregarOrden = new javax.swing.JButton();
-        buttonVolverPanel = new javax.swing.JButton();
-        buttonCancelarOrden = new javax.swing.JButton();
+        buttonPagarConEfectivo = new javax.swing.JButton();
+        buttonCancelarPago = new javax.swing.JButton();
+        buttonPagarConTarjeta = new javax.swing.JButton();
         labelUsuario1 = new javax.swing.JLabel();
         labelTituloFecha1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        fieldMonto = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
         tablaOrdenes1 = new javax.swing.JTable();
         fieldIdOrden = new javax.swing.JTextField();
@@ -292,28 +292,28 @@ public class GestionVenta extends javax.swing.JFrame {
         labelTituloForm.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         labelTituloForm.setText("Gestión de venta");
 
-        labelUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelUsuario.setText("[labelNombreCliente]");
+        labelNombreCliente.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelNombreCliente.setText("Cliente:");
 
-        labelTituloFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelTituloFecha.setText("[labelFecha-Hora]");
+        labelFechaHora.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelFechaHora.setText("Fecha-Hora:");
 
-        buttonAgregarOrden.setBackground(new java.awt.Color(34, 141, 110));
-        buttonAgregarOrden.setForeground(new java.awt.Color(255, 255, 255));
-        buttonAgregarOrden.setText("buttonPagarConEfectivo");
-        buttonAgregarOrden.addActionListener(new java.awt.event.ActionListener() {
+        buttonPagarConEfectivo.setBackground(new java.awt.Color(34, 141, 110));
+        buttonPagarConEfectivo.setForeground(new java.awt.Color(255, 255, 255));
+        buttonPagarConEfectivo.setText("Pagar con efectivo");
+        buttonPagarConEfectivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAgregarOrdenActionPerformed(evt);
+                buttonPagarConEfectivoActionPerformed(evt);
             }
         });
 
-        buttonVolverPanel.setBackground(new java.awt.Color(34, 141, 110));
-        buttonVolverPanel.setForeground(new java.awt.Color(255, 255, 255));
-        buttonVolverPanel.setText("buttonCancelarPago");
+        buttonCancelarPago.setBackground(new java.awt.Color(34, 141, 110));
+        buttonCancelarPago.setForeground(new java.awt.Color(255, 255, 255));
+        buttonCancelarPago.setText("Cancelar pago");
 
-        buttonCancelarOrden.setBackground(new java.awt.Color(34, 141, 110));
-        buttonCancelarOrden.setForeground(new java.awt.Color(255, 255, 255));
-        buttonCancelarOrden.setText("buttonPagarConTarjeta");
+        buttonPagarConTarjeta.setBackground(new java.awt.Color(34, 141, 110));
+        buttonPagarConTarjeta.setForeground(new java.awt.Color(255, 255, 255));
+        buttonPagarConTarjeta.setText("Pagar con tarjeta");
 
         labelUsuario1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelUsuario1.setText("Total a Pagar:");
@@ -321,9 +321,8 @@ public class GestionVenta extends javax.swing.JFrame {
         labelTituloFecha1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelTituloFecha1.setText("ID de Orden:");
 
-        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("fieldMonto");
+        fieldMonto.setBackground(new java.awt.Color(59, 73, 69));
+        fieldMonto.setForeground(new java.awt.Color(255, 255, 255));
 
         tablaOrdenes1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         tablaOrdenes1.setModel(new javax.swing.table.DefaultTableModel(
@@ -360,7 +359,6 @@ public class GestionVenta extends javax.swing.JFrame {
 
         fieldIdOrden.setBackground(new java.awt.Color(59, 73, 69));
         fieldIdOrden.setForeground(new java.awt.Color(255, 255, 255));
-        fieldIdOrden.setText("fieldIDOrden");
         fieldIdOrden.setMaximumSize(new java.awt.Dimension(60, 25));
         fieldIdOrden.setMinimumSize(new java.awt.Dimension(60, 25));
         fieldIdOrden.setPreferredSize(new java.awt.Dimension(60, 25));
@@ -373,14 +371,14 @@ public class GestionVenta extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelUsuario)
+                    .addComponent(labelNombreCliente)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(labelUsuario1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(fieldMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelTituloFecha)
+                    .addComponent(labelFechaHora)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(labelTituloFecha1)
                         .addGap(41, 41, 41)
@@ -391,15 +389,16 @@ public class GestionVenta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(buttonAgregarOrden)
-                        .addGap(3, 3, 3)
-                        .addComponent(buttonCancelarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonPagarConEfectivo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(buttonPagarConTarjeta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonCancelarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(labelTituloForm)
                         .addGap(150, 150, 150)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,13 +407,13 @@ public class GestionVenta extends javax.swing.JFrame {
                 .addComponent(labelTituloForm)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelUsuario)
-                    .addComponent(labelTituloFecha))
+                    .addComponent(labelNombreCliente)
+                    .addComponent(labelFechaHora))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUsuario1)
                     .addComponent(labelTituloFecha1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fieldIdOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -422,18 +421,18 @@ public class GestionVenta extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonAgregarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonCancelarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonCancelarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonPagarConEfectivo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonPagarConTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonAgregarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAgregarOrdenActionPerformed
+    private void buttonPagarConEfectivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPagarConEfectivoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonAgregarOrdenActionPerformed
+    }//GEN-LAST:event_buttonPagarConEfectivoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -475,19 +474,19 @@ public class GestionVenta extends javax.swing.JFrame {
 
     // Getters y Setters de los Widgets
     public JButton getButtonAgregarOrden() {
-        return buttonAgregarOrden;
+        return buttonPagarConEfectivo;
     }
 
     public JButton getButtonCancelarOrden() {
-        return buttonCancelarOrden;
+        return buttonPagarConTarjeta;
     }
 
     public JButton getButtonVolverPanel() {
-        return buttonVolverPanel;
+        return buttonCancelarPago;
     }
 
     public JLabel getLabelTituloFecha() {
-        return labelTituloFecha;
+        return labelFechaHora;
     }
 
     public JLabel getLabelTituloForm() {
@@ -545,14 +544,15 @@ public class GestionVenta extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonAgregarOrden;
     private javax.swing.JButton buttonAgregarProducto;
-    private javax.swing.JButton buttonCancelarOrden;
+    private javax.swing.JButton buttonCancelarPago;
     private javax.swing.JButton buttonEliminarProducto;
+    private javax.swing.JButton buttonPagarConEfectivo;
+    private javax.swing.JButton buttonPagarConTarjeta;
     private javax.swing.JButton buttonTerminarOrden;
-    private javax.swing.JButton buttonVolverPanel;
     private javax.swing.JTextField fieldIdOrden;
     private javax.swing.JTextField fieldIdProducto;
+    private javax.swing.JTextField fieldMonto;
     private javax.swing.JFrame frameOrden;
     private javax.swing.JFrame framePago;
     private javax.swing.JScrollPane jScrollPane1;
@@ -561,15 +561,14 @@ public class GestionVenta extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel labelFechaHora;
+    private javax.swing.JLabel labelNombreCliente;
     private javax.swing.JLabel labelOrdenCliente;
     private javax.swing.JLabel labelOrdenTotal;
-    private javax.swing.JLabel labelTituloFecha;
     private javax.swing.JLabel labelTituloFecha1;
     private javax.swing.JLabel labelTituloForm;
     private javax.swing.JLabel labelTituloMenu;
     private javax.swing.JLabel labelTituloOrden;
-    private javax.swing.JLabel labelUsuario;
     private javax.swing.JLabel labelUsuario1;
     private javax.swing.JLabel labelUsuario5;
     private javax.swing.JTable tablaMenu;

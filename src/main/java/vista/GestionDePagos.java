@@ -32,8 +32,8 @@ public class GestionDePagos extends javax.swing.JFrame {
     private void initComponents() {
 
         jSlider1 = new javax.swing.JSlider();
-        labelCliente = new javax.swing.JLabel();
-        labelFecha = new javax.swing.JLabel();
+        labelNombreCliente = new javax.swing.JLabel();
+        labelFechaHora = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         fieldMonto = new javax.swing.JTextField();
         labelTotal = new javax.swing.JLabel();
@@ -44,7 +44,7 @@ public class GestionDePagos extends javax.swing.JFrame {
         buttonCancelarPago = new javax.swing.JButton();
         comboboxMetodos = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        fieldIDOrden = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,19 +52,18 @@ public class GestionDePagos extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(425, 224));
         setSize(new java.awt.Dimension(425, 224));
 
-        labelCliente.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelCliente.setText("[labelNombreCliente]");
+        labelNombreCliente.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelNombreCliente.setText("Cliente:");
 
-        labelFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelFecha.setText("[labelFecha-Hora]");
-        labelFecha.setToolTipText("");
+        labelFechaHora.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelFechaHora.setText("Fecha-Hora:");
+        labelFechaHora.setToolTipText("");
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel6.setText("Monto:");
 
         fieldMonto.setBackground(new java.awt.Color(59, 73, 69));
         fieldMonto.setForeground(new java.awt.Color(255, 255, 255));
-        fieldMonto.setText("fieldMonto");
 
         labelTotal.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelTotal.setText("Total a Pagar:");
@@ -112,9 +111,8 @@ public class GestionDePagos extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel7.setText("Método");
 
-        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("fieldIDOrden");
+        fieldIDOrden.setBackground(new java.awt.Color(59, 73, 69));
+        fieldIDOrden.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,9 +122,9 @@ public class GestionDePagos extends javax.swing.JFrame {
                 .addGap(80, 80, 80)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelCliente)
+                        .addComponent(labelNombreCliente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(labelFecha)
+                        .addComponent(labelFechaHora)
                         .addGap(106, 106, 106))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -154,7 +152,7 @@ public class GestionDePagos extends javax.swing.JFrame {
                                         .addGap(220, 220, 220)
                                         .addComponent(labeldOrden)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(fieldIDOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 90, Short.MAX_VALUE))))
             .addComponent(jSeparator1)
             .addGroup(layout.createSequentialGroup()
@@ -169,8 +167,8 @@ public class GestionDePagos extends javax.swing.JFrame {
                 .addComponent(labelTituloForm)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelCliente)
-                    .addComponent(labelFecha))
+                    .addComponent(labelNombreCliente)
+                    .addComponent(labelFechaHora))
                 .addGap(22, 22, 22)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +190,7 @@ public class GestionDePagos extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelTotal)
                             .addComponent(labeldOrden)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(fieldIDOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -264,11 +262,11 @@ public class GestionDePagos extends javax.swing.JFrame {
     }
 
     public JLabel getLabelCliente() {
-        return labelCliente;
+        return labelNombreCliente;
     }
 
     public JLabel getLabelFecha() {
-        return labelFecha;
+        return labelFechaHora;
     }
 
     public JLabel getLabelTituloForm() {
@@ -292,14 +290,14 @@ public class GestionDePagos extends javax.swing.JFrame {
     private javax.swing.JButton buttonGenerarRecibo;
     private javax.swing.JButton buttonProcesarPago;
     private javax.swing.JComboBox<String> comboboxMetodos;
+    private javax.swing.JTextField fieldIDOrden;
     private javax.swing.JTextField fieldMonto;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSlider jSlider1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel labelCliente;
-    private javax.swing.JLabel labelFecha;
+    private javax.swing.JLabel labelFechaHora;
+    private javax.swing.JLabel labelNombreCliente;
     private javax.swing.JLabel labelTituloForm;
     private javax.swing.JLabel labelTotal;
     private javax.swing.JLabel labeldOrden;

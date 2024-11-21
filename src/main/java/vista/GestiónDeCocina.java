@@ -30,20 +30,20 @@ public class GestiónDeCocina extends javax.swing.JFrame {
         jProgressBar1 = new javax.swing.JProgressBar();
         jScrollPane1 = new javax.swing.JScrollPane();
         jEditorPane1 = new javax.swing.JEditorPane();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        labelNombreUsuario = new javax.swing.JLabel();
+        labelFechaHora = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboboxFiltros = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        fieldBusqueda = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
+        buttonActualizar = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        buttonEnPreparación = new javax.swing.JToggleButton();
+        buttonTerminada = new javax.swing.JToggleButton();
         labelTituloForm = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaOrdenes = new javax.swing.JTable();
@@ -54,16 +54,16 @@ public class GestiónDeCocina extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("[labelNombreUsuario]");
+        labelNombreUsuario.setText("Usuario:");
 
-        jLabel3.setText("[labelFecha-Hora]");
+        labelFechaHora.setText("Fecha-Hora:");
 
-        jComboBox1.setBackground(new java.awt.Color(59, 73, 69));
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estado: Todos" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        comboboxFiltros.setBackground(new java.awt.Color(59, 73, 69));
+        comboboxFiltros.setForeground(new java.awt.Color(255, 255, 255));
+        comboboxFiltros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estado: Todos" }));
+        comboboxFiltros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                comboboxFiltrosActionPerformed(evt);
             }
         });
 
@@ -71,30 +71,29 @@ public class GestiónDeCocina extends javax.swing.JFrame {
 
         jLabel5.setText("Buscar:");
 
-        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("fieldBusqueda");
+        fieldBusqueda.setBackground(new java.awt.Color(59, 73, 69));
+        fieldBusqueda.setForeground(new java.awt.Color(255, 255, 255));
 
-        jButton2.setBackground(new java.awt.Color(34, 141, 110));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("buttonActualizar");
-        jButton2.setToolTipText("");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonActualizar.setBackground(new java.awt.Color(34, 141, 110));
+        buttonActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonActualizar.setText("Actualizar");
+        buttonActualizar.setToolTipText("");
+        buttonActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                buttonActualizarActionPerformed(evt);
             }
         });
 
         jLabel10.setText("Detalles de la orden seleccionada");
 
-        jToggleButton1.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("buttonEnPreparación");
+        buttonEnPreparación.setBackground(new java.awt.Color(34, 141, 110));
+        buttonEnPreparación.setForeground(new java.awt.Color(255, 255, 255));
+        buttonEnPreparación.setText("En preparación");
 
-        jToggleButton2.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton2.setText("buttonTerminada");
-        jToggleButton2.setToolTipText("");
+        buttonTerminada.setBackground(new java.awt.Color(34, 141, 110));
+        buttonTerminada.setForeground(new java.awt.Color(255, 255, 255));
+        buttonTerminada.setText("Terminada");
+        buttonTerminada.setToolTipText("");
 
         labelTituloForm.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         labelTituloForm.setText("Gestión de cocina");
@@ -136,9 +135,9 @@ public class GestiónDeCocina extends javax.swing.JFrame {
                         .addGap(189, 189, 189))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(62, 62, 62)
-                .addComponent(jLabel2)
+                .addComponent(labelNombreUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addComponent(labelFechaHora)
                 .addGap(128, 128, 128))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -154,22 +153,22 @@ public class GestiónDeCocina extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(comboboxFiltros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(55, 55, 55)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(fieldBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(jToggleButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jToggleButton2))
+                        .addGap(167, 167, 167)
+                        .addComponent(buttonEnPreparación)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonTerminada))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(jButton2)))
+                        .addGap(231, 231, 231)
+                        .addComponent(buttonActualizar)))
                 .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -184,9 +183,9 @@ public class GestiónDeCocina extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comboboxFiltros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(fieldBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -196,31 +195,31 @@ public class GestiónDeCocina extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addGap(14, 14, 14)
+                            .addComponent(labelNombreUsuario)
+                            .addComponent(labelFechaHora))))
+                .addGap(8, 8, 8)
+                .addComponent(buttonActualizar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton1)
-                    .addComponent(jToggleButton2))
+                    .addComponent(buttonEnPreparación)
+                    .addComponent(buttonTerminada))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void comboboxFiltrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboboxFiltrosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_comboboxFiltrosActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void buttonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_buttonActualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,13 +258,14 @@ public class GestiónDeCocina extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonActualizar;
+    private javax.swing.JToggleButton buttonEnPreparación;
+    private javax.swing.JToggleButton buttonTerminada;
+    private javax.swing.JComboBox<String> comboboxFiltros;
+    private javax.swing.JTextField fieldBusqueda;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JProgressBar jProgressBar1;
@@ -275,9 +275,8 @@ public class GestiónDeCocina extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JLabel labelFechaHora;
+    private javax.swing.JLabel labelNombreUsuario;
     private javax.swing.JLabel labelTituloForm;
     private javax.swing.JTable tablaOrdenes;
     // End of variables declaration//GEN-END:variables

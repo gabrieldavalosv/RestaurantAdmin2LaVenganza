@@ -27,24 +27,24 @@ public class GestiónDeCombos extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        labelNombreUsuario = new javax.swing.JLabel();
+        labelFechaHora = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
+        fieldNombreProducto = new javax.swing.JTextField();
+        buttonBuscar = new javax.swing.JToggleButton();
+        buttonActualizar = new javax.swing.JToggleButton();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
-        jToggleButton10 = new javax.swing.JToggleButton();
-        jToggleButton11 = new javax.swing.JToggleButton();
+        buttonAgregarProducto = new javax.swing.JToggleButton();
+        buttonQuitarProducto = new javax.swing.JToggleButton();
+        buttonEliminarCombo = new javax.swing.JToggleButton();
+        buttonGuardarCambios = new javax.swing.JToggleButton();
+        buttonCancelar = new javax.swing.JToggleButton();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
-        jToggleButton12 = new javax.swing.JToggleButton();
+        buttonAgregarCombo = new javax.swing.JToggleButton();
         labelTituloForm = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaOrdenes = new javax.swing.JTable();
@@ -62,60 +62,59 @@ public class GestiónDeCombos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("[labelNombreUsuario]");
+        labelNombreUsuario.setText("Usuario:");
 
-        jLabel3.setText("[labelFecha-Hora]");
-        jLabel3.setToolTipText("");
+        labelFechaHora.setText("Fecha-Hora:");
+        labelFechaHora.setToolTipText("");
 
         jLabel6.setText("Buscar Producto:");
 
-        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("fieldNombreProducto");
+        fieldNombreProducto.setBackground(new java.awt.Color(59, 73, 69));
+        fieldNombreProducto.setForeground(new java.awt.Color(255, 255, 255));
 
-        jToggleButton5.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton5.setText("buttonBuscar");
+        buttonBuscar.setBackground(new java.awt.Color(34, 141, 110));
+        buttonBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonBuscar.setText("Buscar");
 
-        jToggleButton6.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton6.setText("buttonActualizar");
+        buttonActualizar.setBackground(new java.awt.Color(34, 141, 110));
+        buttonActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonActualizar.setText("Actualizar");
 
         jLabel5.setText("Detalles y edición del combo seleccionado ");
 
-        jToggleButton7.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton7.setText("buttonAgregarProducto");
+        buttonAgregarProducto.setBackground(new java.awt.Color(34, 141, 110));
+        buttonAgregarProducto.setForeground(new java.awt.Color(255, 255, 255));
+        buttonAgregarProducto.setText("Agregar producto");
 
-        jToggleButton8.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton8.setText("buttonQuitarProducto");
-        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+        buttonQuitarProducto.setBackground(new java.awt.Color(34, 141, 110));
+        buttonQuitarProducto.setForeground(new java.awt.Color(255, 255, 255));
+        buttonQuitarProducto.setText("Quitar producto");
+        buttonQuitarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton8ActionPerformed(evt);
+                buttonQuitarProductoActionPerformed(evt);
             }
         });
 
-        jToggleButton9.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton9.setText("buttonEliminarCombo");
+        buttonEliminarCombo.setBackground(new java.awt.Color(34, 141, 110));
+        buttonEliminarCombo.setForeground(new java.awt.Color(255, 255, 255));
+        buttonEliminarCombo.setText("Eliminar combo");
 
-        jToggleButton10.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton10.setText("buttonGuardarCambios");
+        buttonGuardarCambios.setBackground(new java.awt.Color(34, 141, 110));
+        buttonGuardarCambios.setForeground(new java.awt.Color(255, 255, 255));
+        buttonGuardarCambios.setText("Guardar cambios");
 
-        jToggleButton11.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton11.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton11.setText("buttonCancelar");
+        buttonCancelar.setBackground(new java.awt.Color(34, 141, 110));
+        buttonCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonCancelar.setText("Cancelar");
 
         jLabel11.setText("Agregar nuevo combo");
 
-        jToggleButton12.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton12.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton12.setText("buttonAgregarCombo");
-        jToggleButton12.addActionListener(new java.awt.event.ActionListener() {
+        buttonAgregarCombo.setBackground(new java.awt.Color(34, 141, 110));
+        buttonAgregarCombo.setForeground(new java.awt.Color(255, 255, 255));
+        buttonAgregarCombo.setText("Agregar combo");
+        buttonAgregarCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton12ActionPerformed(evt);
+                buttonAgregarComboActionPerformed(evt);
             }
         });
 
@@ -147,9 +146,9 @@ public class GestiónDeCombos extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(53, 53, 53)
-                .addComponent(jLabel2)
+                .addComponent(labelNombreUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addComponent(labelFechaHora)
                 .addGap(118, 118, 118))
             .addComponent(jSeparator1)
             .addComponent(jSeparator2)
@@ -158,22 +157,22 @@ public class GestiónDeCombos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addComponent(jToggleButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton6))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jToggleButton10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton9)
+                        .addGap(193, 193, 193)
+                        .addComponent(buttonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton11))
+                        .addComponent(buttonActualizar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(jToggleButton7)
+                        .addGap(104, 104, 104)
+                        .addComponent(buttonGuardarCambios)
+                        .addGap(12, 12, 12)
+                        .addComponent(buttonEliminarCombo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonCancelar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(buttonAgregarProducto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton8))
+                        .addComponent(buttonQuitarProducto))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addComponent(jLabel5))
@@ -181,7 +180,7 @@ public class GestiónDeCombos extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(fieldNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -190,12 +189,12 @@ public class GestiónDeCombos extends javax.swing.JFrame {
                         .addComponent(labelTituloForm))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(214, 214, 214)
-                        .addComponent(jLabel11)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(buttonAgregarCombo))
+                            .addComponent(jLabel11))))
                 .addContainerGap(50, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButton12)
-                .addGap(198, 198, 198))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,18 +203,18 @@ public class GestiónDeCombos extends javax.swing.JFrame {
                 .addComponent(labelTituloForm)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
+                    .addComponent(labelFechaHora)
+                    .addComponent(labelNombreUsuario))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldNombreProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleButton5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jToggleButton6, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonBuscar)
+                    .addComponent(buttonActualizar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
@@ -225,33 +224,33 @@ public class GestiónDeCombos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleButton7)
-                    .addComponent(jToggleButton8))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonAgregarProducto)
+                    .addComponent(buttonQuitarProducto))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton10)
-                    .addComponent(jToggleButton9)
-                    .addComponent(jToggleButton11))
+                    .addComponent(buttonGuardarCambios)
+                    .addComponent(buttonEliminarCombo)
+                    .addComponent(buttonCancelar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton12)
+                .addComponent(buttonAgregarCombo)
                 .addGap(20, 20, 20))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+    private void buttonQuitarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonQuitarProductoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton8ActionPerformed
+    }//GEN-LAST:event_buttonQuitarProductoActionPerformed
 
-    private void jToggleButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton12ActionPerformed
+    private void buttonAgregarComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAgregarComboActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton12ActionPerformed
+    }//GEN-LAST:event_buttonAgregarComboActionPerformed
 
     /**
      * @param args the command line arguments
@@ -289,10 +288,17 @@ public class GestiónDeCombos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton buttonActualizar;
+    private javax.swing.JToggleButton buttonAgregarCombo;
+    private javax.swing.JToggleButton buttonAgregarProducto;
+    private javax.swing.JToggleButton buttonBuscar;
+    private javax.swing.JToggleButton buttonCancelar;
+    private javax.swing.JToggleButton buttonEliminarCombo;
+    private javax.swing.JToggleButton buttonGuardarCambios;
+    private javax.swing.JToggleButton buttonQuitarProducto;
+    private javax.swing.JTextField fieldNombreProducto;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane2;
@@ -300,15 +306,8 @@ public class GestiónDeCombos extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton10;
-    private javax.swing.JToggleButton jToggleButton11;
-    private javax.swing.JToggleButton jToggleButton12;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
+    private javax.swing.JLabel labelFechaHora;
+    private javax.swing.JLabel labelNombreUsuario;
     private javax.swing.JLabel labelTituloForm;
     private javax.swing.JTable tablaOrdenes;
     // End of variables declaration//GEN-END:variables

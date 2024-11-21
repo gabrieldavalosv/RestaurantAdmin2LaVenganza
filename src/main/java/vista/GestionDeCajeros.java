@@ -26,21 +26,21 @@ public class GestionDeCajeros extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        labelNombreUsuario = new javax.swing.JLabel();
+        labelFechaHora = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        fieldNombreCajero = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
+        buttonGuardarCambios = new javax.swing.JToggleButton();
+        buttonEliminarCajero = new javax.swing.JToggleButton();
+        buttonBuscar = new javax.swing.JToggleButton();
+        buttonActualizar = new javax.swing.JToggleButton();
         jSeparator3 = new javax.swing.JSeparator();
-        jToggleButton7 = new javax.swing.JToggleButton();
+        buttonCancelar = new javax.swing.JToggleButton();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
-        jToggleButton8 = new javax.swing.JToggleButton();
+        buttonAgregarCajero = new javax.swing.JToggleButton();
         labelTituloForm = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaOrdenes = new javax.swing.JTable();
@@ -50,73 +50,74 @@ public class GestionDeCajeros extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel2.setText("[labelNombreUsuario]");
+        labelNombreUsuario.setText("Usuario:");
 
-        jLabel3.setText("[labelFecha-Hora]");
+        labelFechaHora.setText("Fecha-Hora:");
+        labelFechaHora.setToolTipText("");
 
         jLabel6.setText("Buscar cajero:");
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("fieldNombreCajero");
-        jTextField1.setToolTipText("");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        fieldNombreCajero.setEditable(false);
+        fieldNombreCajero.setBackground(new java.awt.Color(59, 73, 69));
+        fieldNombreCajero.setForeground(new java.awt.Color(255, 255, 255));
+        fieldNombreCajero.setToolTipText("");
+        fieldNombreCajero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                fieldNombreCajeroActionPerformed(evt);
             }
         });
 
         jLabel11.setText("Detalles y edición del cajero seleccionado");
 
-        jToggleButton3.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton3.setText("buttonGuardarCambios");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonGuardarCambios.setBackground(new java.awt.Color(34, 141, 110));
+        buttonGuardarCambios.setForeground(new java.awt.Color(255, 255, 255));
+        buttonGuardarCambios.setText("Guardar cambios");
+        buttonGuardarCambios.setToolTipText("");
+        buttonGuardarCambios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                buttonGuardarCambiosActionPerformed(evt);
             }
         });
 
-        jToggleButton4.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton4.setText("buttonEliminarCajero");
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+        buttonEliminarCajero.setBackground(new java.awt.Color(34, 141, 110));
+        buttonEliminarCajero.setForeground(new java.awt.Color(255, 255, 255));
+        buttonEliminarCajero.setText("Eliminar cajero");
+        buttonEliminarCajero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
+                buttonEliminarCajeroActionPerformed(evt);
             }
         });
 
-        jToggleButton5.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton5.setText("buttonBuscar");
-        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
+        buttonBuscar.setBackground(new java.awt.Color(34, 141, 110));
+        buttonBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonBuscar.setText("Buscar");
+        buttonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton5ActionPerformed(evt);
+                buttonBuscarActionPerformed(evt);
             }
         });
 
-        jToggleButton6.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton6.setText("buttonActualizar");
+        buttonActualizar.setBackground(new java.awt.Color(34, 141, 110));
+        buttonActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonActualizar.setText("Actualizar");
 
-        jToggleButton7.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton7.setText("buttonCancelar");
-        jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
+        buttonCancelar.setBackground(new java.awt.Color(34, 141, 110));
+        buttonCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonCancelar.setText("Cancelar");
+        buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton7ActionPerformed(evt);
+                buttonCancelarActionPerformed(evt);
             }
         });
 
         jLabel12.setText("Agregar nuevo cajero");
 
-        jToggleButton8.setBackground(new java.awt.Color(34, 141, 110));
-        jToggleButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton8.setText("buttonAgregarCajero");
-        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+        buttonAgregarCajero.setBackground(new java.awt.Color(34, 141, 110));
+        buttonAgregarCajero.setForeground(new java.awt.Color(255, 255, 255));
+        buttonAgregarCajero.setText("buttonAgregarCajero");
+        buttonAgregarCajero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton8ActionPerformed(evt);
+                buttonAgregarCajeroActionPerformed(evt);
             }
         });
 
@@ -157,45 +158,31 @@ public class GestionDeCajeros extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(57, 57, 57)
-                                        .addComponent(jToggleButton3)
+                                        .addGap(97, 97, 97)
+                                        .addComponent(buttonGuardarCambios)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton4)
+                                        .addComponent(buttonEliminarCajero)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton7)
+                                        .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE))
                                     .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(labelTituloForm)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelTituloForm)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(buttonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonActualizar)))
                         .addGap(199, 199, 199))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addComponent(jLabel2)
+                .addComponent(labelNombreUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(71, 71, 71))
+                .addComponent(labelFechaHora)
+                .addGap(103, 103, 103))
             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(jToggleButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton6))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(171, 171, 171)
-                        .addComponent(jLabel11))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(224, 224, 224)
-                        .addComponent(jLabel12)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,29 +190,40 @@ public class GestionDeCajeros extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(56, 56, 56))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jToggleButton8)
+                        .addComponent(buttonAgregarCajero)
                         .addGap(209, 209, 209))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(fieldNombreCajero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(jLabel11))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(224, 224, 224)
+                        .addComponent(jLabel12)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(labelTituloForm)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jToggleButton6)
-                            .addComponent(jToggleButton5)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel3)))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelNombreUsuario)
+                    .addComponent(labelFechaHora))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(fieldNombreCajero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonActualizar)
+                    .addComponent(buttonBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -236,44 +234,44 @@ public class GestionDeCajeros extends javax.swing.JFrame {
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton3)
-                    .addComponent(jToggleButton4)
-                    .addComponent(jToggleButton7))
+                    .addComponent(buttonGuardarCambios)
+                    .addComponent(buttonEliminarCajero)
+                    .addComponent(buttonCancelar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton8)
+                .addComponent(buttonAgregarCajero)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void buttonGuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGuardarCambiosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_buttonGuardarCambiosActionPerformed
 
-    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
+    private void buttonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton5ActionPerformed
+    }//GEN-LAST:event_buttonBuscarActionPerformed
 
-    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
+    private void buttonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton7ActionPerformed
+    }//GEN-LAST:event_buttonCancelarActionPerformed
 
-    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+    private void buttonAgregarCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAgregarCajeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton8ActionPerformed
+    }//GEN-LAST:event_buttonAgregarCajeroActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void fieldNombreCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombreCajeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_fieldNombreCajeroActionPerformed
 
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+    private void buttonEliminarCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEliminarCajeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
+    }//GEN-LAST:event_buttonEliminarCajeroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,22 +310,22 @@ public class GestionDeCajeros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton buttonActualizar;
+    private javax.swing.JToggleButton buttonAgregarCajero;
+    private javax.swing.JToggleButton buttonBuscar;
+    private javax.swing.JToggleButton buttonCancelar;
+    private javax.swing.JToggleButton buttonEliminarCajero;
+    private javax.swing.JToggleButton buttonGuardarCambios;
+    private javax.swing.JTextField fieldNombreCajero;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
+    private javax.swing.JLabel labelFechaHora;
+    private javax.swing.JLabel labelNombreUsuario;
     private javax.swing.JLabel labelTituloForm;
     private javax.swing.JTable tablaOrdenes;
     // End of variables declaration//GEN-END:variables
