@@ -45,6 +45,8 @@ public class PanelPrincipal extends javax.swing.JFrame {
 
         labelRol.setText("[Rol: Administrador]");
 
+        buttonCerrarSesion.setBackground(new java.awt.Color(34, 141, 110));
+        buttonCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
         buttonCerrarSesion.setText("Cerrar sesión");
         buttonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,6 +54,8 @@ public class PanelPrincipal extends javax.swing.JFrame {
             }
         });
 
+        buttonGestionarOrdenes.setBackground(new java.awt.Color(34, 141, 110));
+        buttonGestionarOrdenes.setForeground(new java.awt.Color(255, 255, 255));
         buttonGestionarOrdenes.setText("Gestión de órdenes");
         buttonGestionarOrdenes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,6 +63,8 @@ public class PanelPrincipal extends javax.swing.JFrame {
             }
         });
 
+        buttonGestionarVentas.setBackground(new java.awt.Color(34, 141, 110));
+        buttonGestionarVentas.setForeground(new java.awt.Color(255, 255, 255));
         buttonGestionarVentas.setText("Registro de ventas");
         buttonGestionarVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +72,8 @@ public class PanelPrincipal extends javax.swing.JFrame {
             }
         });
 
+        buttonGestionarCajeros.setBackground(new java.awt.Color(34, 141, 110));
+        buttonGestionarCajeros.setForeground(new java.awt.Color(255, 255, 255));
         buttonGestionarCajeros.setText("Gestión de cajeros");
         buttonGestionarCajeros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -62,6 +62,8 @@ public class GestionDePagos extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel6.setText("Monto:");
 
+        fieldMonto.setBackground(new java.awt.Color(59, 73, 69));
+        fieldMonto.setForeground(new java.awt.Color(255, 255, 255));
         fieldMonto.setText("fieldMonto");
 
         labelTotal.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -73,6 +75,8 @@ public class GestionDePagos extends javax.swing.JFrame {
         labelTituloForm.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         labelTituloForm.setText("Gestión de pago");
 
+        buttonProcesarPago.setBackground(new java.awt.Color(34, 141, 110));
+        buttonProcesarPago.setForeground(new java.awt.Color(255, 255, 255));
         buttonProcesarPago.setText("Procesar pago");
         buttonProcesarPago.setMaximumSize(new java.awt.Dimension(100, 25));
         buttonProcesarPago.addActionListener(new java.awt.event.ActionListener() {
@@ -81,6 +85,8 @@ public class GestionDePagos extends javax.swing.JFrame {
             }
         });
 
+        buttonGenerarRecibo.setBackground(new java.awt.Color(34, 141, 110));
+        buttonGenerarRecibo.setForeground(new java.awt.Color(255, 255, 255));
         buttonGenerarRecibo.setText("GenerarRecibo");
         buttonGenerarRecibo.setMaximumSize(new java.awt.Dimension(100, 25));
         buttonGenerarRecibo.addActionListener(new java.awt.event.ActionListener() {
@@ -89,6 +95,8 @@ public class GestionDePagos extends javax.swing.JFrame {
             }
         });
 
+        buttonCancelarPago.setBackground(new java.awt.Color(34, 141, 110));
+        buttonCancelarPago.setForeground(new java.awt.Color(255, 255, 255));
         buttonCancelarPago.setText("Cancelar Pago");
         buttonCancelarPago.setMaximumSize(new java.awt.Dimension(100, 25));
         buttonCancelarPago.addActionListener(new java.awt.event.ActionListener() {
@@ -97,11 +105,15 @@ public class GestionDePagos extends javax.swing.JFrame {
             }
         });
 
+        comboboxMetodos.setBackground(new java.awt.Color(59, 73, 69));
+        comboboxMetodos.setForeground(new java.awt.Color(255, 255, 255));
         comboboxMetodos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Tarjeta" }));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel7.setText("Método");
 
+        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("fieldIDOrden");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

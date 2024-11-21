@@ -264,8 +264,12 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         labelTituloFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelTituloFecha.setText("[labelFecha-Hora]");
 
+        buttonAgregarOrden.setBackground(new java.awt.Color(34, 141, 110));
+        buttonAgregarOrden.setForeground(new java.awt.Color(255, 255, 255));
         buttonAgregarOrden.setText("buttonAgregarOrden");
 
+        buttonVolverPanel.setBackground(new java.awt.Color(34, 141, 110));
+        buttonVolverPanel.setForeground(new java.awt.Color(255, 255, 255));
         buttonVolverPanel.setText("buttonVolver");
 
         tablaOrdenes.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -301,8 +305,12 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
             tablaOrdenes.getColumnModel().getColumn(3).setMaxWidth(125);
         }
 
+        buttonCancelarOrden.setBackground(new java.awt.Color(34, 141, 110));
+        buttonCancelarOrden.setForeground(new java.awt.Color(255, 255, 255));
         buttonCancelarOrden.setText("buttonCancelarOrden");
 
+        buttonVolverPanel1.setBackground(new java.awt.Color(34, 141, 110));
+        buttonVolverPanel1.setForeground(new java.awt.Color(255, 255, 255));
         buttonVolverPanel1.setText("buttonModificarOrden");
 
         labelUsuario3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -313,6 +321,8 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
 
         jLabel6.setText("Cliente:");
 
+        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("fieldNombreCliente");
         jTextField1.setToolTipText("");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {

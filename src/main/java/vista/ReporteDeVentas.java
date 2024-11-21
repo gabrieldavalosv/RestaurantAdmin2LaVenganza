@@ -50,6 +50,8 @@ public class ReporteDeVentas extends javax.swing.JFrame {
 
         jLabel4.setText("Rango de fecha:");
 
+        jComboBox1.setBackground(new java.awt.Color(59, 73, 69));
+        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Desde: [ / / ]" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +59,8 @@ public class ReporteDeVentas extends javax.swing.JFrame {
             }
         });
 
+        jComboBox3.setBackground(new java.awt.Color(59, 73, 69));
+        jComboBox3.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hasta: [ / / ]" }));
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +70,8 @@ public class ReporteDeVentas extends javax.swing.JFrame {
 
         jLabel5.setText("Cajero:");
 
+        jComboBox4.setBackground(new java.awt.Color(59, 73, 69));
+        jComboBox4.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +81,8 @@ public class ReporteDeVentas extends javax.swing.JFrame {
 
         jLabel10.setText("Estado de orden:");
 
+        jComboBox5.setBackground(new java.awt.Color(59, 73, 69));
+        jComboBox5.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos" }));
         jComboBox5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +90,8 @@ public class ReporteDeVentas extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton1.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton1.setText("buttonGenerarReporte");
 
         tablaOrdenes.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N

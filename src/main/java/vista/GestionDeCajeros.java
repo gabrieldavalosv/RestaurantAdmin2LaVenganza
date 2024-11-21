@@ -46,6 +46,9 @@ public class GestionDeCajeros extends javax.swing.JFrame {
         tablaOrdenes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAutoRequestFocus(false);
+        setBackground(new java.awt.Color(0, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel2.setText("[labelNombreUsuario]");
 
@@ -53,6 +56,9 @@ public class GestionDeCajeros extends javax.swing.JFrame {
 
         jLabel6.setText("Buscar cajero:");
 
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("fieldNombreCajero");
         jTextField1.setToolTipText("");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -63,6 +69,8 @@ public class GestionDeCajeros extends javax.swing.JFrame {
 
         jLabel11.setText("Detalles y edición del cajero seleccionado");
 
+        jToggleButton3.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton3.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton3.setText("buttonGuardarCambios");
         jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,6 +78,8 @@ public class GestionDeCajeros extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton4.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton4.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton4.setText("buttonEliminarCajero");
         jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +87,8 @@ public class GestionDeCajeros extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton5.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton5.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton5.setText("buttonBuscar");
         jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,8 +96,12 @@ public class GestionDeCajeros extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton6.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton6.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton6.setText("buttonActualizar");
 
+        jToggleButton7.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton7.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton7.setText("buttonCancelar");
         jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +111,8 @@ public class GestionDeCajeros extends javax.swing.JFrame {
 
         jLabel12.setText("Agregar nuevo cajero");
 
+        jToggleButton8.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton8.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton8.setText("buttonAgregarCajero");
         jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +140,7 @@ public class GestionDeCajeros extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        tablaOrdenes.setShowVerticalLines(true);
         jScrollPane2.setViewportView(tablaOrdenes);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -158,10 +177,6 @@ public class GestionDeCajeros extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(71, 71, 71))
             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(59, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -172,18 +187,24 @@ public class GestionDeCajeros extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(171, 171, 171)
                         .addComponent(jLabel11))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(224, 224, 224)
-                        .addComponent(jLabel12))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(212, 212, 212)
-                        .addComponent(jToggleButton8)))
+                        .addComponent(jLabel12)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(59, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jToggleButton8)
+                        .addGap(209, 209, 209))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,10 +216,10 @@ public class GestionDeCajeros extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jToggleButton6)
                             .addComponent(jToggleButton5)))

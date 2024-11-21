@@ -70,6 +70,8 @@ public class GestionDeVentas extends javax.swing.JFrame {
 
         jLabel4.setText("Filtros:");
 
+        jComboBox1.setBackground(new java.awt.Color(59, 73, 69));
+        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Desde: [ / / ]" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +79,8 @@ public class GestionDeVentas extends javax.swing.JFrame {
             }
         });
 
+        jComboBox3.setBackground(new java.awt.Color(59, 73, 69));
+        jComboBox3.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hasta: [ / / ]" }));
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,6 +92,8 @@ public class GestionDeVentas extends javax.swing.JFrame {
 
         jLabel10.setText("Estado:");
 
+        jComboBox4.setBackground(new java.awt.Color(59, 73, 69));
+        jComboBox4.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +101,8 @@ public class GestionDeVentas extends javax.swing.JFrame {
             }
         });
 
+        jComboBox5.setBackground(new java.awt.Color(59, 73, 69));
+        jComboBox5.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos" }));
         jComboBox5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +110,8 @@ public class GestionDeVentas extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton3.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton3.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton3.setText("buttonBuscar");
         jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,12 +119,18 @@ public class GestionDeVentas extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton4.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton4.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton4.setText("buttonActualizar");
 
         jLabel11.setText("Detalles de la orden seleccionada");
 
+        jToggleButton5.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton5.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton5.setText("buttonGenerarComprobante");
 
+        jToggleButton6.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton6.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton6.setText("buttonCancelarVenta");
 
         tablaOrdenes.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -226,8 +242,7 @@ public class GestionDeVentas extends javax.swing.JFrame {
                         .addGap(63, 63, 63)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel3))))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton3)

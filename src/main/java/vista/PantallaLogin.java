@@ -55,6 +55,8 @@ public class PantallaLogin extends javax.swing.JFrame {
             }
         });
 
+        buttonIniciarSesion.setBackground(new java.awt.Color(34, 141, 110));
+        buttonIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
         buttonIniciarSesion.setText("Iniciar sesión");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

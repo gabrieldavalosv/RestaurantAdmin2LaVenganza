@@ -58,6 +58,8 @@ public class GestionDeProductos extends javax.swing.JFrame {
 
         jLabel4.setText("Categoría:");
 
+        jComboBox1.setBackground(new java.awt.Color(59, 73, 69));
+        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,18 +69,30 @@ public class GestionDeProductos extends javax.swing.JFrame {
 
         jLabel6.setText("Buscar Producto:");
 
+        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("fieldNombreProducto");
 
+        jButton1.setBackground(new java.awt.Color(34, 141, 110));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("buttonMostrarDisponibles");
 
+        jToggleButton5.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton5.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton5.setText("buttonBuscar");
 
+        jToggleButton6.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton6.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton6.setText("buttonActualizar");
 
         jLabel5.setText("Detalles y edición del producto seleccionado");
 
+        jToggleButton7.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton7.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton7.setText("buttonGuardarCambios");
 
+        jToggleButton8.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton8.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton8.setText("buttonEliminarProducto");
         jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,10 +100,14 @@ public class GestionDeProductos extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton9.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton9.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton9.setText("buttonCancelar");
 
         jLabel11.setText("Agregar nuevo producto");
 
+        jToggleButton10.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton10.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton10.setText("buttonAgregarProducto");
         jToggleButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

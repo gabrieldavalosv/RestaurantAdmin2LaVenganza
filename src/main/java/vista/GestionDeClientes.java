@@ -49,16 +49,23 @@ public class GestionDeClientes extends javax.swing.JFrame {
 
         jLabel6.setText("Buscar cliente:");
 
+        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("fieldNombreCliente");
 
+        jToggleButton5.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton5.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton5.setText("buttonBuscar");
 
+        jToggleButton6.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton6.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton6.setText("buttonActualizar");
 
         jLabel5.setText("Detalles del cliente seleccionado");
 
+        jButton1.setBackground(new java.awt.Color(34, 141, 110));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("buttonAgregarNuevoCliente");
-        jButton1.setActionCommand("buttonAgregarNuevoCliente");
 
         tablaOrdenes.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         tablaOrdenes.setModel(new javax.swing.table.DefaultTableModel(

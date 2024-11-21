@@ -69,16 +69,26 @@ public class GestiónDeCombos extends javax.swing.JFrame {
 
         jLabel6.setText("Buscar Producto:");
 
+        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("fieldNombreProducto");
 
+        jToggleButton5.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton5.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton5.setText("buttonBuscar");
 
+        jToggleButton6.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton6.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton6.setText("buttonActualizar");
 
         jLabel5.setText("Detalles y edición del combo seleccionado ");
 
+        jToggleButton7.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton7.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton7.setText("buttonAgregarProducto");
 
+        jToggleButton8.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton8.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton8.setText("buttonQuitarProducto");
         jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,14 +96,22 @@ public class GestiónDeCombos extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton9.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton9.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton9.setText("buttonEliminarCombo");
 
+        jToggleButton10.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton10.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton10.setText("buttonGuardarCambios");
 
+        jToggleButton11.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton11.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton11.setText("buttonCancelar");
 
         jLabel11.setText("Agregar nuevo combo");
 
+        jToggleButton12.setBackground(new java.awt.Color(34, 141, 110));
+        jToggleButton12.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton12.setText("buttonAgregarCombo");
         jToggleButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,12 +175,6 @@ public class GestiónDeCombos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jToggleButton8))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(207, 207, 207)
-                        .addComponent(jLabel11))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addComponent(jToggleButton12))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
@@ -175,8 +187,15 @@ public class GestiónDeCombos extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(177, 177, 177)
-                        .addComponent(labelTituloForm)))
+                        .addComponent(labelTituloForm))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(214, 214, 214)
+                        .addComponent(jLabel11)))
                 .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jToggleButton12)
+                .addGap(198, 198, 198))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,9 +213,9 @@ public class GestiónDeCombos extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton5)
-                    .addComponent(jToggleButton6))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jToggleButton5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jToggleButton6, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
@@ -206,7 +225,7 @@ public class GestiónDeCombos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToggleButton7)
                     .addComponent(jToggleButton8))
                 .addGap(18, 18, 18)

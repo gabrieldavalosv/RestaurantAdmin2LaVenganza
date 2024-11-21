@@ -298,6 +298,8 @@ public class GestionVenta extends javax.swing.JFrame {
         labelTituloFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelTituloFecha.setText("[labelFecha-Hora]");
 
+        buttonAgregarOrden.setBackground(new java.awt.Color(34, 141, 110));
+        buttonAgregarOrden.setForeground(new java.awt.Color(255, 255, 255));
         buttonAgregarOrden.setText("buttonPagarConEfectivo");
         buttonAgregarOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -305,8 +307,12 @@ public class GestionVenta extends javax.swing.JFrame {
             }
         });
 
+        buttonVolverPanel.setBackground(new java.awt.Color(34, 141, 110));
+        buttonVolverPanel.setForeground(new java.awt.Color(255, 255, 255));
         buttonVolverPanel.setText("buttonCancelarPago");
 
+        buttonCancelarOrden.setBackground(new java.awt.Color(34, 141, 110));
+        buttonCancelarOrden.setForeground(new java.awt.Color(255, 255, 255));
         buttonCancelarOrden.setText("buttonPagarConTarjeta");
 
         labelUsuario1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -315,6 +321,8 @@ public class GestionVenta extends javax.swing.JFrame {
         labelTituloFecha1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelTituloFecha1.setText("ID de Orden:");
 
+        jTextField1.setBackground(new java.awt.Color(59, 73, 69));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("fieldMonto");
 
         tablaOrdenes1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -350,6 +358,8 @@ public class GestionVenta extends javax.swing.JFrame {
             tablaOrdenes1.getColumnModel().getColumn(3).setMaxWidth(125);
         }
 
+        fieldIdOrden.setBackground(new java.awt.Color(59, 73, 69));
+        fieldIdOrden.setForeground(new java.awt.Color(255, 255, 255));
         fieldIdOrden.setText("fieldIDOrden");
         fieldIdOrden.setMaximumSize(new java.awt.Dimension(60, 25));
         fieldIdOrden.setMinimumSize(new java.awt.Dimension(60, 25));
