@@ -35,8 +35,6 @@ public class GestionDeOrden extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaOrdenProductos = new javax.swing.JTable();
-        labelUsuario5 = new javax.swing.JLabel();
-        fieldIdProducto = new javax.swing.JTextField();
         buttonAgregarProducto = new javax.swing.JButton();
         buttonEliminarProducto = new javax.swing.JButton();
         buttonTerminarOrden = new javax.swing.JButton();
@@ -78,12 +76,13 @@ public class GestionDeOrden extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tablaMenu);
         if (tablaMenu.getColumnModel().getColumnCount() > 0) {
             tablaMenu.getColumnModel().getColumn(0).setResizable(false);
-            tablaMenu.getColumnModel().getColumn(0).setPreferredWidth(7);
+            tablaMenu.getColumnModel().getColumn(0).setPreferredWidth(25);
             tablaMenu.getColumnModel().getColumn(1).setResizable(false);
+            tablaMenu.getColumnModel().getColumn(1).setPreferredWidth(200);
             tablaMenu.getColumnModel().getColumn(2).setResizable(false);
-            tablaMenu.getColumnModel().getColumn(2).setPreferredWidth(15);
+            tablaMenu.getColumnModel().getColumn(2).setPreferredWidth(75);
             tablaMenu.getColumnModel().getColumn(3).setResizable(false);
-            tablaMenu.getColumnModel().getColumn(3).setPreferredWidth(10);
+            tablaMenu.getColumnModel().getColumn(3).setPreferredWidth(35);
         }
 
         labelTituloMenu.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
@@ -120,22 +119,16 @@ public class GestionDeOrden extends javax.swing.JFrame {
         jScrollPane3.setViewportView(tablaOrdenProductos);
         if (tablaOrdenProductos.getColumnModel().getColumnCount() > 0) {
             tablaOrdenProductos.getColumnModel().getColumn(0).setResizable(false);
-            tablaOrdenProductos.getColumnModel().getColumn(0).setPreferredWidth(7);
+            tablaOrdenProductos.getColumnModel().getColumn(0).setPreferredWidth(25);
             tablaOrdenProductos.getColumnModel().getColumn(1).setResizable(false);
+            tablaOrdenProductos.getColumnModel().getColumn(1).setPreferredWidth(200);
             tablaOrdenProductos.getColumnModel().getColumn(2).setResizable(false);
-            tablaOrdenProductos.getColumnModel().getColumn(2).setPreferredWidth(15);
+            tablaOrdenProductos.getColumnModel().getColumn(2).setPreferredWidth(75);
             tablaOrdenProductos.getColumnModel().getColumn(3).setResizable(false);
-            tablaOrdenProductos.getColumnModel().getColumn(3).setPreferredWidth(10);
+            tablaOrdenProductos.getColumnModel().getColumn(3).setPreferredWidth(35);
         }
 
-        labelUsuario5.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelUsuario5.setText("Id Producto");
-
-        fieldIdProducto.setMaximumSize(new java.awt.Dimension(60, 25));
-        fieldIdProducto.setMinimumSize(new java.awt.Dimension(60, 25));
-        fieldIdProducto.setPreferredSize(new java.awt.Dimension(60, 25));
-
-        buttonAgregarProducto.setText("Agregar a la Orden");
+        buttonAgregarProducto.setText("Agregar selección a la Orden");
         buttonAgregarProducto.setMargin(new java.awt.Insets(2, 2, 2, 2));
         buttonAgregarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,42 +152,35 @@ public class GestionDeOrden extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(labelCliente)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelPrecioTotal)
-                                .addGap(67, 67, 67))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(labelUsuario5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(fieldIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(buttonAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(buttonEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
-                                    .addComponent(buttonTerminarOrden, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE))))
+                        .addComponent(labelCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelPrecioTotal)
+                        .addGap(45, 45, 45))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(labelTituloOrden)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+                                .addComponent(buttonTerminarOrden, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buttonEliminarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(107, 107, 107)
+                                .addComponent(labelTituloOrden)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)))
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+                            .addComponent(buttonAgregarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(33, 33, 33))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelTituloMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(118, 118, 118))))
+                        .addGap(160, 160, 160))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,8 +189,10 @@ public class GestionDeOrden extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(labelTituloMenu)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(buttonAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(labelTituloOrden)
@@ -215,11 +203,7 @@ public class GestionDeOrden extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelUsuario5)
-                    .addComponent(fieldIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(buttonEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(buttonTerminarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
@@ -275,7 +259,6 @@ public class GestionDeOrden extends javax.swing.JFrame {
     public javax.swing.JButton buttonAgregarProducto;
     public javax.swing.JButton buttonEliminarProducto;
     public javax.swing.JButton buttonTerminarOrden;
-    public javax.swing.JTextField fieldIdProducto;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator2;
@@ -283,7 +266,6 @@ public class GestionDeOrden extends javax.swing.JFrame {
     public javax.swing.JLabel labelPrecioTotal;
     private javax.swing.JLabel labelTituloMenu;
     public javax.swing.JLabel labelTituloOrden;
-    private javax.swing.JLabel labelUsuario5;
     public javax.swing.JTable tablaMenu;
     public javax.swing.JTable tablaOrdenProductos;
     // End of variables declaration//GEN-END:variables

@@ -10,15 +10,12 @@ public class Venta {
     private String estado;
     private Pago pago;
     private Orden orden;
-    private Cajero cajero;
 
-    public Venta(String id, Pago pago, Orden orden, Cajero cajero) {
-        this.id = id;
+    public Venta(Pago pago, Orden orden, Cajero cajero) {
         this.fecha = new Date();
-        this.estado = "Pendiente";
         this.pago = pago;
         this.orden = orden;
-        this.cajero = cajero;
+        this.id = orden.getId();
     }
 
     public boolean procesarVenta(float totalPago) {
@@ -41,7 +38,6 @@ public class Venta {
         comprobante += "Fecha: " + fecha + "\n";
         comprobante += "Estado: " + estado + "\n";
         comprobante += "Cliente: " + orden.getCliente() + "\n";
-        comprobante += "Cajero: " + cajero.getNombre() + "\n";
         comprobante += "\n=== Detalles de la Orden ===\n";
         comprobante += orden + "\n";
         comprobante += "\n=== Detalles del Pago ===\n";
@@ -51,5 +47,9 @@ public class Venta {
         comprobante += "===========================\n";
 
         return comprobante;
+    }
+
+    public String getId() {
+        return id;
     }
 }

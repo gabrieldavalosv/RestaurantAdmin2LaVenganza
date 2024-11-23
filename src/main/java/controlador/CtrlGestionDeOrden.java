@@ -79,15 +79,16 @@ public class CtrlGestionDeOrden {
     }
 
     private void eventoAgregarProducto() {
-        var idProducto = vista.fieldIdProducto.getText();
+        int filaSeleccionada = vista.tablaMenu.getSelectedRow();
+        Object idProducto = vista.tablaMenu.getValueAt(filaSeleccionada, 0);
 
-        if (idProducto.isEmpty()) {
+        if (filaSeleccionada == -1) {
             JOptionPane.showMessageDialog(vista, "Por favor, primero ingrese un id de un producto.");
             return;
         }
 
-        if (modelo.agregarProductoALaOrden(idProducto, menu)) {
-            var producto = modelo.getProductoArreglo().buscarProducto(idProducto);
+        if (modelo.agregarProductoALaOrden(idProducto.toString(), menu)) {
+            var producto = modelo.getProductoArreglo().buscarProducto(idProducto.toString());
             var tablaProductos = (DefaultTableModel) vista.tablaOrdenProductos.getModel();
 
             tablaProductos.addRow(new Object[]{producto.getId(), producto.getNombre(), producto.getCategoria(), producto.getPrecio()});
@@ -96,19 +97,18 @@ public class CtrlGestionDeOrden {
         } else {
             JOptionPane.showMessageDialog(vista, "El producto con id " + idProducto + " no fue encontrado...");
         }
-
-        vista.fieldIdProducto.setText("");
     }
 
     private void eventoEliminarProducto() {
-        var idProducto = vista.fieldIdProducto.getText().trim();
+        int filaSeleccionada = vista.tablaOrdenProductos.getSelectedRow();
+        Object idProducto = vista.tablaOrdenProductos.getValueAt(filaSeleccionada, 0);
 
-        if (idProducto.isEmpty()) {
+        if (filaSeleccionada == -1) {
             JOptionPane.showMessageDialog(vista, "Por favor, primero ingrese un id de un producto.");
             return;
         }
 
-        if (modelo.eliminarProductoALaOrden(idProducto)) {
+        if (modelo.eliminarProductoALaOrden(idProducto.toString())) {
             var tablaProductos = (DefaultTableModel) vista.tablaOrdenProductos.getModel();
 
             int posicion = -1;
@@ -121,17 +121,13 @@ public class CtrlGestionDeOrden {
 
             if (posicion != -1) {
                 tablaProductos.removeRow(posicion);
-
                 vista.labelPrecioTotal.setText("Precio total : " + modelo.calcularPrecioTotal());
-                JOptionPane.showMessageDialog(vista, "Producto eliminado correctamente.");
             } else {
                 JOptionPane.showMessageDialog(vista, "El producto no está en la tabla.");
             }
         } else {
             JOptionPane.showMessageDialog(vista, "El producto con id " + idProducto + " no fue encontrado en la orden.");
         }
-
-        vista.fieldIdProducto.setText("");
     }
 
 

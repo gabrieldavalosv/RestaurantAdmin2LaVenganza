@@ -4,7 +4,7 @@ import modelo.excepciones.ArregloLLenoException;
 import modelo.excepciones.IdNoEncontradoException;
 
 public class Administrador extends Trabajador {
-    private CajeroArreglo cajeroArreglo;
+    private static CajeroArreglo cajeroArreglo;
 
 
     public Administrador(String id, String nombre, String contrasena) {

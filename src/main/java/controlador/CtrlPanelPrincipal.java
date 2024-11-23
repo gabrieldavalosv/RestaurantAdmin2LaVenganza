@@ -2,6 +2,7 @@ package controlador;
 
 import java.time.LocalDate;
 
+import modelo.VentaArreglo;
 import modelo.personal.Administrador;
 import modelo.personal.Cajero;
 
@@ -49,15 +50,20 @@ public class CtrlPanelPrincipal {
     }
 
     public void irGestionVentas() {
-        var gestorVentas = new GestionDeVentas();
-        gestorVentas.setVisible(true);
+        var gestorVentas = new GestionDeRegistroVentas();
 
+        //Esto es para qe puedan ver la vista, no esta bien y debe ser cambiado
+        var ventas = new VentaArreglo(20);
+
+        var ctrlVentas = new CtrlGestionRegistroVentas(ventas, gestorVentas, modelo);
         vista.dispose();
     }
 
     public void irGestionDeCajeros() {
         var gestorCajeros = new GestionDeCajeros();
-        gestorCajeros.setVisible(true);
+        var cajeros = modelo.getCajeroArreglo();
+
+        var ctrlCajero = new CtrlGestionDeCajeros(cajeros, gestorCajeros, modelo);
 
         vista.dispose();
     }

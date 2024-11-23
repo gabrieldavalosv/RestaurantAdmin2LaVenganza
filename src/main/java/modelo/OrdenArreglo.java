@@ -12,7 +12,6 @@ public class OrdenArreglo {
         this.index = 0;
     }
 
-
     public void agregarOrden(Orden orden) {
         try {
             if (orden != null && this.index < ordenes.length) {

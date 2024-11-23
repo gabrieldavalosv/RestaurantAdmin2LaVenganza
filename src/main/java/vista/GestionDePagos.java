@@ -32,18 +32,18 @@ public class GestionDePagos extends javax.swing.JFrame {
     private void initComponents() {
 
         jSlider1 = new javax.swing.JSlider();
-        labelCliente = new javax.swing.JLabel();
-        labelFecha = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        fieldMonto = new javax.swing.JTextField();
-        labelTotal = new javax.swing.JLabel();
-        labeldOrden = new javax.swing.JLabel();
-        labelTituloForm = new javax.swing.JLabel();
-        buttonProcesarPago = new javax.swing.JButton();
-        buttonGenerarRecibo = new javax.swing.JButton();
-        buttonCancelarPago = new javax.swing.JButton();
-        comboboxMetodos = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
+        labelCliente = new JLabel();
+        labelFecha = new JLabel();
+        jLabel6 = new JLabel();
+        fieldMonto = new JTextField();
+        labelTotal = new JLabel();
+        labeldOrden = new JLabel();
+        labelTituloForm = new JLabel();
+        buttonProcesarPago = new JButton();
+        buttonCancelarPago = new JButton();
+        comboboxMetodos = new JComboBox<>();
+        jLabel7 = new JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(425, 224));
@@ -84,15 +84,6 @@ public class GestionDePagos extends javax.swing.JFrame {
             }
         });
 
-        buttonGenerarRecibo.setText("Generar Recibo");
-        buttonGenerarRecibo.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        buttonGenerarRecibo.setMaximumSize(new java.awt.Dimension(100, 25));
-        buttonGenerarRecibo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonGenerarReciboActionPerformed(evt);
-            }
-        });
-
         buttonCancelarPago.setText("Cancelar Pago");
         buttonCancelarPago.setMargin(new java.awt.Insets(2, 2, 2, 2));
         buttonCancelarPago.setMaximumSize(new java.awt.Dimension(100, 25));
@@ -103,9 +94,14 @@ public class GestionDePagos extends javax.swing.JFrame {
         });
 
         comboboxMetodos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Tarjeta" }));
+        comboboxMetodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboboxMetodosActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel7.setText("Método");
+        jLabel7.setText("Método:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,50 +120,52 @@ public class GestionDePagos extends javax.swing.JFrame {
                         .addComponent(labelFecha)
                         .addGap(106, 106, 106))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labeldOrden)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(fieldMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(53, 53, 53)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(comboboxMetodos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(labelTotal)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(buttonProcesarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(buttonGenerarRecibo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(buttonCancelarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(fieldMonto))
+                                    .addComponent(buttonProcesarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(31, 31, 31)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(comboboxMetodos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(buttonCancelarPago, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 74, Short.MAX_VALUE))))
+            .addComponent(jSeparator1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(labelTituloForm)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCliente)
                     .addComponent(labelFecha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labeldOrden)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(fieldMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
                             .addComponent(comboboxMetodos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(labelTotal))
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonProcesarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonGenerarRecibo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonCancelarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
@@ -179,10 +177,6 @@ public class GestionDePagos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonProcesarPagoActionPerformed
 
-    private void buttonGenerarReciboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGenerarReciboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonGenerarReciboActionPerformed
-
     private void buttonCancelarPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarPagoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonCancelarPagoActionPerformed
@@ -190,6 +184,10 @@ public class GestionDePagos extends javax.swing.JFrame {
     private void fieldMontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldMontoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldMontoActionPerformed
+
+    private void comboboxMetodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboboxMetodosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboboxMetodosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,10 +229,6 @@ public class GestionDePagos extends javax.swing.JFrame {
         return buttonCancelarPago;
     }
 
-    public JButton getButtonGenerarRecibo() {
-        return buttonGenerarRecibo;
-    }
-
     public JButton getButtonProcesarPago() {
         return buttonProcesarPago;
     }
@@ -268,18 +262,18 @@ public class GestionDePagos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonCancelarPago;
-    private javax.swing.JButton buttonGenerarRecibo;
-    private javax.swing.JButton buttonProcesarPago;
-    private javax.swing.JComboBox<String> comboboxMetodos;
-    private javax.swing.JTextField fieldMonto;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private JButton buttonCancelarPago;
+    private JButton buttonProcesarPago;
+    private JComboBox<String> comboboxMetodos;
+    private JTextField fieldMonto;
+    private JLabel jLabel6;
+    private JLabel jLabel7;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSlider jSlider1;
-    private javax.swing.JLabel labelCliente;
-    private javax.swing.JLabel labelFecha;
-    private javax.swing.JLabel labelTituloForm;
-    private javax.swing.JLabel labelTotal;
-    private javax.swing.JLabel labeldOrden;
+    private JLabel labelCliente;
+    private JLabel labelFecha;
+    private JLabel labelTituloForm;
+    private JLabel labelTotal;
+    private JLabel labeldOrden;
     // End of variables declaration//GEN-END:variables
 }

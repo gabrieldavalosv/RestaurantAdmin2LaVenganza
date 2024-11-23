@@ -8,12 +8,12 @@ package vista;
  *
  * @author josep
  */
-public class GestionDeOrdenes extends javax.swing.JFrame {
+public class GestionDelMenu extends javax.swing.JFrame {
     
     /**
      * Creates new form GestiónDeOrdenes
      */
-    public GestionDeOrdenes() {
+    public GestionDelMenu() {
         initComponents();
     }
 
@@ -32,15 +32,13 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         labelFecha = new javax.swing.JLabel();
         buttonVolverPanel = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tablaOrdenes = new javax.swing.JTable();
+        tablaMenu = new javax.swing.JTable();
         labelNombreUsuario = new javax.swing.JLabel();
         labelIdUsuario = new javax.swing.JLabel();
-        labelCliente = new javax.swing.JLabel();
-        fieldCliente = new javax.swing.JTextField();
         labelTituloFecha2 = new javax.swing.JLabel();
-        buttonAgregarOrden = new javax.swing.JButton();
-        buttonTerminarOrden = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        buttonAgregarPlato = new javax.swing.JButton();
+        buttonEliminarPlato = new javax.swing.JButton();
 
         javax.swing.GroupLayout framePagoLayout = new javax.swing.GroupLayout(framePago.getContentPane());
         framePago.getContentPane().setLayout(framePagoLayout);
@@ -58,7 +56,7 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(552, 547));
 
         labelTituloForm.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        labelTituloForm.setText("Gestión de órdenes");
+        labelTituloForm.setText("Gestión del Menu");
 
         labelRol.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelRol.setText("Rol:");
@@ -70,13 +68,13 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         buttonVolverPanel.setText("Volver");
         buttonVolverPanel.setMargin(new java.awt.Insets(2, 2, 2, 2));
 
-        tablaOrdenes.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        tablaOrdenes.setModel(new javax.swing.table.DefaultTableModel(
+        tablaMenu.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        tablaMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Cliente", "Estado", "Precio total (S/.)"
+                "ID", "Nombre", "Categoria", "Precio (S/.)"
             }
         ) {
             Class[] types = new Class [] {
@@ -94,16 +92,15 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tablaOrdenes);
-        if (tablaOrdenes.getColumnModel().getColumnCount() > 0) {
-            tablaOrdenes.getColumnModel().getColumn(0).setResizable(false);
-            tablaOrdenes.getColumnModel().getColumn(0).setPreferredWidth(50);
-            tablaOrdenes.getColumnModel().getColumn(1).setResizable(false);
-            tablaOrdenes.getColumnModel().getColumn(1).setPreferredWidth(175);
-            tablaOrdenes.getColumnModel().getColumn(2).setResizable(false);
-            tablaOrdenes.getColumnModel().getColumn(2).setPreferredWidth(100);
-            tablaOrdenes.getColumnModel().getColumn(3).setResizable(false);
-            tablaOrdenes.getColumnModel().getColumn(3).setPreferredWidth(125);
+        jScrollPane2.setViewportView(tablaMenu);
+        if (tablaMenu.getColumnModel().getColumnCount() > 0) {
+            tablaMenu.getColumnModel().getColumn(0).setResizable(false);
+            tablaMenu.getColumnModel().getColumn(0).setPreferredWidth(50);
+            tablaMenu.getColumnModel().getColumn(1).setResizable(false);
+            tablaMenu.getColumnModel().getColumn(1).setPreferredWidth(175);
+            tablaMenu.getColumnModel().getColumn(2).setResizable(false);
+            tablaMenu.getColumnModel().getColumn(2).setPreferredWidth(100);
+            tablaMenu.getColumnModel().getColumn(3).setPreferredWidth(125);
         }
 
         labelNombreUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -112,30 +109,19 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         labelIdUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelIdUsuario.setText("ID Usuario:");
 
-        labelCliente.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelCliente.setText("Cliente:");
-
-        fieldCliente.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        fieldCliente.setToolTipText("");
-        fieldCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldClienteActionPerformed(evt);
-            }
-        });
-
         labelTituloFecha2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
-        buttonAgregarOrden.setText("Crear Orden");
-        buttonAgregarOrden.addActionListener(new java.awt.event.ActionListener() {
+        buttonAgregarPlato.setText("Crear Plato");
+        buttonAgregarPlato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAgregarOrdenActionPerformed(evt);
+                buttonAgregarPlatoActionPerformed(evt);
             }
         });
 
-        buttonTerminarOrden.setText("Terminar Orden");
-        buttonTerminarOrden.addActionListener(new java.awt.event.ActionListener() {
+        buttonEliminarPlato.setText("Eliminar Plato");
+        buttonEliminarPlato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonTerminarOrdenActionPerformed(evt);
+                buttonEliminarPlatoActionPerformed(evt);
             }
         });
 
@@ -144,30 +130,32 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
-                    .addComponent(buttonTerminarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
+                    .addComponent(buttonEliminarPlato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelRol)
-                            .addComponent(labelNombreUsuario))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(labelIdUsuario)
-                                .addComponent(labelFecha))
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelRol)
+                                    .addComponent(labelNombreUsuario)))
+                            .addComponent(buttonVolverPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelIdUsuario)
+                                    .addComponent(labelFecha))
+                                .addGap(108, 108, 108))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(87, 87, 87)
                                 .addComponent(labelTituloForm)
-                                .addGap(22, 22, 22)))
-                        .addGap(118, 118, 118))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(fieldCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(buttonAgregarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(buttonAgregarPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelTituloFecha2)
                 .addGap(31, 31, 31))
@@ -199,29 +187,22 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(buttonAgregarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fieldCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelCliente))
+                        .addComponent(buttonAgregarPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)
-                        .addComponent(buttonTerminarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonEliminarPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void fieldClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldClienteActionPerformed
+    private void buttonAgregarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAgregarPlatoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fieldClienteActionPerformed
+    }//GEN-LAST:event_buttonAgregarPlatoActionPerformed
 
-    private void buttonAgregarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAgregarOrdenActionPerformed
+    private void buttonEliminarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEliminarPlatoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonAgregarOrdenActionPerformed
-
-    private void buttonTerminarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTerminarOrdenActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonTerminarOrdenActionPerformed
+    }//GEN-LAST:event_buttonEliminarPlatoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,40 +221,41 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GestionDeOrdenes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionDelMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GestionDeOrdenes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionDelMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GestionDeOrdenes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionDelMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GestionDeOrdenes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionDelMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GestionDeOrdenes().setVisible(true);
+                new GestionDelMenu().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton buttonAgregarOrden;
-    public javax.swing.JButton buttonTerminarOrden;
+    public javax.swing.JButton buttonAgregarPlato;
+    private javax.swing.JButton buttonEliminarPlato;
     public javax.swing.JButton buttonVolverPanel;
-    public javax.swing.JTextField fieldCliente;
     private javax.swing.JFrame framePago;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel labelCliente;
     public javax.swing.JLabel labelFecha;
     public javax.swing.JLabel labelIdUsuario;
     public javax.swing.JLabel labelNombreUsuario;
     public javax.swing.JLabel labelRol;
     private javax.swing.JLabel labelTituloFecha2;
     private javax.swing.JLabel labelTituloForm;
-    public javax.swing.JTable tablaOrdenes;
+    public javax.swing.JTable tablaMenu;
     // End of variables declaration//GEN-END:variables
+
 }
