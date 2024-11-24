@@ -32,17 +32,17 @@ public class GestionDePagos extends javax.swing.JFrame {
     private void initComponents() {
 
         jSlider1 = new javax.swing.JSlider();
-        labelCliente = new JLabel();
-        labelFecha = new JLabel();
-        jLabel6 = new JLabel();
-        fieldMonto = new JTextField();
-        labelTotal = new JLabel();
-        labeldOrden = new JLabel();
-        labelTituloForm = new JLabel();
-        buttonProcesarPago = new JButton();
-        buttonCancelarPago = new JButton();
-        comboboxMetodos = new JComboBox<>();
-        jLabel7 = new JLabel();
+        labelCliente = new javax.swing.JLabel();
+        labelFecha = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        fieldMonto = new javax.swing.JTextField();
+        labelTotal = new javax.swing.JLabel();
+        labeldOrden = new javax.swing.JLabel();
+        labelTituloForm = new javax.swing.JLabel();
+        buttonProcesarPago = new javax.swing.JButton();
+        buttonCancelarPago = new javax.swing.JButton();
+        comboboxMetodos = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,6 +75,8 @@ public class GestionDePagos extends javax.swing.JFrame {
         labelTituloForm.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         labelTituloForm.setText("Gestión de pago");
 
+        buttonProcesarPago.setBackground(new java.awt.Color(34, 141, 110));
+        buttonProcesarPago.setForeground(new java.awt.Color(255, 255, 255));
         buttonProcesarPago.setText("Procesar pago");
         buttonProcesarPago.setMargin(new java.awt.Insets(2, 2, 2, 2));
         buttonProcesarPago.setMaximumSize(new java.awt.Dimension(100, 25));
@@ -84,6 +86,8 @@ public class GestionDePagos extends javax.swing.JFrame {
             }
         });
 
+        buttonCancelarPago.setBackground(new java.awt.Color(34, 141, 110));
+        buttonCancelarPago.setForeground(new java.awt.Color(255, 255, 255));
         buttonCancelarPago.setText("Cancelar Pago");
         buttonCancelarPago.setMargin(new java.awt.Insets(2, 2, 2, 2));
         buttonCancelarPago.setMaximumSize(new java.awt.Dimension(100, 25));
@@ -93,6 +97,8 @@ public class GestionDePagos extends javax.swing.JFrame {
             }
         });
 
+        comboboxMetodos.setBackground(new java.awt.Color(59, 73, 69));
+        comboboxMetodos.setForeground(new java.awt.Color(255, 255, 255));
         comboboxMetodos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Tarjeta" }));
         comboboxMetodos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -262,18 +268,18 @@ public class GestionDePagos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private JButton buttonCancelarPago;
-    private JButton buttonProcesarPago;
-    private JComboBox<String> comboboxMetodos;
-    private JTextField fieldMonto;
-    private JLabel jLabel6;
-    private JLabel jLabel7;
+    private javax.swing.JButton buttonCancelarPago;
+    private javax.swing.JButton buttonProcesarPago;
+    private javax.swing.JComboBox<String> comboboxMetodos;
+    private javax.swing.JTextField fieldMonto;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSlider jSlider1;
-    private JLabel labelCliente;
-    private JLabel labelFecha;
-    private JLabel labelTituloForm;
-    private JLabel labelTotal;
-    private JLabel labeldOrden;
+    private javax.swing.JLabel labelCliente;
+    private javax.swing.JLabel labelFecha;
+    private javax.swing.JLabel labelTituloForm;
+    private javax.swing.JLabel labelTotal;
+    private javax.swing.JLabel labeldOrden;
     // End of variables declaration//GEN-END:variables
 }

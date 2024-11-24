@@ -65,9 +65,12 @@ public class GestionDelMenu extends javax.swing.JFrame {
         labelFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelFecha.setText("Fecha: ");
 
+        buttonVolverPanel.setBackground(new java.awt.Color(34, 141, 110));
+        buttonVolverPanel.setForeground(new java.awt.Color(255, 255, 255));
         buttonVolverPanel.setText("Volver");
         buttonVolverPanel.setMargin(new java.awt.Insets(2, 2, 2, 2));
 
+        tablaMenu.setBackground(new java.awt.Color(213, 250, 194));
         tablaMenu.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         tablaMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -78,7 +81,7 @@ public class GestionDelMenu extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                String.class, String.class, String.class, Float.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
@@ -111,6 +114,8 @@ public class GestionDelMenu extends javax.swing.JFrame {
 
         labelTituloFecha2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
+        buttonAgregarPlato.setBackground(new java.awt.Color(34, 141, 110));
+        buttonAgregarPlato.setForeground(new java.awt.Color(255, 255, 255));
         buttonAgregarPlato.setText("Crear Plato");
         buttonAgregarPlato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,6 +123,8 @@ public class GestionDelMenu extends javax.swing.JFrame {
             }
         });
 
+        buttonEliminarPlato.setBackground(new java.awt.Color(34, 141, 110));
+        buttonEliminarPlato.setForeground(new java.awt.Color(255, 255, 255));
         buttonEliminarPlato.setText("Eliminar Plato");
         buttonEliminarPlato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

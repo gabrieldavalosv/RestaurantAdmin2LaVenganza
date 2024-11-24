@@ -50,6 +50,7 @@ public class GestionDeOrden extends javax.swing.JFrame {
         labelPrecioTotal.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelPrecioTotal.setText("Total: [precioTotal]");
 
+        tablaMenu.setBackground(new java.awt.Color(213, 250, 194));
         tablaMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -92,6 +93,7 @@ public class GestionDeOrden extends javax.swing.JFrame {
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
+        tablaOrdenProductos.setBackground(new java.awt.Color(213, 250, 194));
         tablaOrdenProductos.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         tablaOrdenProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -128,6 +130,8 @@ public class GestionDeOrden extends javax.swing.JFrame {
             tablaOrdenProductos.getColumnModel().getColumn(3).setPreferredWidth(35);
         }
 
+        buttonAgregarProducto.setBackground(new java.awt.Color(34, 141, 110));
+        buttonAgregarProducto.setForeground(new java.awt.Color(255, 255, 255));
         buttonAgregarProducto.setText("Agregar selección a la Orden");
         buttonAgregarProducto.setMargin(new java.awt.Insets(2, 2, 2, 2));
         buttonAgregarProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +140,8 @@ public class GestionDeOrden extends javax.swing.JFrame {
             }
         });
 
+        buttonEliminarProducto.setBackground(new java.awt.Color(34, 141, 110));
+        buttonEliminarProducto.setForeground(new java.awt.Color(255, 255, 255));
         buttonEliminarProducto.setText("Eliminar de la Orden");
         buttonEliminarProducto.setMargin(new java.awt.Insets(2, 2, 2, 2));
         buttonEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -144,6 +150,8 @@ public class GestionDeOrden extends javax.swing.JFrame {
             }
         });
 
+        buttonTerminarOrden.setBackground(new java.awt.Color(34, 141, 110));
+        buttonTerminarOrden.setForeground(new java.awt.Color(255, 255, 255));
         buttonTerminarOrden.setText("Terminar Orden");
         buttonTerminarOrden.setMargin(new java.awt.Insets(2, 2, 3, 2));
 
@@ -265,7 +273,7 @@ public class GestionDeOrden extends javax.swing.JFrame {
     public javax.swing.JLabel labelCliente;
     public javax.swing.JLabel labelPrecioTotal;
     private javax.swing.JLabel labelTituloMenu;
-    public javax.swing.JLabel labelTituloOrden;
+    private javax.swing.JLabel labelTituloOrden;
     public javax.swing.JTable tablaMenu;
     public javax.swing.JTable tablaOrdenProductos;
     // End of variables declaration//GEN-END:variables

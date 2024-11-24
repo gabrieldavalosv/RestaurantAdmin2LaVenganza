@@ -42,7 +42,7 @@ public class PanelPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        jLabel1.setIcon(new ImageIcon(getClass().getResource("/imagenes/logo_algo2_proyecto.png")));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/mavenproject1/logo_algo2reduced.png"))); // NOI18N
 
         labelNombreUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelNombreUsuario.setText("[Usuario: NombreUsuario]");
@@ -50,6 +50,8 @@ public class PanelPrincipal extends javax.swing.JFrame {
         labelRol.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelRol.setText("[Rol: Administrador]");
 
+        buttonCerrarSesion.setBackground(new java.awt.Color(34, 141, 110));
+        buttonCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
         buttonCerrarSesion.setText("Cerrar sesión");
         buttonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +59,8 @@ public class PanelPrincipal extends javax.swing.JFrame {
             }
         });
 
+        buttonGestionarOrdenes.setBackground(new java.awt.Color(34, 141, 110));
+        buttonGestionarOrdenes.setForeground(new java.awt.Color(255, 255, 255));
         buttonGestionarOrdenes.setText("Gestión de órdenes");
         buttonGestionarOrdenes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +68,8 @@ public class PanelPrincipal extends javax.swing.JFrame {
             }
         });
 
+        buttonGestionarVentas.setBackground(new java.awt.Color(34, 141, 110));
+        buttonGestionarVentas.setForeground(new java.awt.Color(255, 255, 255));
         buttonGestionarVentas.setText("Registro de ventas");
         buttonGestionarVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +77,8 @@ public class PanelPrincipal extends javax.swing.JFrame {
             }
         });
 
+        buttonGestionarCajeros.setBackground(new java.awt.Color(34, 141, 110));
+        buttonGestionarCajeros.setForeground(new java.awt.Color(255, 255, 255));
         buttonGestionarCajeros.setText("Gestión de cajeros");
         buttonGestionarCajeros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +92,8 @@ public class PanelPrincipal extends javax.swing.JFrame {
         labelIdUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelIdUsuario.setText("[ID]");
 
+        buttonGestionarMenu.setBackground(new java.awt.Color(34, 141, 110));
+        buttonGestionarMenu.setForeground(new java.awt.Color(255, 255, 255));
         buttonGestionarMenu.setText("Gestión del menú");
         buttonGestionarMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

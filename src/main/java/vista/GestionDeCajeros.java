@@ -67,9 +67,12 @@ public class GestionDeCajeros extends javax.swing.JFrame {
         labelFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelFecha.setText("Fecha: ");
 
+        buttonVolverPanel.setBackground(new java.awt.Color(34, 141, 110));
+        buttonVolverPanel.setForeground(new java.awt.Color(255, 255, 255));
         buttonVolverPanel.setText("Volver");
         buttonVolverPanel.setMargin(new java.awt.Insets(2, 2, 2, 2));
 
+        tablaCajeros.setBackground(new java.awt.Color(213, 250, 194));
         tablaCajeros.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         tablaCajeros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -123,6 +126,8 @@ public class GestionDeCajeros extends javax.swing.JFrame {
 
         labelTituloFecha2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
+        buttonAgregarCajero.setBackground(new java.awt.Color(34, 141, 110));
+        buttonAgregarCajero.setForeground(new java.awt.Color(255, 255, 255));
         buttonAgregarCajero.setText("Añadir Cajero");
         buttonAgregarCajero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +135,8 @@ public class GestionDeCajeros extends javax.swing.JFrame {
             }
         });
 
+        buttonEliminarCajero.setBackground(new java.awt.Color(34, 141, 110));
+        buttonEliminarCajero.setForeground(new java.awt.Color(255, 255, 255));
         buttonEliminarCajero.setText("Eliminar Cajero");
         buttonEliminarCajero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

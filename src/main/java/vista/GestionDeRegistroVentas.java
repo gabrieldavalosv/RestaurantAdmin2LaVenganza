@@ -63,9 +63,12 @@ public class GestionDeRegistroVentas extends javax.swing.JFrame {
         labelFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelFecha.setText("Fecha: ");
 
+        buttonVolverPanel.setBackground(new java.awt.Color(34, 141, 110));
+        buttonVolverPanel.setForeground(new java.awt.Color(255, 255, 255));
         buttonVolverPanel.setText("Volver");
         buttonVolverPanel.setMargin(new java.awt.Insets(2, 2, 2, 2));
 
+        tablaVentas.setBackground(new java.awt.Color(213, 250, 194));
         tablaVentas.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         tablaVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

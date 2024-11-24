@@ -67,9 +67,12 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         labelFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelFecha.setText("Fecha: ");
 
+        buttonVolverPanel.setBackground(new java.awt.Color(34, 141, 110));
+        buttonVolverPanel.setForeground(new java.awt.Color(255, 255, 255));
         buttonVolverPanel.setText("Volver");
         buttonVolverPanel.setMargin(new java.awt.Insets(2, 2, 2, 2));
 
+        tablaOrdenes.setBackground(new java.awt.Color(213, 250, 194));
         tablaOrdenes.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         tablaOrdenes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -80,7 +83,7 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                String.class, String.class, String.class, Float.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
@@ -125,6 +128,8 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
 
         labelTituloFecha2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
+        buttonAgregarOrden.setBackground(new java.awt.Color(34, 141, 110));
+        buttonAgregarOrden.setForeground(new java.awt.Color(255, 255, 255));
         buttonAgregarOrden.setText("Crear Orden");
         buttonAgregarOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,6 +137,8 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
             }
         });
 
+        buttonTerminarOrden.setBackground(new java.awt.Color(34, 141, 110));
+        buttonTerminarOrden.setForeground(new java.awt.Color(255, 255, 255));
         buttonTerminarOrden.setText("Terminar Orden");
         buttonTerminarOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -261,7 +268,7 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton buttonAgregarOrden;
-    public javax.swing.JButton buttonTerminarOrden;
+    private javax.swing.JButton buttonTerminarOrden;
     public javax.swing.JButton buttonVolverPanel;
     public javax.swing.JTextField fieldCliente;
     private javax.swing.JFrame framePago;
