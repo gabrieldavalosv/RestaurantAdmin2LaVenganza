@@ -1,8 +1,5 @@
 package modelo;
 
-import modelo.excepciones.ArregloLLenoException;
-import modelo.excepciones.IdNoEncontradoException;
-
 public class Orden {
     private String id;
     private ProductoArreglo productoArreglo;
@@ -19,6 +16,13 @@ public class Orden {
         this.id = id;
         this.productoArreglo = new ProductoArreglo(20);
         this.estado = "En espera";
+        this.cliente = cliente;
+    }
+    
+    public Orden(String id, String cliente, String estado) {
+        this.id = id;
+        this.productoArreglo = new ProductoArreglo(20);
+        this.estado = estado;
         this.cliente = cliente;
     }
 
@@ -58,9 +62,22 @@ public class Orden {
 
     @Override
     public String toString() {
-        String resultado = "ID de Orden: " + getId();
-        resultado += "\nCliente: " + getCliente();
-        resultado += "\n" + getProductoArreglo();
+        var productos = this.getProductoArreglo().getProductos();
+        String resultado = String.format("%-1s : %-25s : %-10s", 
+                                         getId(), getCliente(), getEstado() );
+
+        // Añadir los productos en la misma línea, separados por comas
+        resultado += " : [";
+        for (int i = 0; i < productos.length; i++) {
+            if (productos[i] != null) { // Verifica que no sea null
+                if (i > 0) {
+                    resultado += ", ";
+                }
+                resultado += productos[i].toString();
+            }
+        }
+        resultado += "]";
+
         return resultado;
     }
 

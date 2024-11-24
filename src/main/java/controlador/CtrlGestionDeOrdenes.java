@@ -98,11 +98,12 @@ public class CtrlGestionDeOrdenes {
 
     private void eventoTerminarOrden() {
         int filaSeleccionada = vista.tablaOrdenes.getSelectedRow();
-        Orden orden = modelo.getOrdenes()[filaSeleccionada];
 
         if (filaSeleccionada == -1) {
             JOptionPane.showMessageDialog(vista, "Por favor, seleccione una fila de la tabla.");
         } else {
+            Orden orden = modelo.getOrdenes()[filaSeleccionada];
+            
             modelo.buscarOrden(orden.getId()).setEstado("Terminada");
             modelo.eliminarOrden(orden.getId());
             actualizarTablaOrdenes();

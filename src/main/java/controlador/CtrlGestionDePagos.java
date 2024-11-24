@@ -74,6 +74,7 @@ public class CtrlGestionDePagos {
         var vistaOrdenes = new GestionDeOrdenes();
         var ordenes = administrador.getOrdenes(); // Método para obtener las órdenes desde el modelo
 
+        ordenes.actualizarOrdenesTxt();
         new CtrlGestionDeOrdenes(ordenes, vistaOrdenes, administrador);
 
         vista.dispose();
