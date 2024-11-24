@@ -2,8 +2,6 @@ package modelo.personal;
 
 import modelo.Orden;
 import modelo.OrdenArreglo;
-import modelo.excepciones.ArregloLLenoException;
-import modelo.excepciones.IdNoEncontradoException;
 
 public class Cajero extends Trabajador {
     private String RUC;
@@ -39,6 +37,6 @@ public class Cajero extends Trabajador {
 
     @Override
     public String toString() {
-        return String.format("%-1s : %-25s : %-10s", this.getId(), this.getNombre(), this.getRUC());
+        return String.format("%-1s : %-25s : %-15s : %-10s", this.getId(), this.getNombre(), this.getContrasena(), this.getRUC());
     }
 }

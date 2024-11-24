@@ -1,15 +1,25 @@
 package modelo.personal;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import modelo.excepciones.ArregloLLenoException;
 import modelo.excepciones.IdNoEncontradoException;
 
 public class CajeroArreglo {
     private Cajero[] cajeros;
     private int index;
+    
+    private static String ARCHIVO_CAJEROS = "cajeros.txt";
 
     public CajeroArreglo(int tamano) {
         cajeros = new Cajero[tamano];
         this.index = 0;
+        
+        // Cargar cajeros desde el archivo al iniciar
+        this.cargarCajerosTxt();
     }
 
     public void agregarCajero(Cajero cajero) {
@@ -17,6 +27,10 @@ public class CajeroArreglo {
             if (cajero != null && this.index < cajeros.length) {
                 cajeros[this.index] = cajero;
                 this.index++;
+                
+                // Actualizamos el archivo después de agregar el cajero
+                actualizarCajerosTxt();
+            
             } else {
                 throw new ArregloLLenoException();
             }
@@ -34,10 +48,15 @@ public class CajeroArreglo {
                     }
                     cajeros[index - 1] = null;
                     index--;
-                } else {
-                    throw new IdNoEncontradoException();
+                    
+                    // Actualizamos el archivo después de eliminar el cajero
+                    actualizarCajerosTxt();
+                    return;
                 }
             }
+            
+            throw new IdNoEncontradoException();    
+               
         } catch (IdNoEncontradoException e) {
             System.out.println(e.getMessage());
         }
@@ -54,6 +73,57 @@ public class CajeroArreglo {
         } catch (IdNoEncontradoException e) {
             System.out.println(e.getMessage());
             return null;
+        }
+    }
+    
+    // Metodos para manipular los archivos txt
+    private void actualizarCajerosTxt() {
+        try (BufferedWriter writer = new BufferedWriter( new FileWriter(ARCHIVO_CAJEROS) ) ) {
+
+            // Recorre el arreglo de cajeros y guarda cada cajero en el archivo
+            for (int i = 0; i < index; i++) {
+                if (cajeros[i] != null) {
+                    writer.write(cajeros[i].toString());
+                    writer.newLine();
+                }
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error al actualizar el archivo de cajeros: " + e.getMessage());
+        }
+    }
+
+    private void cargarCajerosTxt() {
+        try ( BufferedReader reader = new BufferedReader(new FileReader(ARCHIVO_CAJEROS))) {
+            String linea;
+
+            while ( (linea = reader.readLine()) != null ) {
+                
+                // Divide la línea usando ":" como separador y eliminando espacios en los extremos
+                String[] datos = linea.split(" : ");
+                
+                String id = datos[0].trim();
+                String nombre = datos[1].trim();
+                String contrasenia = datos[2].trim();
+                String ruc = datos[3].trim();
+
+                Cajero cajero = new Cajero(id, nombre, contrasenia, ruc);
+
+                try {
+                    if ( this.index < cajeros.length) {
+                        cajeros[this.index] = cajero;
+                        this.index++;
+
+                    } else {
+                        throw new ArregloLLenoException();
+                    }
+                } catch (ArregloLLenoException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error al cargar los cajeros desde el archivo: " + e.getMessage());
         }
     }
 

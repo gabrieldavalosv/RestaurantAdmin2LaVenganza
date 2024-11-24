@@ -80,12 +80,13 @@ public class CtrlGestionDeOrden {
 
     private void eventoAgregarProducto() {
         int filaSeleccionada = vista.tablaMenu.getSelectedRow();
-        Object idProducto = vista.tablaMenu.getValueAt(filaSeleccionada, 0);
 
         if (filaSeleccionada == -1) {
             JOptionPane.showMessageDialog(vista, "Por favor, primero ingrese un id de un producto.");
             return;
         }
+        
+        Object idProducto = vista.tablaMenu.getValueAt(filaSeleccionada, 0);
 
         if (modelo.agregarProductoALaOrden(idProducto.toString(), menu)) {
             var producto = modelo.getProductoArreglo().buscarProducto(idProducto.toString());
@@ -101,12 +102,13 @@ public class CtrlGestionDeOrden {
 
     private void eventoEliminarProducto() {
         int filaSeleccionada = vista.tablaOrdenProductos.getSelectedRow();
-        Object idProducto = vista.tablaOrdenProductos.getValueAt(filaSeleccionada, 0);
 
         if (filaSeleccionada == -1) {
             JOptionPane.showMessageDialog(vista, "Por favor, primero ingrese un id de un producto.");
             return;
         }
+        
+        Object idProducto = vista.tablaOrdenProductos.getValueAt(filaSeleccionada, 0);
 
         if (modelo.eliminarProductoALaOrden(idProducto.toString())) {
             var tablaProductos = (DefaultTableModel) vista.tablaOrdenProductos.getModel();
