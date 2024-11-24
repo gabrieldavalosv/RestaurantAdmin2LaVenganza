@@ -42,7 +42,7 @@ public class PantallaLogin extends JFrame {
         setSize(new java.awt.Dimension(380, 297));
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/mavenproject1/logo_algo2reduced.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo_algo2_proyecto.png"))); // NOI18N
 
         jLabel2.setText("Usuario:");
 

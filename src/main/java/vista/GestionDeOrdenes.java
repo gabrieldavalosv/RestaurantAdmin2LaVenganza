@@ -268,7 +268,7 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton buttonAgregarOrden;
-    private javax.swing.JButton buttonTerminarOrden;
+    public javax.swing.JButton buttonTerminarOrden;
     public javax.swing.JButton buttonVolverPanel;
     public javax.swing.JTextField fieldCliente;
     private javax.swing.JFrame framePago;

@@ -273,7 +273,7 @@ public class GestionDeOrden extends javax.swing.JFrame {
     public javax.swing.JLabel labelCliente;
     public javax.swing.JLabel labelPrecioTotal;
     private javax.swing.JLabel labelTituloMenu;
-    private javax.swing.JLabel labelTituloOrden;
+    public javax.swing.JLabel labelTituloOrden;
     public javax.swing.JTable tablaMenu;
     public javax.swing.JTable tablaOrdenProductos;
     // End of variables declaration//GEN-END:variables
