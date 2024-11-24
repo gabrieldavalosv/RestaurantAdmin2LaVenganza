@@ -89,8 +89,8 @@ public class CtrlGestionDeOrdenes {
 
         if (orden != null) {
             tablaOrdenes.addRow(new Object[]{orden.getId(), orden.getCliente(), orden.getEstado(), orden.calcularPrecioTotal()});
-
             this.irGestionOrden(orden);
+            actualizarTablaOrdenes();
         }
 
         vista.fieldCliente.setText("");
@@ -104,6 +104,7 @@ public class CtrlGestionDeOrdenes {
             JOptionPane.showMessageDialog(vista, "Por favor, seleccione una fila de la tabla.");
         } else {
             modelo.buscarOrden(orden.getId()).setEstado("Terminada");
+            modelo.eliminarOrden(orden.getId());
             actualizarTablaOrdenes();
         }
     }

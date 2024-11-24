@@ -268,7 +268,7 @@ public class GestionDeCajeros extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton buttonAgregarCajero;
-    private javax.swing.JButton buttonEliminarCajero;
+    public javax.swing.JButton buttonEliminarCajero;
     public javax.swing.JButton buttonVolverPanel;
     public javax.swing.JTextField fieldCajero;
     private javax.swing.JFrame framePago;

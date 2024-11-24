@@ -1,10 +1,18 @@
 package modelo.personal;
 
+import modelo.Orden;
+import modelo.OrdenArreglo;
+import modelo.Venta;
+import modelo.VentaArreglo;
+
 public class Trabajador {
     private String id;
     private String nombre;
+
     private String contrasena;
     private String rol;
+    private static final VentaArreglo ventaArreglo = new VentaArreglo(20);
+    private static final OrdenArreglo ordenArreglo = new OrdenArreglo(20);
 
     public Trabajador(String id, String nombre, String contrasena) {
         this.id = id;
@@ -37,11 +45,12 @@ public class Trabajador {
         this.rol = rol;
     }
 
-    public boolean login(String nombre, String contrasena) {
-        if (this.nombre.equals(nombre) && this.contrasena.equals(contrasena)) {
-            return true;
-        }
-        return false;
+    public static VentaArreglo getVentaArreglo() {
+        return ventaArreglo;
+    }
+
+    public static OrdenArreglo getOrdenArreglo() {
+        return ordenArreglo;
     }
 
     public boolean logout() {

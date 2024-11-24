@@ -1,21 +1,18 @@
 package controlador;
 
 import java.time.LocalDate;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+import modelo.Venta;
 import modelo.VentaArreglo;
 import modelo.personal.Administrador;
-import modelo.personal.Cajero;
-import modelo.personal.CajeroArreglo;
-import vista.GestionDeCajeros;
 import vista.GestionDeRegistroVentas;
 import vista.PanelPrincipal;
 
 public class CtrlGestionRegistroVentas {
-    GestionDeRegistroVentas vista;
-    VentaArreglo modelo;
-    Administrador administrador;
+    private GestionDeRegistroVentas vista;
+    private VentaArreglo modelo;
+    private Administrador administrador;
 
     public CtrlGestionRegistroVentas(VentaArreglo modelo, GestionDeRegistroVentas vista, Administrador administrador) {
         this.vista = vista;
@@ -27,21 +24,37 @@ public class CtrlGestionRegistroVentas {
         vista.labelIdUsuario.setText("ID Usuario: " + administrador.getId());
         vista.labelFecha.setText("Fecha: " + LocalDate.now());
 
+        inicializarEventos();
 
-        vista.buttonVolverPanel.addActionListener(e -> this.irPanelPrincipal());
+        actualizarTabla();
 
         this.vista.setVisible(true);
     }
 
+    private void inicializarEventos() {
+        vista.buttonVolverPanel.addActionListener(e -> this.irPanelPrincipal());
+    }
+
+    private void actualizarTabla() {
+        DefaultTableModel model = (DefaultTableModel) vista.tablaVentas.getModel();
+        model.setRowCount(0);
+
+        for (Venta venta : modelo.getVentas()) {
+            if (venta != null) {
+                model.addRow(new Object[]{
+                        venta.getId(),
+                        venta.getOrden().getCliente(),
+                        venta.getEstado(),
+                        venta.getOrden().calcularPrecioTotal(),
+                        venta.getFecha()
+                });
+            }
+        }
+    }
+
     private void irPanelPrincipal() {
         var vistaPanel = new PanelPrincipal();
-        var ctrlPanel = new CtrlPanelPrincipal(administrador, vistaPanel);
-
+        new CtrlPanelPrincipal(administrador, vistaPanel);
         vista.dispose();
     }
 }
-
-
-
-
-

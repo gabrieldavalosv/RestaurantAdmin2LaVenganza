@@ -12,7 +12,7 @@ public class VentaArreglo {
         this.index = 0;
     }
 
-    public void agregarOrden(Venta venta) {
+    public void agregarVenta(Venta venta) {
         try {
             if (venta != null && this.index < ventas.length) {
                 ventas[this.index] = venta;

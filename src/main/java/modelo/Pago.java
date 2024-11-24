@@ -4,7 +4,6 @@ import modelo.excepciones.MetodoInvalidoException;
 import modelo.excepciones.MontoInsuficienteException;
 
 public class Pago {
-    private String id;
     private float monto;
     private MetodoPago metodoPago;
     private String estado;
@@ -15,16 +14,19 @@ public class Pago {
     }
 
     public Pago(String id, float monto, MetodoPago metodoPago, String estado) {
-        this.id = id;
         this.monto = monto;
         this.metodoPago = metodoPago;
         this.estado = estado;
     }
 
-    public boolean procesarPago(float totalPago) {
+    public boolean procesarPago(float totalPago, Orden orden, VentaArreglo ventas) {
         if (validarPago(totalPago)) {
-
             this.estado = "Pago realizado";
+
+            Venta venta = new Venta(this, orden);
+            ventas.agregarVenta(venta);
+            System.out.println(venta.generarComprobante());
+
             return true;
         } else {
             this.estado = "Pago fallido";
@@ -37,7 +39,7 @@ public class Pago {
             if (monto < totalPago) {
                 throw new MontoInsuficienteException();
             }
-            if (!metodoPago.getMetodo().equals("Tarjeta") && !metodoPago.getMetodo().equals("Efectivo") && !metodoPago.getMetodo().equals("Transferencia")) {
+            if (!metodoPago.getMetodo().equals("Tarjeta") && !metodoPago.getMetodo().equals("Efectivo")) {
                 throw new MetodoInvalidoException();
             }
             return true;
@@ -48,10 +50,6 @@ public class Pago {
             System.out.println(e.getMessage());
             return false;
         }
-    }
-
-    public String getId() {
-        return id;
     }
 
     public float getMonto() {

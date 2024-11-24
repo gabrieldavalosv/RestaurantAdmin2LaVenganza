@@ -57,11 +57,12 @@ public class CtrlGestionDePagos {
 
         var pago = new Pago(monto, metodoPago);
 
-        if (pago.procesarPago(modelo.calcularPrecioTotal())) {
+        if (pago.procesarPago(modelo.calcularPrecioTotal(), modelo, administrador.getVentas())) {
             float vuelto = pago.getMonto() - modelo.calcularPrecioTotal();
             JOptionPane.showMessageDialog(vista, "Vuelto: " + vuelto + " Metodo: " + metodoPago.getMetodo());
 
             modelo.setEstado("Pagada");
+
             irGestionOrdenes();
 
         } else {
@@ -71,9 +72,9 @@ public class CtrlGestionDePagos {
 
     public void irGestionOrdenes() {
         var vistaOrdenes = new GestionDeOrdenes();
-        var ordenes = Cajero.getOrdenArreglo();
+        var ordenes = administrador.getOrdenes(); // Método para obtener las órdenes desde el modelo
 
-        var ctrlOrdenes = new CtrlGestionDeOrdenes(ordenes, vistaOrdenes, administrador);
+        new CtrlGestionDeOrdenes(ordenes, vistaOrdenes, administrador);
 
         vista.dispose();
     }

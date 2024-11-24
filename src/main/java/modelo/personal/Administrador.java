@@ -1,11 +1,10 @@
 package modelo.personal;
 
-import modelo.excepciones.ArregloLLenoException;
-import modelo.excepciones.IdNoEncontradoException;
+import modelo.OrdenArreglo;
+import modelo.VentaArreglo;
 
 public class Administrador extends Trabajador {
     private static CajeroArreglo cajeroArreglo;
-
 
     public Administrador(String id, String nombre, String contrasena) {
         super(id, nombre, contrasena);
@@ -28,4 +27,14 @@ public class Administrador extends Trabajador {
     public Cajero buscarCajero(String id) {
         return cajeroArreglo.buscarCajero(id);
     }
+
+    public static VentaArreglo getVentas() {
+        return Trabajador.getVentaArreglo();
+    }
+
+    public static OrdenArreglo getOrdenes() {
+        return Trabajador.getOrdenArreglo();
+    }
+
+
 }

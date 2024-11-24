@@ -66,4 +66,12 @@ public class CajeroArreglo {
         }
         return resultado;
     }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public Cajero[] getCajeros() {
+        return cajeros;
+    }
 }

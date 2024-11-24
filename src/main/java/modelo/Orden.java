@@ -58,9 +58,9 @@ public class Orden {
 
     @Override
     public String toString() {
-        String resultado = "ID de Orden: " + getId() + "Cliente: " + getCliente();
-        resultado += " ID |          NOMBRE           |  PRECIO  |  CATEGORIA";
-        resultado += productoArreglo;
+        String resultado = "ID de Orden: " + getId();
+        resultado += "\nCliente: " + getCliente();
+        resultado += "\n" + getProductoArreglo();
         return resultado;
     }
 
