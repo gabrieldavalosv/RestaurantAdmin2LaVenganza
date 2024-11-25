@@ -127,6 +127,33 @@ public class CajeroArreglo {
         }
     }
 
+    public static Cajero buscarCajerosTxt(String nombreIngresado, String contraseniaIngresada) {
+        try ( BufferedReader reader = new BufferedReader(new FileReader(ARCHIVO_CAJEROS))) {
+            String linea;
+
+            while ( (linea = reader.readLine()) != null ) {
+                
+                // Divide la línea usando ":" como separador y eliminando espacios en los extremos
+                String[] datos = linea.split(" : ");
+                
+                String id = datos[0].trim();
+                String nombre = datos[1].trim();
+                String contrasenia = datos[2].trim();
+                String ruc = datos[3].trim();
+                
+                if( nombre.equals(nombreIngresado) && contrasenia.equals(contraseniaIngresada) ){
+                    Cajero cajero = new Cajero(id, nombre, contrasenia, ruc);
+                    return cajero;
+                }
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error al cargar los cajeros desde el archivo: " + e.getMessage());
+        }
+        
+        return null;
+    }
+    
     @Override
     public String toString() {
         String resultado = "=========================================================\n";

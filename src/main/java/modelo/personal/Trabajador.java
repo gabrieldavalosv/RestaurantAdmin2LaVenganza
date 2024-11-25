@@ -1,8 +1,6 @@
 package modelo.personal;
 
-import modelo.Orden;
 import modelo.OrdenArreglo;
-import modelo.Venta;
 import modelo.VentaArreglo;
 
 public class Trabajador {
@@ -11,8 +9,8 @@ public class Trabajador {
 
     private String contrasena;
     private String rol;
-    private static final VentaArreglo ventaArreglo = new VentaArreglo(20);
-    private static final OrdenArreglo ordenArreglo = new OrdenArreglo(20);
+    public static VentaArreglo ventaArreglo = new VentaArreglo(20);
+    public static OrdenArreglo ordenArreglo = new OrdenArreglo(20);
 
     public Trabajador(String id, String nombre, String contrasena) {
         this.id = id;
@@ -55,5 +53,13 @@ public class Trabajador {
 
     public boolean logout() {
         return true;
+    }
+    
+    public static VentaArreglo getVentas() {
+        return ventaArreglo;
+    }
+    
+    public static OrdenArreglo getOrdenes() {
+        return ordenArreglo;
     }
 }

@@ -6,22 +6,23 @@ import javax.swing.table.DefaultTableModel;
 import modelo.Venta;
 import modelo.VentaArreglo;
 import modelo.personal.Administrador;
+import modelo.personal.Trabajador;
 import vista.GestionDeRegistroVentas;
 import vista.PanelPrincipal;
 
 public class CtrlGestionRegistroVentas {
     private GestionDeRegistroVentas vista;
     private VentaArreglo modelo;
-    private Administrador administrador;
+    private Trabajador trabajador;
 
-    public CtrlGestionRegistroVentas(VentaArreglo modelo, GestionDeRegistroVentas vista, Administrador administrador) {
+    public CtrlGestionRegistroVentas(VentaArreglo modelo, GestionDeRegistroVentas vista, Trabajador trabajador) {
         this.vista = vista;
         this.modelo = modelo;
-        this.administrador = administrador;
+        this.trabajador = trabajador;
 
-        vista.labelRol.setText("Rol: " + administrador.getRol());
-        vista.labelNombreUsuario.setText("Usuario: " + administrador.getNombre());
-        vista.labelIdUsuario.setText("ID Usuario: " + administrador.getId());
+        vista.labelRol.setText("Rol: " + trabajador.getRol());
+        vista.labelNombreUsuario.setText("Usuario: " + trabajador.getNombre());
+        vista.labelIdUsuario.setText("ID Usuario: " + trabajador.getId());
         vista.labelFecha.setText("Fecha: " + LocalDate.now());
 
         inicializarEventos();
@@ -53,7 +54,8 @@ public class CtrlGestionRegistroVentas {
 
     private void irPanelPrincipal() {
         var vistaPanel = new PanelPrincipal();
-        new CtrlPanelPrincipal(administrador, vistaPanel);
+        var ctrlPanelPrincipal = new CtrlPanelPrincipal(trabajador, vistaPanel);
+        
         vista.dispose();
     }
 }

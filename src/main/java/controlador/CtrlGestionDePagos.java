@@ -8,8 +8,7 @@ import javax.swing.JOptionPane;
 import modelo.MetodoPago;
 import modelo.Orden;
 import modelo.Pago;
-import modelo.personal.Administrador;
-import modelo.personal.Cajero;
+import modelo.personal.Trabajador;
 import vista.GestionDeOrdenes;
 import vista.GestionDePagos;
 
@@ -18,16 +17,16 @@ import vista.GestionDePagos;
  */
 
 public class CtrlGestionDePagos {
-    Orden modelo;
-    Administrador administrador;
-    GestionDePagos vista;
+    private Orden modelo;
+    private Trabajador trabajador;
+    private GestionDePagos vista;
 
     private String fecha;
 
-    public CtrlGestionDePagos(Orden modelo, GestionDePagos vista, Administrador administrador) {
+    public CtrlGestionDePagos(Orden modelo, GestionDePagos vista, Trabajador trabajador) {
         this.modelo = modelo;
         this.vista = vista;
-        this.administrador = administrador;
+        this.trabajador = trabajador;
 
         this.asignarEventos();
         this.mostrarDatosTitulos();
@@ -57,7 +56,7 @@ public class CtrlGestionDePagos {
 
         var pago = new Pago(monto, metodoPago);
 
-        if (pago.procesarPago(modelo.calcularPrecioTotal(), modelo, administrador.getVentas())) {
+        if (pago.procesarPago(modelo.calcularPrecioTotal(), modelo, trabajador.getVentas())) {
             float vuelto = pago.getMonto() - modelo.calcularPrecioTotal();
             JOptionPane.showMessageDialog(vista, "Vuelto: " + vuelto + " Metodo: " + metodoPago.getMetodo());
 
@@ -72,10 +71,10 @@ public class CtrlGestionDePagos {
 
     public void irGestionOrdenes() {
         var vistaOrdenes = new GestionDeOrdenes();
-        var ordenes = administrador.getOrdenes(); // Método para obtener las órdenes desde el modelo
+        var ordenes = trabajador.getOrdenes(); // Método para obtener las órdenes desde el modelo
 
         ordenes.actualizarOrdenesTxt();
-        new CtrlGestionDeOrdenes(ordenes, vistaOrdenes, administrador);
+        new CtrlGestionDeOrdenes(ordenes, vistaOrdenes, trabajador);
 
         vista.dispose();
     }

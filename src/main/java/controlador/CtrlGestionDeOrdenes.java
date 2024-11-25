@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import modelo.personal.Administrador;
+import modelo.personal.Trabajador;
 import vista.GestionDeOrden;
 import vista.GestionDeOrdenes;
 import vista.PanelPrincipal;
@@ -21,18 +21,18 @@ import vista.PanelPrincipal;
 public class CtrlGestionDeOrdenes {
     GestionDeOrdenes vista;
     OrdenArreglo modelo;
-    Administrador administrador;
+    Trabajador trabajador;
 
     private Menu menu;
 
-    public CtrlGestionDeOrdenes(OrdenArreglo modelo, GestionDeOrdenes vista, Administrador administrador) {
+    public CtrlGestionDeOrdenes(OrdenArreglo modelo, GestionDeOrdenes vista, Trabajador trabajador) {
         this.vista = vista;
         this.modelo = modelo;
-        this.administrador = administrador;
+        this.trabajador = trabajador;
 
-        vista.labelRol.setText("Rol: " + administrador.getRol());
-        vista.labelNombreUsuario.setText("Usuario: " + administrador.getNombre());
-        vista.labelIdUsuario.setText("ID Usuario: " + administrador.getId());
+        vista.labelRol.setText("Rol: " + trabajador.getRol());
+        vista.labelNombreUsuario.setText("Usuario: " + trabajador.getNombre());
+        vista.labelIdUsuario.setText("ID Usuario: " + trabajador.getId());
         vista.labelFecha.setText("Fecha: " + LocalDate.now());
 
         this.actualizarTablaOrdenes();
@@ -46,14 +46,14 @@ public class CtrlGestionDeOrdenes {
 
     private void irPanelPrincipal() {
         var vistaPanel = new PanelPrincipal();
-        var ctrlPanel = new CtrlPanelPrincipal(administrador, vistaPanel);
+        var ctrlPanel = new CtrlPanelPrincipal(trabajador, vistaPanel);
 
         vista.dispose();
     }
 
     private void irGestionOrden(Orden orden) {
         var vistaOrden = new GestionDeOrden();
-        var ctrlOrden = new CtrlGestionDeOrden(orden, vistaOrden, administrador);
+        var ctrlOrden = new CtrlGestionDeOrden(orden, vistaOrden, trabajador);
 
         vista.dispose();
     }

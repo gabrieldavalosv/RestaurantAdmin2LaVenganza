@@ -8,7 +8,7 @@ import modelo.Producto;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import modelo.personal.Administrador;
+import modelo.personal.Trabajador;
 import vista.GestionDeOrden;
 import vista.GestionDePagos;
 
@@ -19,14 +19,14 @@ import vista.GestionDePagos;
 public class CtrlGestionDeOrden {
     private Orden modelo;
     private GestionDeOrden vista;
-    private Administrador administrador;
+    private Trabajador trabajador;
 
     private Menu menu;
 
-    public CtrlGestionDeOrden(Orden modelo, GestionDeOrden vista, Administrador administrador) {
+    public CtrlGestionDeOrden(Orden modelo, GestionDeOrden vista, Trabajador trabajador) {
         this.vista = vista;
         this.modelo = modelo;
-        this.administrador = administrador;
+        this.trabajador = trabajador;
 
         vista.labelCliente.setText("Cliente: " + modelo.getCliente());
         vista.labelPrecioTotal.setText("Precio total : " + modelo.calcularPrecioTotal());
@@ -44,7 +44,7 @@ public class CtrlGestionDeOrden {
 
     private void irGestionarPago() {
         var vistaPago = new GestionDePagos();
-        var ctrlPago = new CtrlGestionDePagos(modelo, vistaPago, administrador);
+        var ctrlPago = new CtrlGestionDePagos(modelo, vistaPago, trabajador);
     }
 
     private void actualizarTablaProductos() {

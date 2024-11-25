@@ -1,17 +1,18 @@
 package modelo.personal;
 
 import modelo.Orden;
-import modelo.OrdenArreglo;
 
 public class Cajero extends Trabajador {
     private String RUC;
-    private static OrdenArreglo ordenArreglo;
-
 
     public Cajero(String id, String nombre, String contrasena, String RUC) {
         super(id, nombre, contrasena);
         this.RUC = RUC;
-        ordenArreglo = new OrdenArreglo(20);
+        setRol("Cajero");
+    }
+    
+    public Cajero(Trabajador t){
+        super( t.getId(), t.getNombre(), t.getContrasena() );
         setRol("Cajero");
     }
 
@@ -22,11 +23,7 @@ public class Cajero extends Trabajador {
     public void setRUC(String RUC) {
         this.RUC = RUC;
     }
-
-    public static OrdenArreglo getOrdenArreglo() {
-        return ordenArreglo;
-    }
-
+    
     public void crearOrden(String id, String cliente) {
         ordenArreglo.agregarOrden(new Orden(id, cliente));
     }

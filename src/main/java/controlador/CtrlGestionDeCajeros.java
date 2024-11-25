@@ -40,21 +40,25 @@ public class CtrlGestionDeCajeros {
 
     private void agregarCajero() {
         try {
-            String nombre = vista.fieldCajero.getText().trim();
-            if (nombre.isEmpty()) {
-                throw new IllegalArgumentException("El campo de nombre no puede estar vacío.");
+            String nombre = vista.fieldNombre.getText().trim();
+            String contrasenia = vista.fieldContrasenia.getText().trim();
+            String ruc = vista.fieldRUC.getText().trim();
+            
+            if ( nombre.isEmpty() || contrasenia.isEmpty() || ruc.isEmpty() ) {
+                throw new IllegalArgumentException("El nombre, la contraseña o el ruc no pueden estar vacios...");
             }
 
             // Generar un ID único basado en la cantidad de cajeros actuales
             String id = String.valueOf(administrador.getCajeroArreglo().getIndex() + 1);
-            String ruc = "RUC" + id; // Generar un RUC ficticio
 
             // Crear y añadir el cajero
-            administrador.agregarCajero(new Cajero(id, nombre, "1234", ruc));
+            administrador.agregarCajero(new Cajero(id, nombre, contrasenia, ruc));
             actualizarTabla();
 
             // Limpiar el campo de entrada
-            vista.fieldCajero.setText("");
+            vista.fieldNombre.setText("");
+            vista.fieldContrasenia.setText("");
+            vista.fieldRUC.setText("");
 
             JOptionPane.showMessageDialog(vista, "Cajero agregado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } catch (IllegalArgumentException ex) {

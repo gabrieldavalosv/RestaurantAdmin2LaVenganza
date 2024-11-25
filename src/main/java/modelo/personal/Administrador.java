@@ -1,14 +1,15 @@
 package modelo.personal;
 
-import modelo.OrdenArreglo;
-import modelo.VentaArreglo;
-
 public class Administrador extends Trabajador {
-    private static CajeroArreglo cajeroArreglo;
-
+    private static CajeroArreglo cajeroArreglo = new CajeroArreglo(20);
+    
     public Administrador(String id, String nombre, String contrasena) {
         super(id, nombre, contrasena);
-        cajeroArreglo = new CajeroArreglo(20);
+        setRol("Administrador");
+    }
+    
+    public Administrador(Trabajador t){
+        super( t.getId(), t.getNombre(), t.getContrasena() );
         setRol("Administrador");
     }
 
@@ -28,13 +29,11 @@ public class Administrador extends Trabajador {
         return cajeroArreglo.buscarCajero(id);
     }
 
-    public static VentaArreglo getVentas() {
-        return Trabajador.getVentaArreglo();
+    public static boolean buscarAdmin(String nombreIngresado, String contraseniaIngresada){
+        String id = "101";
+        String nombre = "Mathias";
+        String contrasenia = "2301";
+        
+        return nombre.equals( nombreIngresado ) && contrasenia.equals( contraseniaIngresada );
     }
-
-    public static OrdenArreglo getOrdenes() {
-        return Trabajador.getOrdenArreglo();
-    }
-
-
 }

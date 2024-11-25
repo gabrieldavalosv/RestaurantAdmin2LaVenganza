@@ -36,11 +36,15 @@ public class GestionDeCajeros extends javax.swing.JFrame {
         labelNombreUsuario = new javax.swing.JLabel();
         labelIdUsuario = new javax.swing.JLabel();
         labelCajero = new javax.swing.JLabel();
-        fieldCajero = new javax.swing.JTextField();
+        fieldNombre = new javax.swing.JTextField();
         labelTituloFecha2 = new javax.swing.JLabel();
         buttonAgregarCajero = new javax.swing.JButton();
         buttonEliminarCajero = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        labelCajero1 = new javax.swing.JLabel();
+        labelCajero2 = new javax.swing.JLabel();
+        fieldRUC = new javax.swing.JTextField();
+        fieldContrasenia = new javax.swing.JPasswordField();
 
         javax.swing.GroupLayout framePagoLayout = new javax.swing.GroupLayout(framePago.getContentPane());
         framePago.getContentPane().setLayout(framePagoLayout);
@@ -114,13 +118,13 @@ public class GestionDeCajeros extends javax.swing.JFrame {
         labelIdUsuario.setText("ID Usuario:");
 
         labelCajero.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelCajero.setText("Cajero:");
+        labelCajero.setText("Nombre:");
 
-        fieldCajero.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        fieldCajero.setToolTipText("");
-        fieldCajero.addActionListener(new java.awt.event.ActionListener() {
+        fieldNombre.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        fieldNombre.setToolTipText("");
+        fieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldCajeroActionPerformed(evt);
+                fieldNombreActionPerformed(evt);
             }
         });
 
@@ -144,6 +148,20 @@ public class GestionDeCajeros extends javax.swing.JFrame {
             }
         });
 
+        labelCajero1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelCajero1.setText("Contraseña:");
+
+        labelCajero2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelCajero2.setText("RUC:");
+
+        fieldRUC.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        fieldRUC.setToolTipText("");
+        fieldRUC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldRUCActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -154,11 +172,30 @@ public class GestionDeCajeros extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
                     .addComponent(buttonEliminarCajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelRol)
-                            .addComponent(labelNombreUsuario))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(labelCajero)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                                .addComponent(fieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelCajero2)
+                                    .addComponent(labelCajero1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(fieldContrasenia)
+                                    .addComponent(fieldRUC, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE))))
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonAgregarCajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelNombreUsuario)
+                                .addGap(10, 10, 10))
+                            .addComponent(buttonVolverPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelRol, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(97, 97, 97)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(labelIdUsuario)
@@ -166,13 +203,7 @@ public class GestionDeCajeros extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(labelTituloForm)
                                 .addGap(22, 22, 22)))
-                        .addGap(118, 118, 118))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelCajero)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(fieldCajero, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(buttonAgregarCajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelTituloFecha2)
                 .addGap(31, 31, 31))
@@ -181,44 +212,54 @@ public class GestionDeCajeros extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelTituloForm, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(buttonVolverPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(labelTituloForm)
+                        .addGap(20, 20, 20)
+                        .addComponent(labelFecha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelIdUsuario))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(labelRol)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelNombreUsuario)))
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelRol)
-                    .addComponent(labelFecha))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNombreUsuario)
-                    .addComponent(labelIdUsuario))
-                .addGap(15, 15, 15)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(255, 255, 255)
                         .addComponent(labelTituloFecha2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(194, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelCajero)
+                            .addComponent(fieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelCajero1)
                             .addComponent(buttonAgregarCajero, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fieldCajero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelCajero))
-                        .addGap(20, 20, 20)
+                            .addComponent(fieldContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelCajero2)
+                            .addComponent(fieldRUC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(buttonEliminarCajero, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30))))
+                        .addContainerGap())))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void fieldCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldCajeroActionPerformed
+    private void fieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fieldCajeroActionPerformed
+    }//GEN-LAST:event_fieldNombreActionPerformed
 
     private void buttonAgregarCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAgregarCajeroActionPerformed
         // TODO add your handling code here:
@@ -228,9 +269,14 @@ public class GestionDeCajeros extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonEliminarCajeroActionPerformed
 
+    private void fieldRUCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldRUCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldRUCActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -270,11 +316,15 @@ public class GestionDeCajeros extends javax.swing.JFrame {
     public javax.swing.JButton buttonAgregarCajero;
     public javax.swing.JButton buttonEliminarCajero;
     public javax.swing.JButton buttonVolverPanel;
-    public javax.swing.JTextField fieldCajero;
+    public javax.swing.JPasswordField fieldContrasenia;
+    public javax.swing.JTextField fieldNombre;
+    public javax.swing.JTextField fieldRUC;
     private javax.swing.JFrame framePago;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel labelCajero;
+    private javax.swing.JLabel labelCajero1;
+    private javax.swing.JLabel labelCajero2;
     public javax.swing.JLabel labelFecha;
     public javax.swing.JLabel labelIdUsuario;
     public javax.swing.JLabel labelNombreUsuario;

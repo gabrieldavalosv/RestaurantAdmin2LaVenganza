@@ -1,24 +1,28 @@
 package controlador;
 
-import modelo.personal.Administrador;
+import controlador.CtrlPanelPrincipal;
 import vista.PanelPrincipal;
 import vista.PantallaLogin;
 
 import javax.swing.JOptionPane;
+import modelo.personal.Administrador;
+import modelo.personal.CajeroArreglo;
+import modelo.personal.Trabajador;
 
 /**
  * @author Davi
  */
 
 public class CtrlPantallaLogin {
-    private final Administrador modelo;
+    private Trabajador modelo;
     private final PantallaLogin vista;
 
-    public CtrlPantallaLogin(Administrador modelo, PantallaLogin vista) {
+    public CtrlPantallaLogin(Trabajador modelo, PantallaLogin vista) {
         this.modelo = modelo;
         this.vista = vista;
 
         this.asignarEventos();
+        
         vista.setVisible(true);
     }
 
@@ -31,15 +35,30 @@ public class CtrlPantallaLogin {
     public void iniciarSesion() {
         var usuario = vista.getFieldUsuario().getText();
         var contrasenia = vista.getFieldContrasenia().getText();
-
-        if (usuario.equals(modelo.getNombre()) && contrasenia.equals(modelo.getContrasena())) {
+        
+        // Loguear como administrador
+        if ( Administrador.buscarAdmin(usuario, contrasenia) ) {
             var vistaPanel = new PanelPrincipal();
-            var ctrlPanel = new CtrlPanelPrincipal(modelo, vistaPanel);
+            var ctrlPanel = new CtrlPanelPrincipal( modelo, vistaPanel);
 
             vista.dispose();
-        } else {
-            JOptionPane.showMessageDialog(vista, "Usuario o contrasenia incorrectos.\nIntentar de nuevo");
+        
+        // Loguear como cajero
+        }else{
+            // Para comprueba si es un cajero
+            var cajero = CajeroArreglo.buscarCajerosTxt(usuario, contrasenia);
+            
+            if( cajero != null ){
+                var vistaPanel = new PanelPrincipal();
+                var ctrlPanel = new CtrlPanelPrincipal( cajero, vistaPanel);
+            
+                vista.dispose();
+                
+            }else{
+                JOptionPane.showMessageDialog(vista, "Usuario o contrasenia incorrectos.\nIntentar de nuevo");
+            }
         }
+        
     }
 
     public void mostrarcontrasena() {

@@ -1,16 +1,16 @@
 package controlador;
 
 import java.time.LocalDate;
-
 import modelo.personal.Administrador;
-import modelo.personal.CajeroArreglo;
+
+import modelo.personal.Trabajador;
 import vista.*;
 
 public class CtrlPanelPrincipal {
-    private Administrador modelo;
+    private Trabajador modelo;
     private PanelPrincipal vista;
 
-    public CtrlPanelPrincipal(Administrador modelo, PanelPrincipal vista) {
+    public CtrlPanelPrincipal(Trabajador modelo, PanelPrincipal vista) {
         this.modelo = modelo;
         this.vista = vista;
 
@@ -25,14 +25,20 @@ public class CtrlPanelPrincipal {
         vista.buttonGestionarVentas.addActionListener(e -> this.irGestionVentas());
         vista.buttonGestionarCajeros.addActionListener(e -> this.irGestionDeCajeros());
         vista.buttonCerrarSesion.addActionListener(e -> this.irLogin());
+        
+        // Gestionar permisos
+        if ( modelo.getRol().equals("Cajero") ){
+            vista.buttonGestionarCajeros.setEnabled(false);
+        }
 
         this.vista.setVisible(true);
     }
-
+    
     // Métodos de navegación
     public void irLogin() {
         var vistaLogin = new PantallaLogin();
-        new CtrlPantallaLogin(modelo, vistaLogin);
+        
+        var ctrlPantallaLogin = new CtrlPantallaLogin( modelo, vistaLogin);
 
         vista.dispose();
     }
@@ -40,8 +46,8 @@ public class CtrlPanelPrincipal {
     public void irGestionOrdenes() {
         var vistaOrdenes = new GestionDeOrdenes();
         var ordenes = modelo.getOrdenes(); // Método para obtener las órdenes desde el modelo
-
-        new CtrlGestionDeOrdenes(ordenes, vistaOrdenes, modelo);
+        
+        var ctrlGestionDeOrdenes = new CtrlGestionDeOrdenes(ordenes, vistaOrdenes, modelo);
 
         vista.dispose();
     }
@@ -49,17 +55,17 @@ public class CtrlPanelPrincipal {
     public void irGestionVentas() {
         var gestorVentas = new GestionDeRegistroVentas();
         var ventas = modelo.getVentas(); // Método para obtener las ventas desde el modelo
-
-        new CtrlGestionRegistroVentas(ventas, gestorVentas, modelo);
+        
+        var ctrlGestionRegistroVentas = new CtrlGestionRegistroVentas(ventas, gestorVentas, modelo);
 
         vista.dispose();
     }
 
     public void irGestionDeCajeros() {
         var gestorCajeros = new GestionDeCajeros();
-        var cajeros = modelo.getCajeroArreglo(); // Obtener el arreglo de cajeros desde el modelo
-
-        new CtrlGestionDeCajeros(gestorCajeros, modelo);
+        var admin = new Administrador( modelo );
+        
+        var ctrlGestionDeCajeros = new CtrlGestionDeCajeros( gestorCajeros, admin);
 
         vista.dispose();
     }

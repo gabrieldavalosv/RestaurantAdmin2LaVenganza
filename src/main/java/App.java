@@ -9,7 +9,6 @@ import vista.PantallaLogin;
 
 public class App {
     public static void main(String[] args) {
-        
         // Creacion de personales
         Administrador administrador1 = new Administrador("100", "Mathias", "2301");
         
