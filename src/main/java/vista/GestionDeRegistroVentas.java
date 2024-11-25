@@ -75,14 +75,14 @@ public class GestionDeRegistroVentas extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Cliente", "Estado", "Precio total (S/.)", "Fecha"
+                "ID", "Fecha", "Monto", "Método Pago"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -98,12 +98,11 @@ public class GestionDeRegistroVentas extends javax.swing.JFrame {
             tablaVentas.getColumnModel().getColumn(0).setResizable(false);
             tablaVentas.getColumnModel().getColumn(0).setPreferredWidth(25);
             tablaVentas.getColumnModel().getColumn(1).setResizable(false);
-            tablaVentas.getColumnModel().getColumn(1).setPreferredWidth(150);
+            tablaVentas.getColumnModel().getColumn(1).setPreferredWidth(100);
             tablaVentas.getColumnModel().getColumn(2).setResizable(false);
-            tablaVentas.getColumnModel().getColumn(2).setPreferredWidth(75);
+            tablaVentas.getColumnModel().getColumn(2).setPreferredWidth(50);
             tablaVentas.getColumnModel().getColumn(3).setResizable(false);
-            tablaVentas.getColumnModel().getColumn(3).setPreferredWidth(75);
-            tablaVentas.getColumnModel().getColumn(4).setPreferredWidth(150);
+            tablaVentas.getColumnModel().getColumn(3).setPreferredWidth(100);
         }
 
         labelNombreUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N

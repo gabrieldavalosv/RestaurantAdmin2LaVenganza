@@ -1,1 +1,2 @@
-0 : Sabogal                   : Terminada  : [113 : Hamburguesa Estilo Sabogal : 16.50 : Comida    , 109 : Hamburguesa Royal         : 17.00 : Comida    ]
+0 : Sabogal                   : Pagada     : [113 : Hamburguesa Estilo Sabogal : 16.50 : Comida    , 309 : Chicha Morada Grande      :  9.00 : Bebida    , 401 : Helado de Vainilla        :  6.00 : Postre    ]
+1 : Joseph                    : Pagada     : [107 : Hamburguesa Tartara       : 14.00 : Comida    ]

@@ -1,5 +1,7 @@
 package modelo;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import modelo.excepciones.MetodoInvalidoException;
 import modelo.excepciones.MontoInsuficienteException;
 
@@ -23,7 +25,12 @@ public class Pago {
         if (validarPago(totalPago)) {
             this.estado = "Pago realizado";
 
-            Venta venta = new Venta(this, orden);
+            // Obtener la fecha actual y formatearla a un String
+            LocalDate fechaActual = LocalDate.now();
+            DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            String fecha = fechaActual.format(formatoFecha);
+            
+            Venta venta = new Venta(orden, fecha, this);
             ventas.agregarVenta(venta);
             System.out.println(venta.generarComprobante());
 

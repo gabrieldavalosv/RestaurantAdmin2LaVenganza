@@ -74,7 +74,7 @@ public class OrdenArreglo {
 
     // Metodos para manipular los archivos txt
     public void actualizarOrdenesTxt() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(ARCHIVO_ORDENES))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(ARCHIVO_ORDENES, false))) {
 
             // Recorre el arreglo de ordenes y guarda cada orden en el archivo
             for (int i = 0; i < index; i++) {
@@ -146,6 +146,56 @@ public class OrdenArreglo {
         } catch (IOException e) {
             System.out.println("Error al cargar las ordenes desde el archivo: " + e.getMessage());
         }
+    }
+    
+    public static Orden buscarOrdenTxt(String idOrden){
+        try (BufferedReader reader = new BufferedReader(new FileReader("ordenes.txt"))) {
+            String linea;
+
+            while ( (linea = reader.readLine()) != null) {
+                
+                // Divide la línea usando ":" como separador y eliminando espacios en los extremos
+                String[] datos = linea.split(" : ");
+                
+                String id = datos[0].trim();
+                
+                if ( id.equals(idOrden) ){
+                    String cliente = datos[1].trim();
+                    String estado = datos[2].trim();
+
+                    Orden orden = new Orden(id, cliente, estado);
+
+                    // Buscar y procesar los productos (se encuentran entre corchetes)
+                    String productosLine = linea.substring(linea.indexOf("[") + 1, linea.indexOf("]")).trim();
+
+                    // Dividir los productos por coma
+                    String[] productos = productosLine.split(" , ");
+
+                    for (String productoData : productos) {
+                        // Separar los detalles de cada producto
+                        String[] detallesProducto = productoData.split(" : ");
+
+                        String idProducto = detallesProducto[0].trim();
+                        String nombreProducto = detallesProducto[1].trim();
+                        float precioProducto = Float.parseFloat(detallesProducto[2].trim());
+                        String categoriaProducto = detallesProducto[3].trim();
+
+                        // Crear el objeto Producto con la información extraída
+                        Producto producto = new Producto(idProducto, nombreProducto, precioProducto, categoriaProducto);
+
+                        // Agregar el producto a la orden
+                        orden.getProductoArreglo().agregarProducto(producto);
+                    }
+                    
+                    return orden;
+                }
+            }
+            
+        } catch (IOException e) {
+            System.out.println("Error al cargar las ordenes desde el archivo: " + e.getMessage());
+        }
+        
+        return null;
     }
     
     public int getIndex() {

@@ -43,10 +43,9 @@ public class CtrlGestionRegistroVentas {
             if (venta != null) {
                 model.addRow(new Object[]{
                         venta.getId(),
-                        venta.getOrden().getCliente(),
-                        venta.getEstado(),
-                        venta.getOrden().calcularPrecioTotal(),
-                        venta.getFecha()
+                        venta.getFecha(),
+                        venta.getPago().getMonto(),
+                        venta.getPago().getMetodo()
                 });
             }
         }
