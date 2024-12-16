@@ -32,19 +32,17 @@ public class GestionDePagos extends javax.swing.JFrame {
     private void initComponents() {
 
         jSlider1 = new javax.swing.JSlider();
-        labelNombreCliente = new javax.swing.JLabel();
-        labelFechaHora = new javax.swing.JLabel();
+        labelCliente = new javax.swing.JLabel();
+        labelFecha = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         fieldMonto = new javax.swing.JTextField();
         labelTotal = new javax.swing.JLabel();
         labeldOrden = new javax.swing.JLabel();
         labelTituloForm = new javax.swing.JLabel();
         buttonProcesarPago = new javax.swing.JButton();
-        buttonGenerarRecibo = new javax.swing.JButton();
         buttonCancelarPago = new javax.swing.JButton();
         comboboxMetodos = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        fieldIDOrden = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,24 +50,27 @@ public class GestionDePagos extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(425, 224));
         setSize(new java.awt.Dimension(425, 224));
 
-        labelNombreCliente.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelNombreCliente.setText("Cliente:");
+        labelCliente.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelCliente.setText("Cliente: [Cliente]");
 
-        labelFechaHora.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelFechaHora.setText("Fecha-Hora:");
-        labelFechaHora.setToolTipText("");
+        labelFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelFecha.setText("Fecha: [Fecha]");
+        labelFecha.setToolTipText("");
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel6.setText("Monto:");
 
-        fieldMonto.setBackground(new java.awt.Color(59, 73, 69));
-        fieldMonto.setForeground(new java.awt.Color(255, 255, 255));
+        fieldMonto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldMontoActionPerformed(evt);
+            }
+        });
 
         labelTotal.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelTotal.setText("Total a Pagar:");
 
         labeldOrden.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labeldOrden.setText("ID de Orden:");
+        labeldOrden.setText("ID de Orden: [IdOrden]");
 
         labelTituloForm.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         labelTituloForm.setText("Gestión de pago");
@@ -77,6 +78,7 @@ public class GestionDePagos extends javax.swing.JFrame {
         buttonProcesarPago.setBackground(new java.awt.Color(34, 141, 110));
         buttonProcesarPago.setForeground(new java.awt.Color(255, 255, 255));
         buttonProcesarPago.setText("Procesar pago");
+        buttonProcesarPago.setMargin(new java.awt.Insets(2, 2, 2, 2));
         buttonProcesarPago.setMaximumSize(new java.awt.Dimension(100, 25));
         buttonProcesarPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,19 +86,10 @@ public class GestionDePagos extends javax.swing.JFrame {
             }
         });
 
-        buttonGenerarRecibo.setBackground(new java.awt.Color(34, 141, 110));
-        buttonGenerarRecibo.setForeground(new java.awt.Color(255, 255, 255));
-        buttonGenerarRecibo.setText("GenerarRecibo");
-        buttonGenerarRecibo.setMaximumSize(new java.awt.Dimension(100, 25));
-        buttonGenerarRecibo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonGenerarReciboActionPerformed(evt);
-            }
-        });
-
         buttonCancelarPago.setBackground(new java.awt.Color(34, 141, 110));
         buttonCancelarPago.setForeground(new java.awt.Color(255, 255, 255));
         buttonCancelarPago.setText("Cancelar Pago");
+        buttonCancelarPago.setMargin(new java.awt.Insets(2, 2, 2, 2));
         buttonCancelarPago.setMaximumSize(new java.awt.Dimension(100, 25));
         buttonCancelarPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,91 +100,80 @@ public class GestionDePagos extends javax.swing.JFrame {
         comboboxMetodos.setBackground(new java.awt.Color(59, 73, 69));
         comboboxMetodos.setForeground(new java.awt.Color(255, 255, 255));
         comboboxMetodos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Tarjeta" }));
+        comboboxMetodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboboxMetodosActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel7.setText("Método");
-
-        fieldIDOrden.setBackground(new java.awt.Color(59, 73, 69));
-        fieldIDOrden.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Método:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelNombreCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(labelFechaHora)
-                        .addGap(106, 106, 106))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(buttonProcesarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(buttonGenerarRecibo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(fieldMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel7)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(buttonCancelarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(comboboxMetodos, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelTotal)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(220, 220, 220)
-                                        .addComponent(labeldOrden)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(fieldIDOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 90, Short.MAX_VALUE))))
-            .addComponent(jSeparator1)
-            .addGroup(layout.createSequentialGroup()
                 .addGap(204, 204, 204)
                 .addComponent(labelTituloForm)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelFecha)
+                        .addGap(106, 106, 106))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labeldOrden)
+                            .addComponent(labelTotal)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(fieldMonto))
+                                    .addComponent(buttonProcesarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(31, 31, 31)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(comboboxMetodos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(buttonCancelarPago, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 74, Short.MAX_VALUE))))
+            .addComponent(jSeparator1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(labelTituloForm)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNombreCliente)
-                    .addComponent(labelFechaHora))
-                .addGap(22, 22, 22)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelCliente)
+                    .addComponent(labelFecha))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labeldOrden)
+                .addGap(20, 20, 20)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(fieldMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
-                            .addComponent(comboboxMetodos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 187, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(buttonProcesarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonGenerarRecibo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonCancelarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelTotal)
-                            .addComponent(labeldOrden)
-                            .addComponent(fieldIDOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(comboboxMetodos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(labelTotal))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonProcesarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonCancelarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -201,13 +183,17 @@ public class GestionDePagos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonProcesarPagoActionPerformed
 
-    private void buttonGenerarReciboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGenerarReciboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonGenerarReciboActionPerformed
-
     private void buttonCancelarPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarPagoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonCancelarPagoActionPerformed
+
+    private void fieldMontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldMontoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldMontoActionPerformed
+
+    private void comboboxMetodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboboxMetodosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboboxMetodosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,10 +235,6 @@ public class GestionDePagos extends javax.swing.JFrame {
         return buttonCancelarPago;
     }
 
-    public JButton getButtonGenerarRecibo() {
-        return buttonGenerarRecibo;
-    }
-
     public JButton getButtonProcesarPago() {
         return buttonProcesarPago;
     }
@@ -262,11 +244,11 @@ public class GestionDePagos extends javax.swing.JFrame {
     }
 
     public JLabel getLabelCliente() {
-        return labelNombreCliente;
+        return labelCliente;
     }
 
     public JLabel getLabelFecha() {
-        return labelFechaHora;
+        return labelFecha;
     }
 
     public JLabel getLabelTituloForm() {
@@ -287,17 +269,15 @@ public class GestionDePagos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancelarPago;
-    private javax.swing.JButton buttonGenerarRecibo;
     private javax.swing.JButton buttonProcesarPago;
     private javax.swing.JComboBox<String> comboboxMetodos;
-    private javax.swing.JTextField fieldIDOrden;
     private javax.swing.JTextField fieldMonto;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSlider jSlider1;
-    private javax.swing.JLabel labelFechaHora;
-    private javax.swing.JLabel labelNombreCliente;
+    private javax.swing.JLabel labelCliente;
+    private javax.swing.JLabel labelFecha;
     private javax.swing.JLabel labelTituloForm;
     private javax.swing.JLabel labelTotal;
     private javax.swing.JLabel labeldOrden;

@@ -1,55 +1,56 @@
 package modelo;
 
-import modelo.personal.Cajero;
-
-import java.util.Date;
-
 public class Venta {
     private String id;
-    private Date fecha;
-    private String estado;
+    private String fecha;
     private Pago pago;
     private Orden orden;
-    private Cajero cajero;
 
-    public Venta(String id, Pago pago, Orden orden, Cajero cajero) {
-        this.id = id;
-        this.fecha = new Date();
-        this.estado = "Pendiente";
+    public Venta(Orden orden, String fecha, Pago pago) {
+        this.id = orden.getId();
+        this.fecha = fecha;
         this.pago = pago;
         this.orden = orden;
-        this.cajero = cajero;
-    }
-
-    public boolean procesarVenta() {
-        if (pago.procesarPago()) {
-            this.estado = "Realizada";
-            this.fecha = new Date();
-            generarComprobante();
-            return true;
-        } else {
-            this.estado = "Fallida";
-            return false;
-        }
-
     }
 
     public String generarComprobante() {
         String comprobante = "";
         comprobante += "=== Comprobante de Venta ===\n";
-        comprobante += "ID Venta: " + id + "\n";
+        comprobante += "ID: " + id + "\n";
         comprobante += "Fecha: " + fecha + "\n";
-        comprobante += "Estado: " + estado + "\n";
-        comprobante += "Cliente: " + orden.getCliente() + "\n";
-        comprobante += "Cajero: " + cajero.getNombre() + "\n";
         comprobante += "\n=== Detalles de la Orden ===\n";
         comprobante += orden + "\n";
         comprobante += "\n=== Detalles del Pago ===\n";
-        comprobante += "ID Pago: " + pago.getId() + "\n";
         comprobante += "Monto: S/." + pago.getMonto() + "\n";
         comprobante += "Método: " + pago.getMetodo() + "\n";
         comprobante += "===========================\n";
 
         return comprobante;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public String getEstado() {
+        return orden.getEstado();
+    }
+
+    public Pago getPago() {
+        return pago;
+    }
+
+    public Orden getOrden() {
+        return orden;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-1s : %-25s : %5.2f : %-10s", id, fecha, pago.getMonto(), pago.getMetodo());
+    }
+    
 }

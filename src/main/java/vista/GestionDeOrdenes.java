@@ -4,12 +4,6 @@
  */
 package vista;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-
 /**
  *
  * @author josep
@@ -32,211 +26,21 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        frameOrden = new javax.swing.JFrame();
-        labelTituloOrden = new javax.swing.JLabel();
-        labelOrdenCliente = new javax.swing.JLabel();
-        labelOrdenTotal = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaMenu = new javax.swing.JTable();
-        labelTituloMenu = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tablaOrdenProductos = new javax.swing.JTable();
-        labelUsuario5 = new javax.swing.JLabel();
-        fieldIdProducto = new javax.swing.JTextField();
-        buttonAgregarProducto = new javax.swing.JButton();
-        buttonEliminarProducto = new javax.swing.JButton();
-        buttonTerminarOrden = new javax.swing.JButton();
         framePago = new javax.swing.JFrame();
         labelTituloForm = new javax.swing.JLabel();
         labelRol = new javax.swing.JLabel();
-        labelFechaHora = new javax.swing.JLabel();
-        buttonAgregarOrden = new javax.swing.JButton();
-        buttonVolver = new javax.swing.JButton();
+        labelFecha = new javax.swing.JLabel();
+        buttonVolverPanel = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaOrdenes = new javax.swing.JTable();
-        buttonCancelarOrden = new javax.swing.JButton();
-        buttonModificarOrden = new javax.swing.JButton();
         labelNombreUsuario = new javax.swing.JLabel();
-        labelID = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        fieldNombreCliente = new javax.swing.JTextField();
-        labelOrdenID = new javax.swing.JLabel();
-
-        frameOrden.setMinimumSize(new java.awt.Dimension(1090, 520));
-        frameOrden.setSize(new java.awt.Dimension(1090, 520));
-
-        labelTituloOrden.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        labelTituloOrden.setText("Gestión de Órden [idOrden] ");
-
-        labelOrdenCliente.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelOrdenCliente.setText("Cliente: [cliente]");
-
-        labelOrdenTotal.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelOrdenTotal.setText("Total: [precioTotal]");
-
-        tablaMenu.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Nombre", "Categoria", "Precio (S/.)"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tablaMenu);
-        if (tablaMenu.getColumnModel().getColumnCount() > 0) {
-            tablaMenu.getColumnModel().getColumn(0).setMinWidth(50);
-            tablaMenu.getColumnModel().getColumn(0).setPreferredWidth(50);
-            tablaMenu.getColumnModel().getColumn(0).setMaxWidth(50);
-            tablaMenu.getColumnModel().getColumn(1).setMinWidth(175);
-            tablaMenu.getColumnModel().getColumn(1).setPreferredWidth(175);
-            tablaMenu.getColumnModel().getColumn(1).setMaxWidth(175);
-            tablaMenu.getColumnModel().getColumn(2).setMinWidth(85);
-            tablaMenu.getColumnModel().getColumn(2).setPreferredWidth(85);
-            tablaMenu.getColumnModel().getColumn(2).setMaxWidth(85);
-            tablaMenu.getColumnModel().getColumn(3).setMinWidth(100);
-            tablaMenu.getColumnModel().getColumn(3).setPreferredWidth(100);
-            tablaMenu.getColumnModel().getColumn(3).setMaxWidth(100);
-        }
-
-        labelTituloMenu.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        labelTituloMenu.setText("Menú [fecha]");
-        labelTituloMenu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jSeparator2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-
-        tablaOrdenProductos.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        tablaOrdenProductos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Nombre", "Categoria", "Precio (S/.)"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(tablaOrdenProductos);
-        if (tablaOrdenProductos.getColumnModel().getColumnCount() > 0) {
-            tablaOrdenProductos.getColumnModel().getColumn(0).setMinWidth(50);
-            tablaOrdenProductos.getColumnModel().getColumn(0).setPreferredWidth(50);
-            tablaOrdenProductos.getColumnModel().getColumn(0).setMaxWidth(50);
-            tablaOrdenProductos.getColumnModel().getColumn(1).setMinWidth(175);
-            tablaOrdenProductos.getColumnModel().getColumn(1).setPreferredWidth(175);
-            tablaOrdenProductos.getColumnModel().getColumn(1).setMaxWidth(175);
-            tablaOrdenProductos.getColumnModel().getColumn(2).setMinWidth(100);
-            tablaOrdenProductos.getColumnModel().getColumn(2).setPreferredWidth(100);
-            tablaOrdenProductos.getColumnModel().getColumn(2).setMaxWidth(100);
-            tablaOrdenProductos.getColumnModel().getColumn(3).setMinWidth(125);
-            tablaOrdenProductos.getColumnModel().getColumn(3).setPreferredWidth(125);
-            tablaOrdenProductos.getColumnModel().getColumn(3).setMaxWidth(125);
-        }
-
-        labelUsuario5.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelUsuario5.setText("Id Producto");
-
-        fieldIdProducto.setMaximumSize(new java.awt.Dimension(60, 25));
-        fieldIdProducto.setMinimumSize(new java.awt.Dimension(60, 25));
-        fieldIdProducto.setPreferredSize(new java.awt.Dimension(60, 25));
-
-        buttonAgregarProducto.setText("Agregar Producto");
-
-        buttonEliminarProducto.setText("Eliminar Producto");
-
-        buttonTerminarOrden.setText("Terminar órden");
-
-        javax.swing.GroupLayout frameOrdenLayout = new javax.swing.GroupLayout(frameOrden.getContentPane());
-        frameOrden.getContentPane().setLayout(frameOrdenLayout);
-        frameOrdenLayout.setHorizontalGroup(
-            frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(frameOrdenLayout.createSequentialGroup()
-                .addGroup(frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(frameOrdenLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(frameOrdenLayout.createSequentialGroup()
-                                .addGroup(frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(frameOrdenLayout.createSequentialGroup()
-                                        .addComponent(buttonAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(buttonEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(buttonTerminarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(frameOrdenLayout.createSequentialGroup()
-                                        .addComponent(labelUsuario5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(fieldIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frameOrdenLayout.createSequentialGroup()
-                                .addGroup(frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(frameOrdenLayout.createSequentialGroup()
-                                        .addGap(0, 45, Short.MAX_VALUE)
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(frameOrdenLayout.createSequentialGroup()
-                                        .addComponent(labelOrdenCliente)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(labelOrdenTotal)))
-                                .addGap(67, 67, 67))))
-                    .addGroup(frameOrdenLayout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(labelTituloOrden)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(frameOrdenLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frameOrdenLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelTituloMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(125, 125, 125))))
-        );
-        frameOrdenLayout.setVerticalGroup(
-            frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator2)
-            .addGroup(frameOrdenLayout.createSequentialGroup()
-                .addGroup(frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(frameOrdenLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(labelTituloOrden)
-                        .addGap(18, 18, 18)
-                        .addGroup(frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelOrdenCliente)
-                            .addComponent(labelOrdenTotal))
-                        .addGap(30, 30, 30)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(fieldIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelUsuario5))
-                        .addGap(30, 30, 30)
-                        .addGroup(frameOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(buttonTerminarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(frameOrdenLayout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(labelTituloMenu)
-                        .addGap(38, 38, 38)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(23, 34, Short.MAX_VALUE))
-        );
+        labelIdUsuario = new javax.swing.JLabel();
+        labelCliente = new javax.swing.JLabel();
+        fieldCliente = new javax.swing.JTextField();
+        labelTituloFecha2 = new javax.swing.JLabel();
+        buttonAgregarOrden = new javax.swing.JButton();
+        buttonTerminarOrden = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         javax.swing.GroupLayout framePagoLayout = new javax.swing.GroupLayout(framePago.getContentPane());
         framePago.getContentPane().setLayout(framePagoLayout);
@@ -250,7 +54,6 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(552, 547));
         setMinimumSize(new java.awt.Dimension(552, 547));
         setSize(new java.awt.Dimension(552, 547));
 
@@ -261,17 +64,15 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         labelRol.setText("Rol:");
         labelRol.setToolTipText("");
 
-        labelFechaHora.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelFechaHora.setText("Fecha-Hora:");
+        labelFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelFecha.setText("Fecha: ");
 
-        buttonAgregarOrden.setBackground(new java.awt.Color(34, 141, 110));
-        buttonAgregarOrden.setForeground(new java.awt.Color(255, 255, 255));
-        buttonAgregarOrden.setText("Agregar orden");
+        buttonVolverPanel.setBackground(new java.awt.Color(34, 141, 110));
+        buttonVolverPanel.setForeground(new java.awt.Color(255, 255, 255));
+        buttonVolverPanel.setText("Volver");
+        buttonVolverPanel.setMargin(new java.awt.Insets(2, 2, 2, 2));
 
-        buttonVolver.setBackground(new java.awt.Color(34, 141, 110));
-        buttonVolver.setForeground(new java.awt.Color(255, 255, 255));
-        buttonVolver.setText("Volver");
-
+        tablaOrdenes.setBackground(new java.awt.Color(213, 250, 194));
         tablaOrdenes.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         tablaOrdenes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -284,132 +85,150 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
         jScrollPane2.setViewportView(tablaOrdenes);
         if (tablaOrdenes.getColumnModel().getColumnCount() > 0) {
-            tablaOrdenes.getColumnModel().getColumn(0).setMinWidth(50);
+            tablaOrdenes.getColumnModel().getColumn(0).setResizable(false);
             tablaOrdenes.getColumnModel().getColumn(0).setPreferredWidth(50);
-            tablaOrdenes.getColumnModel().getColumn(0).setMaxWidth(50);
-            tablaOrdenes.getColumnModel().getColumn(1).setMinWidth(175);
+            tablaOrdenes.getColumnModel().getColumn(1).setResizable(false);
             tablaOrdenes.getColumnModel().getColumn(1).setPreferredWidth(175);
-            tablaOrdenes.getColumnModel().getColumn(1).setMaxWidth(175);
-            tablaOrdenes.getColumnModel().getColumn(2).setMinWidth(100);
+            tablaOrdenes.getColumnModel().getColumn(2).setResizable(false);
             tablaOrdenes.getColumnModel().getColumn(2).setPreferredWidth(100);
-            tablaOrdenes.getColumnModel().getColumn(2).setMaxWidth(100);
-            tablaOrdenes.getColumnModel().getColumn(3).setMinWidth(125);
+            tablaOrdenes.getColumnModel().getColumn(3).setResizable(false);
             tablaOrdenes.getColumnModel().getColumn(3).setPreferredWidth(125);
-            tablaOrdenes.getColumnModel().getColumn(3).setMaxWidth(125);
         }
-
-        buttonCancelarOrden.setBackground(new java.awt.Color(34, 141, 110));
-        buttonCancelarOrden.setForeground(new java.awt.Color(255, 255, 255));
-        buttonCancelarOrden.setText("Cancelar orden");
-
-        buttonModificarOrden.setBackground(new java.awt.Color(34, 141, 110));
-        buttonModificarOrden.setForeground(new java.awt.Color(255, 255, 255));
-        buttonModificarOrden.setText("Modificar orden");
 
         labelNombreUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelNombreUsuario.setText("Usuario:");
 
-        labelID.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelID.setText("ID:");
+        labelIdUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelIdUsuario.setText("ID Usuario:");
 
-        jLabel6.setText("Cliente:");
+        labelCliente.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelCliente.setText("Cliente:");
 
-        fieldNombreCliente.setBackground(new java.awt.Color(59, 73, 69));
-        fieldNombreCliente.setForeground(new java.awt.Color(255, 255, 255));
-        fieldNombreCliente.setToolTipText("");
-        fieldNombreCliente.addActionListener(new java.awt.event.ActionListener() {
+        fieldCliente.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        fieldCliente.setToolTipText("");
+        fieldCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldNombreClienteActionPerformed(evt);
+                fieldClienteActionPerformed(evt);
             }
         });
 
-        labelOrdenID.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        labelOrdenID.setText("Orden ID:");
+        labelTituloFecha2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+
+        buttonAgregarOrden.setBackground(new java.awt.Color(34, 141, 110));
+        buttonAgregarOrden.setForeground(new java.awt.Color(255, 255, 255));
+        buttonAgregarOrden.setText("Crear Orden");
+        buttonAgregarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAgregarOrdenActionPerformed(evt);
+            }
+        });
+
+        buttonTerminarOrden.setBackground(new java.awt.Color(34, 141, 110));
+        buttonTerminarOrden.setForeground(new java.awt.Color(255, 255, 255));
+        buttonTerminarOrden.setText("Terminar Orden");
+        buttonTerminarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonTerminarOrdenActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelRol)
-                    .addComponent(labelNombreUsuario)
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+                    .addComponent(buttonTerminarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelRol)
+                            .addComponent(labelNombreUsuario))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(labelIdUsuario)
+                                .addComponent(labelFecha))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelTituloForm)
+                                .addGap(22, 22, 22)))
+                        .addGap(118, 118, 118))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelCliente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(fieldNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelFechaHora)
-                    .addComponent(labelID)
-                    .addComponent(labelOrdenID))
-                .addGap(111, 111, 111))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(buttonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(labelTituloForm))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(buttonAgregarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonModificarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonCancelarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                        .addComponent(fieldCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonAgregarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelTituloFecha2)
+                .addGap(31, 31, 31))
+            .addComponent(jSeparator1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelTituloForm, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(buttonVolverPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelTituloForm)
-                    .addComponent(buttonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(labelRol)
+                    .addComponent(labelFecha))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelNombreUsuario)
+                    .addComponent(labelIdUsuario))
+                .addGap(15, 15, 15)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelRol)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(labelNombreUsuario))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelFechaHora)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(labelID)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6)
-                        .addComponent(fieldNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(labelOrdenID))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonModificarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonAgregarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonCancelarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                        .addGap(255, 255, 255)
+                        .addComponent(labelTituloFecha2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonAgregarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fieldCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelCliente))
+                        .addGap(20, 20, 20)
+                        .addComponent(buttonTerminarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void fieldNombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombreClienteActionPerformed
+    private void fieldClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fieldNombreClienteActionPerformed
+    }//GEN-LAST:event_fieldClienteActionPerformed
+
+    private void buttonAgregarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAgregarOrdenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonAgregarOrdenActionPerformed
+
+    private void buttonTerminarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTerminarOrdenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonTerminarOrdenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -447,130 +266,21 @@ public class GestionDeOrdenes extends javax.swing.JFrame {
         });
     }
 
-    // Getters y Setters de los Widgets
-    public JButton getButtonAgregarOrden() {
-        return buttonAgregarOrden;
-    }
-
-    public JButton getButtonCancelarOrden() {
-        return buttonCancelarOrden;
-    }
-
-    public JButton getButtonVolverPanel() {
-        return buttonVolver;
-    }
-
-    public JLabel getLabelTituloFecha() {
-        return labelFechaHora;
-    }
-
-    public JLabel getLabelTituloForm() {
-        return labelTituloForm;
-    }
-
-    public JTable getTablaMenu() {
-        return tablaMenu;
-    }
-
-    public JTable getTablaOrdenes() {
-        return tablaOrdenes;
-    }
-    
-    public JButton getButtonBuscarOrden() {
-        return buttonBuscarOrden;
-    }
-
-    public JTextField getFieldCliente() {
-        return fieldCliente;
-    }
-
-    public JTextField getFieldIdOrden() {
-        return fieldIdOrden;
-    }
-
-    public void setFieldCliente(JTextField fieldCliente) {
-        this.fieldCliente = fieldCliente;
-    }
-
-    public void setFieldIdOrden(JTextField fieldIdOrden) {
-        this.fieldIdOrden = fieldIdOrden;
-    }
-    
-    
-    
-    // Getters y Setters del frame orden
-    public JFrame getFrameOrden() {
-        return frameOrden;
-    }
-
-    public JLabel getLabelTituloMenu() {
-        return labelTituloMenu;
-    }
-
-    public JLabel getLabelTituloOrden() {
-        return labelTituloOrden;
-    }
-    
-    public JLabel getLabelOrdenCliente() {
-        return labelOrdenCliente;
-    }
-
-    public JLabel getLabelOrdenTotal() {
-        return labelOrdenTotal;
-    }
-    
-    public JTable getTablaOrdenProductos() {
-        return tablaOrdenProductos;
-    }
-    
-    public JButton getButtonAgregarProducto() {
-        return buttonAgregarProducto;
-    }
-
-    public JButton getButtonEliminarProducto() {
-        return buttonEliminarProducto;
-    }
-
-    public JButton getButtonTerminarOrden() {
-        return buttonTerminarOrden;
-    }
-
-    public JTextField getFieldIdProducto() {
-        return fieldIdProducto;
-    }
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonAgregarOrden;
-    private javax.swing.JButton buttonAgregarProducto;
-    private javax.swing.JButton buttonCancelarOrden;
-    private javax.swing.JButton buttonEliminarProducto;
-    private javax.swing.JButton buttonModificarOrden;
-    private javax.swing.JButton buttonTerminarOrden;
-    private javax.swing.JButton buttonVolver;
-    private javax.swing.JTextField fieldIdProducto;
-    private javax.swing.JTextField fieldNombreCliente;
-    private javax.swing.JFrame frameOrden;
+    public javax.swing.JButton buttonAgregarOrden;
+    public javax.swing.JButton buttonTerminarOrden;
+    public javax.swing.JButton buttonVolverPanel;
+    public javax.swing.JTextField fieldCliente;
     private javax.swing.JFrame framePago;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel labelFechaHora;
-    private javax.swing.JLabel labelID;
-    private javax.swing.JLabel labelNombreUsuario;
-    private javax.swing.JLabel labelOrdenCliente;
-    private javax.swing.JLabel labelOrdenID;
-    private javax.swing.JLabel labelOrdenTotal;
-    private javax.swing.JLabel labelRol;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel labelCliente;
+    public javax.swing.JLabel labelFecha;
+    public javax.swing.JLabel labelIdUsuario;
+    public javax.swing.JLabel labelNombreUsuario;
+    public javax.swing.JLabel labelRol;
+    private javax.swing.JLabel labelTituloFecha2;
     private javax.swing.JLabel labelTituloForm;
-    private javax.swing.JLabel labelTituloMenu;
-    private javax.swing.JLabel labelTituloOrden;
-    private javax.swing.JLabel labelUsuario5;
-    private javax.swing.JTable tablaMenu;
-    private javax.swing.JTable tablaOrdenProductos;
-    private javax.swing.JTable tablaOrdenes;
+    public javax.swing.JTable tablaOrdenes;
     // End of variables declaration//GEN-END:variables
-
 }

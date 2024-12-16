@@ -1,30 +1,39 @@
 package modelo.personal;
 
-import modelo.excepciones.ArregloLLenoException;
-import modelo.excepciones.IdNoEncontradoException;
-
 public class Administrador extends Trabajador {
-    private CajeroArreglo cajeroArreglo;
-
+    private static final String id = "001";
+    private static CajeroArreglo cajeroArreglo = new CajeroArreglo(20);
     
-    public Administrador(String id, String nombre, String contrasena) {
+    public Administrador(String nombre, String contrasena) {
         super(id, nombre, contrasena);
-        cajeroArreglo = new CajeroArreglo(20);
+        setRol("Administrador");
+    }
+    
+    public Administrador(Trabajador t){
+        super( t.getId(), t.getNombre(), t.getContrasena() );
+        setRol("Administrador");
     }
 
     public CajeroArreglo getCajeroArreglo() {
         return cajeroArreglo;
     }
 
-    public void agregarCajero(Cajero cajero) throws ArregloLLenoException {
+    public void agregarCajero(Cajero cajero) {
         cajeroArreglo.agregarCajero(cajero);
     }
 
-    public void eliminarCajero(String id) throws IdNoEncontradoException {
+    public void eliminarCajero(String id) {
         cajeroArreglo.eliminarCajero(id);
     }
 
-    public Cajero buscarCajero(String id) throws IdNoEncontradoException {
+    public Cajero buscarCajero(String id) {
         return cajeroArreglo.buscarCajero(id);
+    }
+
+    public static boolean buscarAdmin(String nombreIngresado, String contraseniaIngresada){
+        String nombre = "Mathias";
+        String contrasenia = "2301";
+        
+        return nombre.equals( nombreIngresado ) && contrasenia.equals( contraseniaIngresada );
     }
 }

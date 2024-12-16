@@ -1,0 +1,47 @@
+101 : Hamburguesa Clasica       : 13.00 : Comida    
+102 : Hamburguesa de Pollo      : 13.00 : Comida    
+103 : Hamburguesa Parrillera    : 15.50 : Comida    
+104 : Hamburguesa a lo Pobre    : 15.00 : Comida    
+105 : Hamburguesa Amazonica     : 15.50 : Comida    
+106 : Hamburguesa Vegana        : 14.50 : Comida    
+107 : Hamburguesa Tartara       : 14.00 : Comida    
+108 : Hamburguesa de Pescado    : 15.00 : Comida    
+109 : Hamburguesa Royal         : 17.00 : Comida    
+110 : Hamburguesa Trufada       : 19.00 : Comida    
+111 : Hamburguesa Doble Clasica : 17.00 : Comida    
+112 : Hamburguesa Doble de Pollo : 17.00 : Comida    
+113 : Hamburguesa Estilo Sabogal : 16.50 : Comida    
+201 : Papas Fritas Regulares    :  5.00 : Aperitivo 
+202 : Papas Fritas Medianas     :  6.00 : Aperitivo 
+203 : Papas Fritas Grandes      :  7.00 : Aperitivo 
+204 : Camotes Fritos Regulares  :  5.00 : Aperitivo 
+205 : Camotes Fritos Medianas   :  6.00 : Aperitivo 
+206 : Camotes Fritos Grandes    :  7.00 : Aperitivo 
+207 : Yuquitas Fritas Regulares :  6.00 : Aperitivo 
+208 : Yuquitas Fritas Medianas  :  7.00 : Aperitivo 
+209 : Yuquitas Fritas Grandes   :  8.00 : Aperitivo 
+301 : Inca Kola Regular         :  6.00 : Bebida    
+302 : Inca Kola Mediana         :  8.00 : Bebida    
+303 : Inca Kola Grande          :  9.00 : Bebida    
+304 : Coca Cola Regular         :  7.00 : Bebida    
+305 : Coca Cola Mediana         :  8.00 : Bebida    
+306 : Coca Cola Grande          :  9.00 : Bebida    
+307 : Chicha Morada Regular     :  7.00 : Bebida    
+308 : Chicha Morada Mediana     :  8.00 : Bebida    
+309 : Chicha Morada Grande      :  9.00 : Bebida    
+310 : Maracuya Regular          :  7.00 : Bebida    
+311 : Maracuya Mediana          :  8.00 : Bebida    
+312 : Maracuya Grande           :  9.00 : Bebida    
+401 : Helado de Vainilla        :  6.00 : Postre    
+402 : Helado de Fresa           :  6.00 : Postre    
+403 : Helado de Chocolate       :  6.00 : Postre    
+404 : Helado de Lucuma          :  7.00 : Postre    
+405 : Helado de Menta           :  7.00 : Postre    
+406 : Helado de Arandano        :  7.00 : Postre    
+407 : Pie de Manzana            :  8.00 : Postre    
+408 : Pie de Limón              :  8.00 : Postre    
+501 : Combo Duo                 : 46.50 : Combo     
+502 : Combo Familiar            : 69.50 : Combo     
+503 : Combo Kids                : 21.50 : Combo     
+504 : Combo Sabogal             : 60.50 : Combo     
+505 : Combo Trio                : 83.50 : Combo     

@@ -9,9 +9,9 @@ package vista;
  * @author josep
  */
 public class GestionDeCajeros extends javax.swing.JFrame {
-
+    
     /**
-     * Creates new form GestiónDeCajeros
+     * Creates new form GestiónDeOrdenes
      */
     public GestionDeCajeros() {
         initComponents();
@@ -26,256 +26,257 @@ public class GestionDeCajeros extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelNombreUsuario = new javax.swing.JLabel();
-        labelFechaHora = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        fieldNombreCajero = new javax.swing.JTextField();
-        jSeparator2 = new javax.swing.JSeparator();
-        jLabel11 = new javax.swing.JLabel();
-        buttonGuardarCambios = new javax.swing.JToggleButton();
-        buttonEliminarCajero = new javax.swing.JToggleButton();
-        buttonBuscar = new javax.swing.JToggleButton();
-        buttonActualizar = new javax.swing.JToggleButton();
-        jSeparator3 = new javax.swing.JSeparator();
-        buttonCancelar = new javax.swing.JToggleButton();
-        jSeparator4 = new javax.swing.JSeparator();
-        jLabel12 = new javax.swing.JLabel();
-        buttonAgregarCajero = new javax.swing.JToggleButton();
+        framePago = new javax.swing.JFrame();
         labelTituloForm = new javax.swing.JLabel();
+        labelRol = new javax.swing.JLabel();
+        labelFecha = new javax.swing.JLabel();
+        buttonVolverPanel = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tablaOrdenes = new javax.swing.JTable();
+        tablaCajeros = new javax.swing.JTable();
+        labelNombreUsuario = new javax.swing.JLabel();
+        labelIdUsuario = new javax.swing.JLabel();
+        labelCajero = new javax.swing.JLabel();
+        fieldNombre = new javax.swing.JTextField();
+        labelTituloFecha2 = new javax.swing.JLabel();
+        buttonAgregarCajero = new javax.swing.JButton();
+        buttonEliminarCajero = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        labelCajero1 = new javax.swing.JLabel();
+        labelCajero2 = new javax.swing.JLabel();
+        fieldRUC = new javax.swing.JTextField();
+        fieldContrasenia = new javax.swing.JPasswordField();
+
+        javax.swing.GroupLayout framePagoLayout = new javax.swing.GroupLayout(framePago.getContentPane());
+        framePago.getContentPane().setLayout(framePagoLayout);
+        framePagoLayout.setHorizontalGroup(
+            framePagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        framePagoLayout.setVerticalGroup(
+            framePagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAutoRequestFocus(false);
-        setBackground(new java.awt.Color(0, 0, 0));
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMinimumSize(new java.awt.Dimension(552, 547));
+        setSize(new java.awt.Dimension(552, 547));
 
+        labelTituloForm.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        labelTituloForm.setText("Gestión de cajeros");
+
+        labelRol.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelRol.setText("Rol:");
+        labelRol.setToolTipText("");
+
+        labelFecha.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelFecha.setText("Fecha: ");
+
+        buttonVolverPanel.setBackground(new java.awt.Color(34, 141, 110));
+        buttonVolverPanel.setForeground(new java.awt.Color(255, 255, 255));
+        buttonVolverPanel.setText("Volver");
+        buttonVolverPanel.setMargin(new java.awt.Insets(2, 2, 2, 2));
+
+        tablaCajeros.setBackground(new java.awt.Color(213, 250, 194));
+        tablaCajeros.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        tablaCajeros.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Nombre", "RUC"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tablaCajeros);
+        if (tablaCajeros.getColumnModel().getColumnCount() > 0) {
+            tablaCajeros.getColumnModel().getColumn(0).setResizable(false);
+            tablaCajeros.getColumnModel().getColumn(0).setPreferredWidth(25);
+            tablaCajeros.getColumnModel().getColumn(1).setResizable(false);
+            tablaCajeros.getColumnModel().getColumn(1).setPreferredWidth(225);
+            tablaCajeros.getColumnModel().getColumn(2).setResizable(false);
+            tablaCajeros.getColumnModel().getColumn(2).setPreferredWidth(125);
+        }
+
+        labelNombreUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         labelNombreUsuario.setText("Usuario:");
 
-        labelFechaHora.setText("Fecha-Hora:");
-        labelFechaHora.setToolTipText("");
+        labelIdUsuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelIdUsuario.setText("ID Usuario:");
 
-        jLabel6.setText("Buscar cajero:");
+        labelCajero.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelCajero.setText("Nombre:");
 
-        fieldNombreCajero.setEditable(false);
-        fieldNombreCajero.setBackground(new java.awt.Color(59, 73, 69));
-        fieldNombreCajero.setForeground(new java.awt.Color(255, 255, 255));
-        fieldNombreCajero.setToolTipText("");
-        fieldNombreCajero.addActionListener(new java.awt.event.ActionListener() {
+        fieldNombre.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        fieldNombre.setToolTipText("");
+        fieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldNombreCajeroActionPerformed(evt);
+                fieldNombreActionPerformed(evt);
             }
         });
 
-        jLabel11.setText("Detalles y edición del cajero seleccionado");
-
-        buttonGuardarCambios.setBackground(new java.awt.Color(34, 141, 110));
-        buttonGuardarCambios.setForeground(new java.awt.Color(255, 255, 255));
-        buttonGuardarCambios.setText("Guardar cambios");
-        buttonGuardarCambios.setToolTipText("");
-        buttonGuardarCambios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonGuardarCambiosActionPerformed(evt);
-            }
-        });
-
-        buttonEliminarCajero.setBackground(new java.awt.Color(34, 141, 110));
-        buttonEliminarCajero.setForeground(new java.awt.Color(255, 255, 255));
-        buttonEliminarCajero.setText("Eliminar cajero");
-        buttonEliminarCajero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonEliminarCajeroActionPerformed(evt);
-            }
-        });
-
-        buttonBuscar.setBackground(new java.awt.Color(34, 141, 110));
-        buttonBuscar.setForeground(new java.awt.Color(255, 255, 255));
-        buttonBuscar.setText("Buscar");
-        buttonBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonBuscarActionPerformed(evt);
-            }
-        });
-
-        buttonActualizar.setBackground(new java.awt.Color(34, 141, 110));
-        buttonActualizar.setForeground(new java.awt.Color(255, 255, 255));
-        buttonActualizar.setText("Actualizar");
-
-        buttonCancelar.setBackground(new java.awt.Color(34, 141, 110));
-        buttonCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        buttonCancelar.setText("Cancelar");
-        buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCancelarActionPerformed(evt);
-            }
-        });
-
-        jLabel12.setText("Agregar nuevo cajero");
+        labelTituloFecha2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
         buttonAgregarCajero.setBackground(new java.awt.Color(34, 141, 110));
         buttonAgregarCajero.setForeground(new java.awt.Color(255, 255, 255));
-        buttonAgregarCajero.setText("buttonAgregarCajero");
+        buttonAgregarCajero.setText("Añadir Cajero");
         buttonAgregarCajero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonAgregarCajeroActionPerformed(evt);
             }
         });
 
-        labelTituloForm.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        labelTituloForm.setText("Gestión de cajeros");
-
-        tablaOrdenes.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        tablaOrdenes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Cliente", "Estado", "Precio total (S/.)"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+        buttonEliminarCajero.setBackground(new java.awt.Color(34, 141, 110));
+        buttonEliminarCajero.setForeground(new java.awt.Color(255, 255, 255));
+        buttonEliminarCajero.setText("Eliminar Cajero");
+        buttonEliminarCajero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonEliminarCajeroActionPerformed(evt);
             }
         });
-        tablaOrdenes.setShowVerticalLines(true);
-        jScrollPane2.setViewportView(tablaOrdenes);
+
+        labelCajero1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelCajero1.setText("Contraseña:");
+
+        labelCajero2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        labelCajero2.setText("RUC:");
+
+        fieldRUC.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        fieldRUC.setToolTipText("");
+        fieldRUC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldRUCActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+                    .addComponent(buttonEliminarCajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(labelCajero)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                                .addComponent(fieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(97, 97, 97)
-                                        .addComponent(buttonGuardarCambios)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(buttonEliminarCajero)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING))))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                                    .addComponent(labelCajero2)
+                                    .addComponent(labelCajero1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(fieldContrasenia)
+                                    .addComponent(fieldRUC, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE))))
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonAgregarCajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelTituloForm)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(buttonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(buttonActualizar)))
-                        .addGap(199, 199, 199))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(labelNombreUsuario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelFechaHora)
-                .addGap(103, 103, 103))
-            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(59, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(56, 56, 56))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(buttonAgregarCajero)
-                        .addGap(209, 209, 209))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(fieldNombreCajero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(171, 171, 171)
-                        .addComponent(jLabel11))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(224, 224, 224)
-                        .addComponent(jLabel12)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(labelNombreUsuario)
+                                .addGap(10, 10, 10))
+                            .addComponent(buttonVolverPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelRol, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(97, 97, 97)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(labelIdUsuario)
+                                .addComponent(labelFecha))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelTituloForm)
+                                .addGap(22, 22, 22)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelTituloFecha2)
+                .addGap(31, 31, 31))
+            .addComponent(jSeparator1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(labelTituloForm)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNombreUsuario)
-                    .addComponent(labelFechaHora))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(fieldNombreCajero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonActualizar)
-                    .addComponent(buttonBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonGuardarCambios)
-                    .addComponent(buttonEliminarCajero)
-                    .addComponent(buttonCancelar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonAgregarCajero)
-                .addContainerGap())
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(labelTituloForm)
+                        .addGap(20, 20, 20)
+                        .addComponent(labelFecha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelIdUsuario))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(buttonVolverPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(labelRol)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelNombreUsuario)))
+                .addGap(20, 20, 20)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(255, 255, 255)
+                        .addComponent(labelTituloFecha2)
+                        .addContainerGap(194, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelCajero)
+                            .addComponent(fieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelCajero1)
+                            .addComponent(buttonAgregarCajero, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fieldContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelCajero2)
+                            .addComponent(fieldRUC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonEliminarCajero, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonGuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGuardarCambiosActionPerformed
+    private void fieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonGuardarCambiosActionPerformed
-
-    private void buttonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonBuscarActionPerformed
-
-    private void buttonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonCancelarActionPerformed
+    }//GEN-LAST:event_fieldNombreActionPerformed
 
     private void buttonAgregarCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAgregarCajeroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonAgregarCajeroActionPerformed
 
-    private void fieldNombreCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNombreCajeroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fieldNombreCajeroActionPerformed
-
     private void buttonEliminarCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEliminarCajeroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonEliminarCajeroActionPerformed
 
+    private void fieldRUCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldRUCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldRUCActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -300,6 +301,8 @@ public class GestionDeCajeros extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -310,23 +313,24 @@ public class GestionDeCajeros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton buttonActualizar;
-    private javax.swing.JToggleButton buttonAgregarCajero;
-    private javax.swing.JToggleButton buttonBuscar;
-    private javax.swing.JToggleButton buttonCancelar;
-    private javax.swing.JToggleButton buttonEliminarCajero;
-    private javax.swing.JToggleButton buttonGuardarCambios;
-    private javax.swing.JTextField fieldNombreCajero;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel6;
+    public javax.swing.JButton buttonAgregarCajero;
+    public javax.swing.JButton buttonEliminarCajero;
+    public javax.swing.JButton buttonVolverPanel;
+    public javax.swing.JPasswordField fieldContrasenia;
+    public javax.swing.JTextField fieldNombre;
+    public javax.swing.JTextField fieldRUC;
+    private javax.swing.JFrame framePago;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JLabel labelFechaHora;
-    private javax.swing.JLabel labelNombreUsuario;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel labelCajero;
+    private javax.swing.JLabel labelCajero1;
+    private javax.swing.JLabel labelCajero2;
+    public javax.swing.JLabel labelFecha;
+    public javax.swing.JLabel labelIdUsuario;
+    public javax.swing.JLabel labelNombreUsuario;
+    public javax.swing.JLabel labelRol;
+    private javax.swing.JLabel labelTituloFecha2;
     private javax.swing.JLabel labelTituloForm;
-    private javax.swing.JTable tablaOrdenes;
+    public javax.swing.JTable tablaCajeros;
     // End of variables declaration//GEN-END:variables
 }

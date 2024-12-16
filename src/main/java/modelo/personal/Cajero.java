@@ -1,19 +1,19 @@
 package modelo.personal;
 
 import modelo.Orden;
-import modelo.OrdenArreglo;
-import modelo.excepciones.ArregloLLenoException;
-import modelo.excepciones.IdNoEncontradoException;
 
-public class Cajero extends Trabajador{
+public class Cajero extends Trabajador {
     private String RUC;
-    private static OrdenArreglo ordenArreglo;
-
 
     public Cajero(String id, String nombre, String contrasena, String RUC) {
         super(id, nombre, contrasena);
         this.RUC = RUC;
-        ordenArreglo = new OrdenArreglo(20);
+        setRol("Cajero");
+    }
+    
+    public Cajero(Trabajador t){
+        super( t.getId(), t.getNombre(), t.getContrasena() );
+        setRol("Cajero");
     }
 
     public String getRUC() {
@@ -23,21 +23,17 @@ public class Cajero extends Trabajador{
     public void setRUC(String RUC) {
         this.RUC = RUC;
     }
-
-    public static OrdenArreglo getOrdenArreglo() {
-        return ordenArreglo;
-    }
-
-    public void crearOrden(String id, String cliente) throws ArregloLLenoException {
+    
+    public void crearOrden(String id, String cliente) {
         ordenArreglo.agregarOrden(new Orden(id, cliente));
     }
 
-    public void cancelarOrden(String id) throws IdNoEncontradoException {
+    public void cancelarOrden(String id) {
         ordenArreglo.eliminarOrden(id);
     }
 
     @Override
     public String toString() {
-        return String.format("%-1s : %-25s : %-10s", this.getId(), this.getNombre(), this.getRUC());
+        return String.format("%-1s : %-25s : %-15s : %-10s", this.getId(), this.getNombre(), this.getContrasena(), this.getRUC());
     }
 }
